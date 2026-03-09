@@ -1,0 +1,19 @@
+# --- Root & General ---
+.env
+*.env
+.vscode/
+.DS_Store
+
+# --- Backend (Python) ---
+backend/.env
+backend/venv/
+backend/__pycache__/
+venv/
+.venv/
+*.py[cod]
+
+# --- Frontend (Next.js) ---
+my-todo/.next/
+my-todo/node_modules/
+my-todo/.env*
+node_modules/
