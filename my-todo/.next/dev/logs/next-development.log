@@ -1,0 +1,1296 @@
+[00:00:02.844] Server  LOG     ✓ Ready in 1965ms
+[00:00:10.805] Server  LOG     ○ Compiling / ...
+[00:00:12.359] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:17.800] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:00:17.800] Browser LOG     Available cookies: 
+[00:00:17.801] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:17.801] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:17.801] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:17.801] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:17.801] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:00:17.801] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:20.818] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-08T22:18:46.142057","id":"70db6e11-ebb2-4aa8-9522-4515b3749fa5","session_id":"bde2fed7-e941-414e-b8d3-648deaca8220","updated_at":"2026-03-08T22:18:46.142057","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:17:01.140715","id":"3e0f910a-035f-47a3-9a40-e7f1c5b0574f","session_id":"93f7cd65-ec44-4c19-9c28-6f12d31ee10a","updated_at":"2026-03-08T22:17:01.140715","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:04:46.658729","id":"4ec31f0d-07ea-48de-bf59-01cfac03cc7b","session_id":"62bd4da3-0bb3-4d7b-806c-a07b7232e6d3","updated_at":"2026-03-08T22:04:46.658729","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T21:59:05.569416","id":"7553d629-106a-42dd-8d80-c4e8598b3f0d","session_id":"78e9d91c-1980-4b56-8649-7527d1849a9c","updated_at":"2026-03-08T21:59:05.569416","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:20.818] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-08T22:18:46.142057","id":"70db6e11-ebb2-4aa8-9522-4515b3749fa5","session_id":"bde2fed7-e941-414e-b8d3-648deaca8220","updated_at":"2026-03-08T22:18:46.142057","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:17:01.140715","id":"3e0f910a-035f-47a3-9a40-e7f1c5b0574f","session_id":"93f7cd65-ec44-4c19-9c28-6f12d31ee10a","updated_at":"2026-03-08T22:17:01.140715","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:04:46.658729","id":"4ec31f0d-07ea-48de-bf59-01cfac03cc7b","session_id":"62bd4da3-0bb3-4d7b-806c-a07b7232e6d3","updated_at":"2026-03-08T22:04:46.658729","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T21:59:05.569416","id":"7553d629-106a-42dd-8d80-c4e8598b3f0d","session_id":"78e9d91c-1980-4b56-8649-7527d1849a9c","updated_at":"2026-03-08T21:59:05.569416","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:25.487] Browser LOG     [handleDeleteConversation] Deleting conversation: 7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:25.487] Browser LOG     [deleteConversation] Deleting conversation: 7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:25.487] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:25.487] Browser LOG     Available cookies: 
+[00:00:25.487] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:25.487] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:25.487] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:25.487] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:25.487] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:25.487] Browser LOG     [deleteConversation] Request options: {
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:29.397] Browser LOG     [handleDeleteConversation] Deleting conversation: 7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:29.397] Browser LOG     [deleteConversation] Deleting conversation: 7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:29.397] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:29.397] Browser LOG     Available cookies: 
+[00:00:29.397] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:29.397] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:29.397] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:29.397] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:29.397] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/7553d629-106a-42dd-8d80-c4e8598b3f0d
+[00:00:29.397] Browser LOG     [deleteConversation] Request options: {
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:29.397] Browser LOG     [deleteConversation] Success: {"deleted_conversation_id":"7553d629-106a-42dd-8d80-c4e8598b3f0d","success":true}
+[00:00:29.397] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:00:29.397] Browser LOG     Available cookies: 
+[00:00:29.397] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:29.397] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:29.397] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:29.397] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:29.397] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:00:29.397] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:33.171] Browser LOG     [handleDeleteConversation] Deleting conversation: 4ec31f0d-07ea-48de-bf59-01cfac03cc7b
+[00:00:33.171] Browser LOG     [deleteConversation] Deleting conversation: 4ec31f0d-07ea-48de-bf59-01cfac03cc7b
+[00:00:33.171] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/4ec31f0d-07ea-48de-bf59-01cfac03cc7b
+[00:00:33.171] Browser LOG     Available cookies: 
+[00:00:33.171] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:33.171] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:33.171] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:33.171] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:33.171] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/4ec31f0d-07ea-48de-bf59-01cfac03cc7b
+[00:00:33.171] Browser LOG     [deleteConversation] Request options: {
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:33.171] Browser ERROR   [deleteConversation] HTTP 404: {"detail":"Conversation not found or access denied. You have 4 conversations."}
+[00:00:33.171] Browser ERROR   [deleteConversation] === FULL ERROR DATA ===
+[00:00:33.171] Browser ERROR   [deleteConversation] Status: 404
+[00:00:33.171] Browser ERROR   [deleteConversation] Status Text: Not Found
+[00:00:33.171] Browser ERROR   [deleteConversation] Response Headers: {"content-length":"79","content-type":"application/json"}
+[00:00:33.171] Browser ERROR   [deleteConversation] Error Data: {
+  "detail": "Conversation not found or access denied. You have 4 conversations."
+}
+[00:00:33.171] Browser ERROR   [deleteConversation] === END ERROR DATA ===
+[00:00:33.171] Browser ERROR   [deleteConversation] Full backend errorData: {"detail":"Conversation not found or access denied. You have 4 conversations."}
+[00:00:33.171] Browser ERROR   [deleteConversation] Request failed: {}
+[00:00:33.171] Browser ERROR   Failed to delete conversation: {}
+[00:00:34.733] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-08T22:18:46.142057","id":"70db6e11-ebb2-4aa8-9522-4515b3749fa5","session_id":"bde2fed7-e941-414e-b8d3-648deaca8220","updated_at":"2026-03-08T22:18:46.142057","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:17:01.140715","id":"3e0f910a-035f-47a3-9a40-e7f1c5b0574f","session_id":"93f7cd65-ec44-4c19-9c28-6f12d31ee10a","updated_at":"2026-03-08T22:17:01.140715","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:04:46.658729","id":"4ec31f0d-07ea-48de-bf59-01cfac03cc7b","session_id":"62bd4da3-0bb3-4d7b-806c-a07b7232e6d3","updated_at":"2026-03-08T22:04:46.658729","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:34.733] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-08T22:18:46.142057","id":"70db6e11-ebb2-4aa8-9522-4515b3749fa5","session_id":"bde2fed7-e941-414e-b8d3-648deaca8220","updated_at":"2026-03-08T22:18:46.142057","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:17:01.140715","id":"3e0f910a-035f-47a3-9a40-e7f1c5b0574f","session_id":"93f7cd65-ec44-4c19-9c28-6f12d31ee10a","updated_at":"2026-03-08T22:17:01.140715","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:04:46.658729","id":"4ec31f0d-07ea-48de-bf59-01cfac03cc7b","session_id":"62bd4da3-0bb3-4d7b-806c-a07b7232e6d3","updated_at":"2026-03-08T22:04:46.658729","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:36.984] Browser LOG     [handleDeleteConversation] Deleting conversation: 3e0f910a-035f-47a3-9a40-e7f1c5b0574f
+[00:00:36.984] Browser LOG     [deleteConversation] Deleting conversation: 3e0f910a-035f-47a3-9a40-e7f1c5b0574f
+[00:00:36.984] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/3e0f910a-035f-47a3-9a40-e7f1c5b0574f
+[00:00:36.985] Browser LOG     Available cookies: 
+[00:00:36.985] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:36.985] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:36.985] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:36.985] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:36.985] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/3e0f910a-035f-47a3-9a40-e7f1c5b0574f
+[00:00:36.985] Browser LOG     [deleteConversation] Request options: {
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:36.985] Browser LOG     [deleteConversation] Success: {"deleted_conversation_id":"4ec31f0d-07ea-48de-bf59-01cfac03cc7b","success":true}
+[00:00:36.985] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:00:36.985] Browser LOG     Available cookies: 
+[00:00:36.985] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:36.985] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:36.986] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:36.986] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:36.986] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:00:36.986] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:40.979] Browser LOG     [handleDeleteConversation] Deleting conversation: 70db6e11-ebb2-4aa8-9522-4515b3749fa5
+[00:00:40.979] Browser LOG     [deleteConversation] Deleting conversation: 70db6e11-ebb2-4aa8-9522-4515b3749fa5
+[00:00:40.979] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/70db6e11-ebb2-4aa8-9522-4515b3749fa5
+[00:00:40.979] Browser LOG     Available cookies: 
+[00:00:40.979] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:40.979] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:40.979] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:40.979] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:40.979] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/70db6e11-ebb2-4aa8-9522-4515b3749fa5
+[00:00:40.979] Browser LOG     [deleteConversation] Request options: {
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:40.979] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-08T22:18:46.142057","id":"70db6e11-ebb2-4aa8-9522-4515b3749fa5","session_id":"bde2fed7-e941-414e-b8d3-648deaca8220","updated_at":"2026-03-08T22:18:46.142057","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:17:01.140715","id":"3e0f910a-035f-47a3-9a40-e7f1c5b0574f","session_id":"93f7cd65-ec44-4c19-9c28-6f12d31ee10a","updated_at":"2026-03-08T22:17:01.140715","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:40.979] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-08T22:18:46.142057","id":"70db6e11-ebb2-4aa8-9522-4515b3749fa5","session_id":"bde2fed7-e941-414e-b8d3-648deaca8220","updated_at":"2026-03-08T22:18:46.142057","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:17:01.140715","id":"3e0f910a-035f-47a3-9a40-e7f1c5b0574f","session_id":"93f7cd65-ec44-4c19-9c28-6f12d31ee10a","updated_at":"2026-03-08T22:17:01.140715","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:42.215] Browser LOG     [deleteConversation] Success: {"deleted_conversation_id":"3e0f910a-035f-47a3-9a40-e7f1c5b0574f","success":true}
+[00:00:42.215] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:00:42.216] Browser LOG     Available cookies: 
+[00:00:42.216] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:42.216] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:42.216] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:42.216] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:42.216] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:00:42.216] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:43.957] Browser LOG     [deleteConversation] Success: {"deleted_conversation_id":"70db6e11-ebb2-4aa8-9522-4515b3749fa5","success":true}
+[00:00:43.958] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:00:43.958] Browser LOG     Available cookies: 
+[00:00:43.958] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:43.958] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:43.958] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:43.958] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:43.958] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:00:43.958] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:00:44.523] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:44.523] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:46.936] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:46.936] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:00:53.813] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/
+[00:00:53.813] Browser LOG     Available cookies: 
+[00:00:53.813] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:53.813] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:53.813] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:53.813] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:53.813] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/
+[00:00:53.813] Browser LOG     [sendMessage] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include",
+  "body": "{\"message\":\"Add a task to buy groceries\"}"
+}
+[00:01:08.762] Browser LOG     [sendMessage] Success: {"conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","message":{"content":"I've added a task: Buy groceries. Let me know if there's anything else I can help with!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:27.294204","id":"cd24351c-6bb4-411a-a7b4-36af009017b5","role":"assistant"},"tool_calls":[]}
+[00:01:08.763] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:01:08.763] Browser LOG     Available cookies: 
+[00:01:08.763] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:01:08.763] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:01:08.764] Browser LOG     Cookie session_token: NOT FOUND
+[00:01:08.764] Browser LOG     Cookie auth_token: NOT FOUND
+[00:01:08.764] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:01:08.764] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:01:10.792] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:01:10.792] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-08T22:03:01.191884","id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","session_id":"fb6cc309-62b2-433d-88c1-f87fe1e663d5","updated_at":"2026-03-08T22:03:01.191884","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:01:41.370] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/
+[00:01:41.371] Browser LOG     Available cookies: 
+[00:01:41.371] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:01:41.371] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:01:41.371] Browser LOG     Cookie session_token: NOT FOUND
+[00:01:41.371] Browser LOG     Cookie auth_token: NOT FOUND
+[00:01:41.371] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/
+[00:01:41.371] Browser LOG     [sendMessage] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include",
+  "body": "{\"message\":\"Add a task to buy milk\",\"conversation_id\":\"4495e991-22d4-46d9-a6b6-068040ce28f2\"}"
+}
+[00:01:45.997] Browser LOG     [loadConversation] Loading conversation: 328b22aa-4167-4bbd-9f7a-97d43bb7476e
+[00:01:45.997] Browser LOG     Available cookies: 
+[00:01:45.997] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:01:45.997] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:01:45.997] Browser LOG     Cookie session_token: NOT FOUND
+[00:01:45.997] Browser LOG     Cookie auth_token: NOT FOUND
+[00:01:45.997] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/328b22aa-4167-4bbd-9f7a-97d43bb7476e/messages
+[00:01:45.997] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:01:48.999] Browser LOG     [getConversationMessages] Success: {"count":0,"messages":[]}
+[00:01:49.294] Browser LOG     [sendMessage] Success: {"conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","message":{"content":"It looks like you already have a task to buy groceries. Would you like me to update it to include milk, or should I add a separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:07.663929","id":"6657b78d-19b3-4735-ad7a-115b61dd7083","role":"assistant"},"tool_calls":[]}
+[00:01:56.130] Browser LOG     [loadConversation] Loading conversation: 4495e991-22d4-46d9-a6b6-068040ce28f2
+[00:01:56.130] Browser LOG     Available cookies: 
+[00:01:56.130] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:01:56.130] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:01:56.130] Browser LOG     Cookie session_token: NOT FOUND
+[00:01:56.130] Browser LOG     Cookie auth_token: NOT FOUND
+[00:01:56.130] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/4495e991-22d4-46d9-a6b6-068040ce28f2/messages
+[00:01:56.130] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:01:58.899] Browser LOG     [getConversationMessages] Success: {"count":4,"messages":[{"content":"Add a task to buy groceries","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:17.451036","id":"2c83671b-a8c9-4dc7-b4b2-4e4118338e2b","role":"user"},{"content":"I've added a task: Buy groceries. Let me know if there's anything else I can help with!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:27.294204","id":"cd24351c-6bb4-411a-a7b4-36af009017b5","role":"assistant"},{"content":"Add a task to buy milk","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:03.743913","id":"ace1759a-85cc-4d30-96c5-e35a29f6e330","role":"user"},{"content":"It looks like you already have a task to buy groceries. Would you like me to update it to include milk, or should I add a separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:07.663929","id":"6657b78d-19b3-4735-ad7a-115b61dd7083","role":"assistant"}]}
+[00:02:12.102] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/
+[00:02:12.102] Browser LOG     Available cookies: 
+[00:02:12.102] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:02:12.102] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:02:12.102] Browser LOG     Cookie session_token: NOT FOUND
+[00:02:12.102] Browser LOG     Cookie auth_token: NOT FOUND
+[00:02:12.102] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/
+[00:02:12.102] Browser LOG     [sendMessage] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include",
+  "body": "{\"message\":\"yes\",\"conversation_id\":\"4495e991-22d4-46d9-a6b6-068040ce28f2\"}"
+}
+[00:02:16.793] Browser LOG     [handleDeleteConversation] Deleting conversation: 328b22aa-4167-4bbd-9f7a-97d43bb7476e
+[00:02:16.793] Browser LOG     [deleteConversation] Deleting conversation: 328b22aa-4167-4bbd-9f7a-97d43bb7476e
+[00:02:16.793] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/328b22aa-4167-4bbd-9f7a-97d43bb7476e
+[00:02:16.793] Browser LOG     Available cookies: 
+[00:02:16.793] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:02:16.793] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:02:16.793] Browser LOG     Cookie session_token: NOT FOUND
+[00:02:16.793] Browser LOG     Cookie auth_token: NOT FOUND
+[00:02:16.793] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/328b22aa-4167-4bbd-9f7a-97d43bb7476e
+[00:02:16.793] Browser LOG     [deleteConversation] Request options: {
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:02:20.075] Browser LOG     [sendMessage] Success: {"conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","message":{"content":"Could you please clarify if you'd like me to update the existing task to include milk or add a new, separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:38.259779","id":"e2369ecf-0de0-4a57-9740-e81f7117893e","role":"assistant"},"tool_calls":[]}
+[00:02:20.076] Browser LOG     [deleteConversation] Success: {"deleted_conversation_id":"328b22aa-4167-4bbd-9f7a-97d43bb7476e","success":true}
+[00:02:20.076] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:02:20.076] Browser LOG     Available cookies: 
+[00:02:20.076] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:02:20.076] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:02:20.076] Browser LOG     Cookie session_token: NOT FOUND
+[00:02:20.076] Browser LOG     Cookie auth_token: NOT FOUND
+[00:02:20.076] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:02:20.076] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:02:22.465] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:02:22.465] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:02:37.939] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/
+[00:02:37.939] Browser LOG     Available cookies: 
+[00:02:37.939] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:02:37.939] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:02:37.939] Browser LOG     Cookie session_token: NOT FOUND
+[00:02:37.939] Browser LOG     Cookie auth_token: NOT FOUND
+[00:02:37.939] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/
+[00:02:37.939] Browser LOG     [sendMessage] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include",
+  "body": "{\"message\":\"please update\",\"conversation_id\":\"4495e991-22d4-46d9-a6b6-068040ce28f2\"}"
+}
+[00:02:52.069] Browser LOG     [sendMessage] Success: {"conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","message":{"content":"I've updated the task to: Buy groceries and milk. Let me know if there's anything else you need!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:10.260346","id":"ea1f98bd-97e9-4d9b-9532-77d267e36155","role":"assistant"},"tool_calls":[]}
+[00:03:01.579] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:04.303] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:03:04.303] Browser LOG     Available cookies: 
+[00:03:04.303] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:03:04.303] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:03:04.303] Browser LOG     Cookie session_token: NOT FOUND
+[00:03:04.303] Browser LOG     Cookie auth_token: NOT FOUND
+[00:03:04.303] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:03:04.303] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:03:06.194] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:03:06.194] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:03:52.695] Browser LOG     [loadConversation] Loading conversation: 4495e991-22d4-46d9-a6b6-068040ce28f2
+[00:03:52.695] Browser LOG     Available cookies: 
+[00:03:52.695] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:03:52.695] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:03:52.695] Browser LOG     Cookie session_token: NOT FOUND
+[00:03:52.695] Browser LOG     Cookie auth_token: NOT FOUND
+[00:03:52.695] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/4495e991-22d4-46d9-a6b6-068040ce28f2/messages
+[00:03:52.695] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:03:55.204] Browser LOG     [getConversationMessages] Success: {"count":8,"messages":[{"content":"Add a task to buy groceries","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:17.451036","id":"2c83671b-a8c9-4dc7-b4b2-4e4118338e2b","role":"user"},{"content":"I've added a task: Buy groceries. Let me know if there's anything else I can help with!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:27.294204","id":"cd24351c-6bb4-411a-a7b4-36af009017b5","role":"assistant"},{"content":"Add a task to buy milk","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:03.743913","id":"ace1759a-85cc-4d30-96c5-e35a29f6e330","role":"user"},{"content":"It looks like you already have a task to buy groceries. Would you like me to update it to include milk, or should I add a separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:07.663929","id":"6657b78d-19b3-4735-ad7a-115b61dd7083","role":"assistant"},{"content":"yes","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:34.352050","id":"184519c7-f26b-4360-a0ae-1d3ab6b12746","role":"user"},{"content":"Could you please clarify if you'd like me to update the existing task to include milk or add a new, separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:38.259779","id":"e2369ecf-0de0-4a57-9740-e81f7117893e","role":"assistant"},{"content":"please update","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:00.364856","id":"0e51f815-3663-4d97-a51a-b7f24e4a430f","role":"user"},{"content":"I've updated the task to: Buy groceries and milk. Let me know if there's anything else you need!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:10.260346","id":"ea1f98bd-97e9-4d9b-9532-77d267e36155","role":"assistant"}]}
+[00:04:43.156] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/
+[00:04:43.156] Browser LOG     Available cookies: 
+[00:04:43.156] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:04:43.156] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:04:43.156] Browser LOG     Cookie session_token: NOT FOUND
+[00:04:43.156] Browser LOG     Cookie auth_token: NOT FOUND
+[00:04:43.156] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/
+[00:04:43.156] Browser LOG     [sendMessage] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include",
+  "body": "{\"message\":\"delete my first task \\\"buy grocorie\\\"\",\"conversation_id\":\"4495e991-22d4-46d9-a6b6-068040ce28f2\"}"
+}
+[00:04:55.963] Browser LOG     [sendMessage] Success: {"conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","message":{"content":"Done! I've deleted the task: Buy grocerie. If there's anything else you need, feel free to ask!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:14.239480","id":"c5bfe2f4-e189-4a32-a345-42ef08ae41d3","role":"assistant"},"tool_calls":[]}
+[00:05:15.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:17.393] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[00:05:17.393] Browser LOG     Available cookies: 
+[00:05:17.393] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:05:17.393] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:05:17.393] Browser LOG     Cookie session_token: NOT FOUND
+[00:05:17.393] Browser LOG     Cookie auth_token: NOT FOUND
+[00:05:17.393] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[00:05:17.393] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:05:19.922] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[00:05:19.922] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:16:15.943] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:16:15.943] Browser LOG     Available cookies: 
+[08:16:15.943] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:16:15.943] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:16:15.943] Browser LOG     Cookie session_token: NOT FOUND
+[08:16:15.943] Browser LOG     Cookie auth_token: NOT FOUND
+[08:16:15.943] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:16:15.943] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:16:18.888] Browser LOG     [loadConversation] Loading conversation: 4495e991-22d4-46d9-a6b6-068040ce28f2
+[08:16:18.888] Browser LOG     Available cookies: 
+[08:16:18.889] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:16:18.889] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:16:18.889] Browser LOG     Cookie session_token: NOT FOUND
+[08:16:18.889] Browser LOG     Cookie auth_token: NOT FOUND
+[08:16:18.889] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/4495e991-22d4-46d9-a6b6-068040ce28f2/messages
+[08:16:18.889] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:16:22.692] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:16:22.692] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:16:23.614] Browser LOG     [getConversationMessages] Success: {"count":10,"messages":[{"content":"Add a task to buy groceries","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:17.451036","id":"2c83671b-a8c9-4dc7-b4b2-4e4118338e2b","role":"user"},{"content":"I've added a task: Buy groceries. Let me know if there's anything else I can help with!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:27.294204","id":"cd24351c-6bb4-411a-a7b4-36af009017b5","role":"assistant"},{"content":"Add a task to buy milk","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:03.743913","id":"ace1759a-85cc-4d30-96c5-e35a29f6e330","role":"user"},{"content":"It looks like you already have a task to buy groceries. Would you like me to update it to include milk, or should I add a separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:07.663929","id":"6657b78d-19b3-4735-ad7a-115b61dd7083","role":"assistant"},{"content":"yes","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:34.352050","id":"184519c7-f26b-4360-a0ae-1d3ab6b12746","role":"user"},{"content":"Could you please clarify if you'd like me to update the existing task to include milk or add a new, separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:38.259779","id":"e2369ecf-0de0-4a57-9740-e81f7117893e","role":"assistant"},{"content":"please update","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:00.364856","id":"0e51f815-3663-4d97-a51a-b7f24e4a430f","role":"user"},{"content":"I've updated the task to: Buy groceries and milk. Let me know if there's anything else you need!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:10.260346","id":"ea1f98bd-97e9-4d9b-9532-77d267e36155","role":"assistant"},{"content":"delete my first task \"buy grocorie\"","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:05.498833","id":"23f0f110-a432-45d1-848d-644d1f0bbfee","role":"user"},{"content":"Done! I've deleted the task: Buy grocerie. If there's anything else you need, feel free to ask!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:14.239480","id":"c5bfe2f4-e189-4a32-a345-42ef08ae41d3","role":"assistant"}]}
+[08:22:30.515] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:22:30.515] Browser LOG     Available cookies: 
+[08:22:30.516] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:22:30.516] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:22:30.516] Browser LOG     Cookie session_token: NOT FOUND
+[08:22:30.516] Browser LOG     Cookie auth_token: NOT FOUND
+[08:22:30.516] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:22:30.516] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:22:32.976] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:22:32.976] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:22:46.305] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/
+[08:22:46.305] Browser LOG     Available cookies: 
+[08:22:46.305] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:22:46.305] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:22:46.305] Browser LOG     Cookie session_token: NOT FOUND
+[08:22:46.305] Browser LOG     Cookie auth_token: NOT FOUND
+[08:22:46.305] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/
+[08:22:46.305] Browser LOG     [sendMessage] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include",
+  "body": "{\"message\":\"Add a task to buy groceries and another one to pay the internet bill tomorrow.\",\"conversation_id\":\"4495e991-22d4-46d9-a6b6-068040ce28f2\"}"
+}
+[08:23:02.818] Browser LOG     [sendMessage] Success: {"conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","message":{"content":"I've added the tasks: \n\n1. Buy groceries\n2. Pay the internet bill tomorrow\n\nIf there's anything more you need, just let me know!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:03:21.035917","id":"8751cdc4-9516-4ac3-a654-fb5a7adc7d9d","role":"assistant"},"tool_calls":[]}
+[08:23:11.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:23:14.132] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:23:14.133] Browser LOG     Available cookies: 
+[08:23:14.133] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:23:14.133] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:23:14.133] Browser LOG     Cookie session_token: NOT FOUND
+[08:23:14.133] Browser LOG     Cookie auth_token: NOT FOUND
+[08:23:14.133] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:23:14.133] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:23:16.808] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:23:16.808] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:23:21.585] Browser LOG     [loadConversation] Loading conversation: 4495e991-22d4-46d9-a6b6-068040ce28f2
+[08:23:21.585] Browser LOG     Available cookies: 
+[08:23:21.585] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:23:21.585] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:23:21.585] Browser LOG     Cookie session_token: NOT FOUND
+[08:23:21.585] Browser LOG     Cookie auth_token: NOT FOUND
+[08:23:21.585] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/4495e991-22d4-46d9-a6b6-068040ce28f2/messages
+[08:23:21.585] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:23:25.373] Browser LOG     [getConversationMessages] Success: {"count":12,"messages":[{"content":"Add a task to buy groceries","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:17.451036","id":"2c83671b-a8c9-4dc7-b4b2-4e4118338e2b","role":"user"},{"content":"I've added a task: Buy groceries. Let me know if there's anything else I can help with!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:27.294204","id":"cd24351c-6bb4-411a-a7b4-36af009017b5","role":"assistant"},{"content":"Add a task to buy milk","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:03.743913","id":"ace1759a-85cc-4d30-96c5-e35a29f6e330","role":"user"},{"content":"It looks like you already have a task to buy groceries. Would you like me to update it to include milk, or should I add a separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:07.663929","id":"6657b78d-19b3-4735-ad7a-115b61dd7083","role":"assistant"},{"content":"yes","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:34.352050","id":"184519c7-f26b-4360-a0ae-1d3ab6b12746","role":"user"},{"content":"Could you please clarify if you'd like me to update the existing task to include milk or add a new, separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:38.259779","id":"e2369ecf-0de0-4a57-9740-e81f7117893e","role":"assistant"},{"content":"please update","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:00.364856","id":"0e51f815-3663-4d97-a51a-b7f24e4a430f","role":"user"},{"content":"I've updated the task to: Buy groceries and milk. Let me know if there's anything else you need!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:10.260346","id":"ea1f98bd-97e9-4d9b-9532-77d267e36155","role":"assistant"},{"content":"delete my first task \"buy grocorie\"","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:05.498833","id":"23f0f110-a432-45d1-848d-644d1f0bbfee","role":"user"},{"content":"Done! I've deleted the task: Buy grocerie. If there's anything else you need, feel free to ask!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:14.239480","id":"c5bfe2f4-e189-4a32-a345-42ef08ae41d3","role":"assistant"},{"content":"Add a task to buy groceries and another one to pay the internet bill tomorrow.","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:03:08.920944","id":"d5357e3d-a723-4ffc-a4de-da0f143def05","role":"user"},{"content":"I've added the tasks: \n\n1. Buy groceries\n2. Pay the internet bill tomorrow\n\nIf there's anything more you need, just let me know!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:03:21.035917","id":"8751cdc4-9516-4ac3-a654-fb5a7adc7d9d","role":"assistant"}]}
+[08:23:41.213] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/
+[08:23:41.213] Browser LOG     Available cookies: 
+[08:23:41.213] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:23:41.213] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:23:41.213] Browser LOG     Cookie session_token: NOT FOUND
+[08:23:41.213] Browser LOG     Cookie auth_token: NOT FOUND
+[08:23:41.213] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/
+[08:23:41.213] Browser LOG     [sendMessage] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include",
+  "body": "{\"message\":\"delete a first task\",\"conversation_id\":\"4495e991-22d4-46d9-a6b6-068040ce28f2\"}"
+}
+[08:23:56.532] Browser LOG     [sendMessage] Success: {"conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","message":{"content":"I've deleted the task: Buy groceries. If you need anything else, just let me know!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:04:14.393235","id":"78bf1473-beb7-4d67-a79b-35db7931bf04","role":"assistant"},"tool_calls":[]}
+[08:24:00.295] Browser LOG     [loadConversation] Loading conversation: 4495e991-22d4-46d9-a6b6-068040ce28f2
+[08:24:00.295] Browser LOG     Available cookies: 
+[08:24:00.295] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:24:00.295] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:24:00.295] Browser LOG     Cookie session_token: NOT FOUND
+[08:24:00.295] Browser LOG     Cookie auth_token: NOT FOUND
+[08:24:00.295] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/4495e991-22d4-46d9-a6b6-068040ce28f2/messages
+[08:24:00.295] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:24:03.612] Browser LOG     [getConversationMessages] Success: {"count":14,"messages":[{"content":"Add a task to buy groceries","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:17.451036","id":"2c83671b-a8c9-4dc7-b4b2-4e4118338e2b","role":"user"},{"content":"I've added a task: Buy groceries. Let me know if there's anything else I can help with!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:27.294204","id":"cd24351c-6bb4-411a-a7b4-36af009017b5","role":"assistant"},{"content":"Add a task to buy milk","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:03.743913","id":"ace1759a-85cc-4d30-96c5-e35a29f6e330","role":"user"},{"content":"It looks like you already have a task to buy groceries. Would you like me to update it to include milk, or should I add a separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:07.663929","id":"6657b78d-19b3-4735-ad7a-115b61dd7083","role":"assistant"},{"content":"yes","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:34.352050","id":"184519c7-f26b-4360-a0ae-1d3ab6b12746","role":"user"},{"content":"Could you please clarify if you'd like me to update the existing task to include milk or add a new, separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:38.259779","id":"e2369ecf-0de0-4a57-9740-e81f7117893e","role":"assistant"},{"content":"please update","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:00.364856","id":"0e51f815-3663-4d97-a51a-b7f24e4a430f","role":"user"},{"content":"I've updated the task to: Buy groceries and milk. Let me know if there's anything else you need!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:10.260346","id":"ea1f98bd-97e9-4d9b-9532-77d267e36155","role":"assistant"},{"content":"delete my first task \"buy grocorie\"","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:05.498833","id":"23f0f110-a432-45d1-848d-644d1f0bbfee","role":"user"},{"content":"Done! I've deleted the task: Buy grocerie. If there's anything else you need, feel free to ask!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:14.239480","id":"c5bfe2f4-e189-4a32-a345-42ef08ae41d3","role":"assistant"},{"content":"Add a task to buy groceries and another one to pay the internet bill tomorrow.","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:03:08.920944","id":"d5357e3d-a723-4ffc-a4de-da0f143def05","role":"user"},{"content":"I've added the tasks: \n\n1. Buy groceries\n2. Pay the internet bill tomorrow\n\nIf there's anything more you need, just let me know!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:03:21.035917","id":"8751cdc4-9516-4ac3-a654-fb5a7adc7d9d","role":"assistant"},{"content":"delete a first task","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:04:03.605798","id":"6a95bba2-1a6d-4a0e-9e48-102f4630c419","role":"user"},{"content":"I've deleted the task: Buy groceries. If you need anything else, just let me know!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:04:14.393235","id":"78bf1473-beb7-4d67-a79b-35db7931bf04","role":"assistant"}]}
+[08:24:06.432] Browser LOG     Available cookies: 
+[08:24:06.432] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:24:06.432] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:24:06.432] Browser LOG     Cookie session_token: NOT FOUND
+[08:24:06.432] Browser LOG     Cookie auth_token: NOT FOUND
+[08:24:06.432] Browser LOG     [createConversation] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:24:06.432] Browser LOG     [createConversation] Request options: {
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:24:11.388] Browser LOG     [createConversation] Success: {"conversation_id":"39fd6bdf-0089-4d2b-a5a5-18476bd56b04","created_at":"2026-03-09T17:04:28.823185","session_id":"f96c1bc7-b9ad-4185-9b1f-332cc83f7797"}
+[08:24:11.388] Browser LOG     [startNewConversation] Created conversation: {"conversation_id":"39fd6bdf-0089-4d2b-a5a5-18476bd56b04","created_at":"2026-03-09T17:04:28.823185","session_id":"f96c1bc7-b9ad-4185-9b1f-332cc83f7797"}
+[08:24:11.388] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:24:11.389] Browser LOG     Available cookies: 
+[08:24:11.389] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:24:11.389] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:24:11.389] Browser LOG     Cookie session_token: NOT FOUND
+[08:24:11.389] Browser LOG     Cookie auth_token: NOT FOUND
+[08:24:11.389] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:24:11.389] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:24:13.348] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T17:04:28.823185","id":"39fd6bdf-0089-4d2b-a5a5-18476bd56b04","session_id":"f96c1bc7-b9ad-4185-9b1f-332cc83f7797","updated_at":"2026-03-09T17:04:28.823185","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:24:13.348] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T17:04:28.823185","id":"39fd6bdf-0089-4d2b-a5a5-18476bd56b04","session_id":"f96c1bc7-b9ad-4185-9b1f-332cc83f7797","updated_at":"2026-03-09T17:04:28.823185","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:24:20.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:24:25.028] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:24:25.028] Browser LOG     Available cookies: 
+[08:24:25.028] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:24:25.028] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:24:25.028] Browser LOG     Cookie session_token: NOT FOUND
+[08:24:25.028] Browser LOG     Cookie auth_token: NOT FOUND
+[08:24:25.028] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:24:25.028] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:24:28.360] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T17:04:28.823185","id":"39fd6bdf-0089-4d2b-a5a5-18476bd56b04","session_id":"f96c1bc7-b9ad-4185-9b1f-332cc83f7797","updated_at":"2026-03-09T17:04:28.823185","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:24:28.360] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T17:04:28.823185","id":"39fd6bdf-0089-4d2b-a5a5-18476bd56b04","session_id":"f96c1bc7-b9ad-4185-9b1f-332cc83f7797","updated_at":"2026-03-09T17:04:28.823185","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"},{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:24:34.056] Browser LOG     [loadConversation] Loading conversation: 4495e991-22d4-46d9-a6b6-068040ce28f2
+[08:24:34.056] Browser LOG     Available cookies: 
+[08:24:34.056] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:24:34.056] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:24:34.056] Browser LOG     Cookie session_token: NOT FOUND
+[08:24:34.056] Browser LOG     Cookie auth_token: NOT FOUND
+[08:24:34.056] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/4495e991-22d4-46d9-a6b6-068040ce28f2/messages
+[08:24:34.056] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:24:38.013] Browser LOG     [getConversationMessages] Success: {"count":14,"messages":[{"content":"Add a task to buy groceries","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:17.451036","id":"2c83671b-a8c9-4dc7-b4b2-4e4118338e2b","role":"user"},{"content":"I've added a task: Buy groceries. Let me know if there's anything else I can help with!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:41:27.294204","id":"cd24351c-6bb4-411a-a7b4-36af009017b5","role":"assistant"},{"content":"Add a task to buy milk","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:03.743913","id":"ace1759a-85cc-4d30-96c5-e35a29f6e330","role":"user"},{"content":"It looks like you already have a task to buy groceries. Would you like me to update it to include milk, or should I add a separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:07.663929","id":"6657b78d-19b3-4735-ad7a-115b61dd7083","role":"assistant"},{"content":"yes","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:34.352050","id":"184519c7-f26b-4360-a0ae-1d3ab6b12746","role":"user"},{"content":"Could you please clarify if you'd like me to update the existing task to include milk or add a new, separate task for buying milk?","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:42:38.259779","id":"e2369ecf-0de0-4a57-9740-e81f7117893e","role":"assistant"},{"content":"please update","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:00.364856","id":"0e51f815-3663-4d97-a51a-b7f24e4a430f","role":"user"},{"content":"I've updated the task to: Buy groceries and milk. Let me know if there's anything else you need!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:43:10.260346","id":"ea1f98bd-97e9-4d9b-9532-77d267e36155","role":"assistant"},{"content":"delete my first task \"buy grocorie\"","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:05.498833","id":"23f0f110-a432-45d1-848d-644d1f0bbfee","role":"user"},{"content":"Done! I've deleted the task: Buy grocerie. If there's anything else you need, feel free to ask!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T08:45:14.239480","id":"c5bfe2f4-e189-4a32-a345-42ef08ae41d3","role":"assistant"},{"content":"Add a task to buy groceries and another one to pay the internet bill tomorrow.","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:03:08.920944","id":"d5357e3d-a723-4ffc-a4de-da0f143def05","role":"user"},{"content":"I've added the tasks: \n\n1. Buy groceries\n2. Pay the internet bill tomorrow\n\nIf there's anything more you need, just let me know!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:03:21.035917","id":"8751cdc4-9516-4ac3-a654-fb5a7adc7d9d","role":"assistant"},{"content":"delete a first task","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:04:03.605798","id":"6a95bba2-1a6d-4a0e-9e48-102f4630c419","role":"user"},{"content":"I've deleted the task: Buy groceries. If you need anything else, just let me know!","conversation_id":"4495e991-22d4-46d9-a6b6-068040ce28f2","created_at":"2026-03-09T17:04:14.393235","id":"78bf1473-beb7-4d67-a79b-35db7931bf04","role":"assistant"}]}
+[08:24:42.615] Browser LOG     [handleDeleteConversation] Deleting conversation: 39fd6bdf-0089-4d2b-a5a5-18476bd56b04
+[08:24:42.615] Browser LOG     [deleteConversation] Deleting conversation: 39fd6bdf-0089-4d2b-a5a5-18476bd56b04
+[08:24:42.615] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/39fd6bdf-0089-4d2b-a5a5-18476bd56b04
+[08:24:42.615] Browser LOG     Available cookies: 
+[08:24:42.615] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:24:42.615] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:24:42.615] Browser LOG     Cookie session_token: NOT FOUND
+[08:24:42.615] Browser LOG     Cookie auth_token: NOT FOUND
+[08:24:42.615] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/39fd6bdf-0089-4d2b-a5a5-18476bd56b04
+[08:24:42.615] Browser LOG     [deleteConversation] Request options: {
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:24:45.925] Browser LOG     [deleteConversation] Success: {"deleted_conversation_id":"39fd6bdf-0089-4d2b-a5a5-18476bd56b04","success":true}
+[08:24:45.925] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:24:45.927] Browser LOG     Available cookies: 
+[08:24:45.927] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:24:45.927] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:24:45.927] Browser LOG     Cookie session_token: NOT FOUND
+[08:24:45.927] Browser LOG     Cookie auth_token: NOT FOUND
+[08:24:45.927] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:24:45.927] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:24:48.057] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:24:48.057] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:24:58.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:25:03.062] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:25:04.687] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:25:04.687] Browser LOG     Available cookies: 
+[08:25:04.687] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:25:04.687] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:25:04.687] Browser LOG     Cookie session_token: NOT FOUND
+[08:25:04.687] Browser LOG     Cookie auth_token: NOT FOUND
+[08:25:04.687] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:25:04.687] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:25:08.227] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:25:08.227] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:26:15.132] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:26:15.132] Browser LOG     Available cookies: 
+[08:26:15.132] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:26:15.132] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:26:15.132] Browser LOG     Cookie session_token: NOT FOUND
+[08:26:15.132] Browser LOG     Cookie auth_token: NOT FOUND
+[08:26:15.132] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:26:15.132] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:26:17.848] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:26:17.848] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:26:35.132] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:26:35.132] Browser LOG     Available cookies: 
+[08:26:35.132] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:26:35.132] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:26:35.132] Browser LOG     Cookie session_token: NOT FOUND
+[08:26:35.132] Browser LOG     Cookie auth_token: NOT FOUND
+[08:26:35.132] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:26:35.132] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:26:37.695] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:26:37.695] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:28:16.847] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:28:16.847] Browser LOG     Available cookies: 
+[08:28:16.847] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:28:16.847] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:28:16.847] Browser LOG     Cookie session_token: NOT FOUND
+[08:28:16.847] Browser LOG     Cookie auth_token: NOT FOUND
+[08:28:16.847] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:28:16.847] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:28:20.854] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:28:20.854] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:29:26.013] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:29:26.014] Browser LOG     Available cookies: 
+[08:29:26.014] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:29:26.014] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:29:26.014] Browser LOG     Cookie session_token: NOT FOUND
+[08:29:26.014] Browser LOG     Cookie auth_token: NOT FOUND
+[08:29:26.014] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:29:26.014] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:29:33.341] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:29:33.341] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:30:40.853] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:30:40.853] Browser LOG     Available cookies: 
+[08:30:40.853] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:30:40.853] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:30:40.853] Browser LOG     Cookie session_token: NOT FOUND
+[08:30:40.853] Browser LOG     Cookie auth_token: NOT FOUND
+[08:30:40.853] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:30:40.853] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:30:43.859] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:30:43.859] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:32:02.850] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:32:02.850] Browser LOG     Available cookies: 
+[08:32:02.850] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:32:02.850] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:32:02.850] Browser LOG     Cookie session_token: NOT FOUND
+[08:32:02.850] Browser LOG     Cookie auth_token: NOT FOUND
+[08:32:02.850] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:32:02.850] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:32:06.852] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:32:06.852] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:32:22.854] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:32:22.854] Browser LOG     Available cookies: 
+[08:32:22.854] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:32:22.854] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:32:22.854] Browser LOG     Cookie session_token: NOT FOUND
+[08:32:22.854] Browser LOG     Cookie auth_token: NOT FOUND
+[08:32:22.854] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:32:22.854] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:32:24.847] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:32:24.848] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:32:41.414] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:32:41.415] Browser LOG     Available cookies: 
+[08:32:41.415] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:32:41.415] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:32:41.415] Browser LOG     Cookie session_token: NOT FOUND
+[08:32:41.415] Browser LOG     Cookie auth_token: NOT FOUND
+[08:32:41.415] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:32:41.415] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:32:43.852] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:32:43.852] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:33:07.852] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:33:07.852] Browser LOG     Available cookies: 
+[08:33:07.852] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:33:07.852] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:33:07.852] Browser LOG     Cookie session_token: NOT FOUND
+[08:33:07.852] Browser LOG     Cookie auth_token: NOT FOUND
+[08:33:07.852] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:33:07.852] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:33:09.849] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:33:09.850] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:33:26.324] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:33:26.324] Browser LOG     Available cookies: 
+[08:33:26.324] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:33:26.324] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:33:26.324] Browser LOG     Cookie session_token: NOT FOUND
+[08:33:26.324] Browser LOG     Cookie auth_token: NOT FOUND
+[08:33:26.324] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:33:26.324] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:33:28.618] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:33:28.618] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:33:46.718] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:33:46.719] Browser LOG     Available cookies: 
+[08:33:46.719] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:33:46.719] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:33:46.719] Browser LOG     Cookie session_token: NOT FOUND
+[08:33:46.719] Browser LOG     Cookie auth_token: NOT FOUND
+[08:33:46.719] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:33:46.719] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:33:49.360] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:33:49.360] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:34:04.475] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:34:04.475] Browser LOG     Available cookies: 
+[08:34:04.475] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:34:04.475] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:34:04.475] Browser LOG     Cookie session_token: NOT FOUND
+[08:34:04.475] Browser LOG     Cookie auth_token: NOT FOUND
+[08:34:04.475] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:34:04.475] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:34:07.361] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:34:07.361] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:34:18.619] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:34:18.619] Browser LOG     Available cookies: 
+[08:34:18.619] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:34:18.619] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:34:18.619] Browser LOG     Cookie session_token: NOT FOUND
+[08:34:18.619] Browser LOG     Cookie auth_token: NOT FOUND
+[08:34:18.619] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:34:18.619] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:34:20.982] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:34:20.982] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:37:54.929] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:37:54.929] Browser LOG     Available cookies: 
+[08:37:54.929] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:37:54.929] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:37:54.929] Browser LOG     Cookie session_token: NOT FOUND
+[08:37:54.929] Browser LOG     Cookie auth_token: NOT FOUND
+[08:37:54.929] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:37:54.930] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:37:58.862] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:37:58.862] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:20.856] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:39:20.856] Browser LOG     Available cookies: 
+[08:39:20.856] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:39:20.856] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:39:20.856] Browser LOG     Cookie session_token: NOT FOUND
+[08:39:20.856] Browser LOG     Cookie auth_token: NOT FOUND
+[08:39:20.856] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:39:20.856] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:39:22.848] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:22.848] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:29.859] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:39:29.859] Browser LOG     Available cookies: 
+[08:39:29.859] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:39:29.859] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:39:29.859] Browser LOG     Cookie session_token: NOT FOUND
+[08:39:29.860] Browser LOG     Cookie auth_token: NOT FOUND
+[08:39:29.860] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:39:29.860] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:39:32.858] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:32.858] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:38.856] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:39:38.856] Browser LOG     Available cookies: 
+[08:39:38.856] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:39:38.856] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:39:38.856] Browser LOG     Cookie session_token: NOT FOUND
+[08:39:38.856] Browser LOG     Cookie auth_token: NOT FOUND
+[08:39:38.856] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:39:38.856] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:39:40.629] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:40.629] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:41.685] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:39:41.685] Browser LOG     Available cookies: 
+[08:39:41.685] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:39:41.685] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:39:41.685] Browser LOG     Cookie session_token: NOT FOUND
+[08:39:41.685] Browser LOG     Cookie auth_token: NOT FOUND
+[08:39:41.686] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:39:41.686] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:39:44.852] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:44.852] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:55.847] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:39:55.847] Browser LOG     Available cookies: 
+[08:39:55.847] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:39:55.847] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:39:55.847] Browser LOG     Cookie session_token: NOT FOUND
+[08:39:55.847] Browser LOG     Cookie auth_token: NOT FOUND
+[08:39:55.847] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:39:55.847] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:39:58.189] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:39:58.189] Browser LOG     Available cookies: 
+[08:39:58.189] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:39:58.189] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:39:58.189] Browser LOG     Cookie session_token: NOT FOUND
+[08:39:58.189] Browser LOG     Cookie auth_token: NOT FOUND
+[08:39:58.189] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:39:58.189] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:39:58.189] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:39:58.189] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:00.848] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:00.848] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:12.855] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:40:12.855] Browser LOG     Available cookies: 
+[08:40:12.855] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:40:12.855] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:40:12.855] Browser LOG     Cookie session_token: NOT FOUND
+[08:40:12.855] Browser LOG     Cookie auth_token: NOT FOUND
+[08:40:12.855] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:40:12.855] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:40:15.700] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:15.700] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:16.558] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:40:16.559] Browser LOG     Available cookies: 
+[08:40:16.559] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:40:16.559] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:40:16.559] Browser LOG     Cookie session_token: NOT FOUND
+[08:40:16.559] Browser LOG     Cookie auth_token: NOT FOUND
+[08:40:16.559] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:40:16.559] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:40:20.010] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:20.010] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:21.016] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:40:21.016] Browser LOG     Available cookies: 
+[08:40:21.016] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:40:21.016] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:40:21.016] Browser LOG     Cookie session_token: NOT FOUND
+[08:40:21.016] Browser LOG     Cookie auth_token: NOT FOUND
+[08:40:21.016] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:40:21.016] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:40:23.849] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:23.849] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:33.510] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:40:33.510] Browser LOG     Available cookies: 
+[08:40:33.510] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:40:33.510] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:40:33.510] Browser LOG     Cookie session_token: NOT FOUND
+[08:40:33.511] Browser LOG     Cookie auth_token: NOT FOUND
+[08:40:33.511] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:40:33.511] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:40:35.850] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:35.850] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:41.856] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:40:41.856] Browser LOG     Available cookies: 
+[08:40:41.856] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:40:41.856] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:40:41.856] Browser LOG     Cookie session_token: NOT FOUND
+[08:40:41.856] Browser LOG     Cookie auth_token: NOT FOUND
+[08:40:41.856] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:40:41.856] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:40:43.734] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:43.734] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:46.857] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:40:46.857] Browser LOG     Available cookies: 
+[08:40:46.857] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:40:46.857] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:40:46.857] Browser LOG     Cookie session_token: NOT FOUND
+[08:40:46.857] Browser LOG     Cookie auth_token: NOT FOUND
+[08:40:46.857] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:40:46.857] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:40:48.854] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:48.854] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:49.690] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:40:49.690] Browser LOG     Available cookies: 
+[08:40:49.690] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:40:49.690] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:40:49.690] Browser LOG     Cookie session_token: NOT FOUND
+[08:40:49.690] Browser LOG     Cookie auth_token: NOT FOUND
+[08:40:49.690] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:40:49.690] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:40:53.374] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:40:53.374] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:41:08.851] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:41:08.851] Browser LOG     Available cookies: 
+[08:41:08.851] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:41:08.851] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:41:08.851] Browser LOG     Cookie session_token: NOT FOUND
+[08:41:08.851] Browser LOG     Cookie auth_token: NOT FOUND
+[08:41:08.851] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:41:08.851] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:41:12.853] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:41:12.853] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:41:24.849] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:41:24.849] Browser LOG     Available cookies: 
+[08:41:24.849] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:41:24.849] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:41:24.849] Browser LOG     Cookie session_token: NOT FOUND
+[08:41:24.849] Browser LOG     Cookie auth_token: NOT FOUND
+[08:41:24.849] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:41:24.849] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:41:27.889] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:41:27.889] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:43:42.156] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:43:42.157] Browser LOG     Available cookies: 
+[08:43:42.157] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:43:42.157] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:43:42.157] Browser LOG     Cookie session_token: NOT FOUND
+[08:43:42.157] Browser LOG     Cookie auth_token: NOT FOUND
+[08:43:42.157] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:43:42.157] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:43:44.679] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:43:44.679] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:45:43.854] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:45:43.854] Browser LOG     Available cookies: 
+[08:45:43.855] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:45:43.855] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:45:43.855] Browser LOG     Cookie session_token: NOT FOUND
+[08:45:43.855] Browser LOG     Cookie auth_token: NOT FOUND
+[08:45:43.855] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:45:43.855] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:45:46.849] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:45:46.849] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:46:05.849] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:46:05.849] Browser LOG     Available cookies: 
+[08:46:05.849] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:46:05.849] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:46:05.849] Browser LOG     Cookie session_token: NOT FOUND
+[08:46:05.849] Browser LOG     Cookie auth_token: NOT FOUND
+[08:46:05.849] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:46:05.849] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:46:08.852] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:46:08.852] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:47:31.848] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:47:31.848] Browser LOG     Available cookies: 
+[08:47:31.848] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:47:31.848] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:47:31.849] Browser LOG     Cookie session_token: NOT FOUND
+[08:47:31.849] Browser LOG     Cookie auth_token: NOT FOUND
+[08:47:31.849] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:47:31.849] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:47:34.846] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:47:34.846] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:47:49.858] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:47:49.858] Browser LOG     Available cookies: 
+[08:47:49.858] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:47:49.858] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:47:49.858] Browser LOG     Cookie session_token: NOT FOUND
+[08:47:49.858] Browser LOG     Cookie auth_token: NOT FOUND
+[08:47:49.858] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:47:49.858] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:47:51.849] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:47:51.849] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:48:06.853] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:48:06.853] Browser LOG     Available cookies: 
+[08:48:06.853] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:48:06.853] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:48:06.853] Browser LOG     Cookie session_token: NOT FOUND
+[08:48:06.853] Browser LOG     Cookie auth_token: NOT FOUND
+[08:48:06.853] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:48:06.853] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:48:09.847] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:48:09.847] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:48:17.296] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:48:17.296] Browser LOG     Available cookies: 
+[08:48:17.296] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:48:17.296] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:48:17.296] Browser LOG     Cookie session_token: NOT FOUND
+[08:48:17.296] Browser LOG     Cookie auth_token: NOT FOUND
+[08:48:17.297] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:48:17.297] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:48:18.058] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:48:19.539] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:48:19.539] Browser LOG     Available cookies: 
+[08:48:19.539] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:48:19.539] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:48:19.539] Browser LOG     Cookie session_token: NOT FOUND
+[08:48:19.539] Browser LOG     Cookie auth_token: NOT FOUND
+[08:48:19.539] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:48:19.539] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:48:22.797] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:48:22.797] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:50:12.996] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:50:12.996] Browser LOG     Available cookies: 
+[08:50:12.996] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:50:12.996] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:50:12.996] Browser LOG     Cookie session_token: NOT FOUND
+[08:50:12.996] Browser LOG     Cookie auth_token: NOT FOUND
+[08:50:12.996] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:50:12.996] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:50:15.855] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:50:15.855] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:50:40.863] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:50:40.863] Browser LOG     Available cookies: 
+[08:50:40.863] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:50:40.863] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:50:40.863] Browser LOG     Cookie session_token: NOT FOUND
+[08:50:40.863] Browser LOG     Cookie auth_token: NOT FOUND
+[08:50:40.864] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:50:40.864] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:50:42.970] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:50:42.970] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:51:29.730] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:51:29.730] Browser LOG     Available cookies: 
+[08:51:29.730] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:51:29.731] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:51:29.731] Browser LOG     Cookie session_token: NOT FOUND
+[08:51:29.731] Browser LOG     Cookie auth_token: NOT FOUND
+[08:51:29.731] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:51:29.731] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:51:31.495] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:51:31.495] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:51:31.829] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:51:31.829] Browser LOG     Available cookies: 
+[08:51:31.829] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:51:31.829] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:51:31.829] Browser LOG     Cookie session_token: NOT FOUND
+[08:51:31.829] Browser LOG     Cookie auth_token: NOT FOUND
+[08:51:31.829] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:51:31.829] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[08:51:34.850] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:51:34.850] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-09T08:41:15.410015","id":"4495e991-22d4-46d9-a6b6-068040ce28f2","session_id":"8087da53-5135-4370-82d4-9f1435dec906","updated_at":"2026-03-09T08:41:15.410015","user_id":"wkwgbHdpqD0P0sRP9Pz486034Hl9Uqis"}]
+[08:52:24.110] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
+[08:52:24.110] Browser LOG     Available cookies: 
+[08:52:24.110] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[08:52:24.110] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[08:52:24.110] Browser LOG     Cookie session_token: NOT FOUND
+[08:52:24.110] Browser LOG     Cookie auth_token: NOT FOUND
+[08:52:24.110] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
+[08:52:24.110] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
