@@ -210,26 +210,26 @@ def chat(
         logger.debug(f"    - user_id: {user_id}")
         logger.debug(f"    - message: {request.message[:50]}...")
         logger.debug(f"    - conversation_history length: {len(conversation_history)}")
-        
+
         try:
             runner = TodoAgentRunner(user_id=user_id)
             logger.debug(f"  ✓ TodoAgentRunner initialized")
 
             print(f'\n🤖 [CHAT ENDPOINT] Calling AI agent for user: {user_id}')
             print(f'   Message: "{request.message[:100]}..."')
-            
+
             agent_response = runner.process_message_sync(
                 message=request.message,
                 conversation_history=conversation_history
             )
             print(f'   AI response received: "{agent_response.content[:100]}..."')
             print(f'   Tool calls: {len(agent_response.tool_calls)}\n')
-            logger.info(f"  ✓ AI agent processing successful")
+            logger.info(f"  [SUCCESS] AI agent processing successful")
             logger.debug(f"    - agent_response.content: {agent_response.content[:100]}...")
             logger.debug(f"    - agent_response.tool_calls: {len(agent_response.tool_calls)} calls")
         except Exception as e:
-            print(f'\n❌ [CHAT ENDPOINT] AI agent FAILED: {type(e).__name__}: {str(e)}\n')
-            logger.error(f"  ✗ AI agent error: {type(e).__name__}: {str(e)}")
+            print(f'\n[ERROR] [CHAT ENDPOINT] AI agent FAILED: {type(e).__name__}: {str(e)}\n')
+            logger.error(f"  [ERROR] AI agent error: {type(e).__name__}: {str(e)}")
             logger.error(f"  Full traceback:\n{traceback.format_exc()}")
             # Rollback user message since we couldn't process it
             try:

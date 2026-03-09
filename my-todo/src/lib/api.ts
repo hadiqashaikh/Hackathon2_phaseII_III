@@ -93,11 +93,14 @@ async function handleFetch<T>(
         console.error(`[${operationName}] Response Headers:`, Object.fromEntries(response.headers.entries()));
         console.error(`[${operationName}] Error Data:`, JSON.stringify(errorData, null, 2));
         console.error(`[${operationName}] === END ERROR DATA ===`);
-        
+
         // Check if error contains AI processing failure
         if (errorData.detail && errorData.detail.includes('AI processing failed')) {
-          console.error(`[${operationName}] ⚠️ AI PROCESSING ERROR - Check backend terminal for tool call details`);
+          console.error(`[${operationName}] AI PROCESSING ERROR - Check backend terminal for tool call details`);
         }
+        
+        // Log full errorData for debugging empty/Sorry responses
+        console.error(`[${operationName}] Full backend errorData:`, errorData);
       }
       
       throw new Error(errorData.detail || `HTTP ${response.status}: ${response.statusText}`);
@@ -135,7 +138,7 @@ export async function sendMessage(
   console.log(`[sendMessage] Attempting to connect to: ${url}`);
   logCookies();
 
-  return handleFetch<ChatResponse>(url, {
+  const result = await handleFetch<ChatResponse>(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -146,6 +149,27 @@ export async function sendMessage(
       conversation_id: conversationId,
     }),
   }, 'sendMessage');
+  
+  // Validate response - check for empty or error responses
+  if (!result) {
+    console.error('[sendMessage] Empty response from backend');
+    throw new Error('Empty response from AI service');
+  }
+  
+  if (!result.message || !result.message.content) {
+    console.error('[sendMessage] Invalid response structure:', result);
+    throw new Error('Invalid response format from AI service');
+  }
+  
+  // Check if AI returned a generic error message
+  const content = result.message.content.trim().toLowerCase();
+  if (content === 'sorry' || content === 'error' || content.includes('i apologize') && content.includes('error')) {
+    console.error('[sendMessage] AI returned error message:', result.message.content);
+    console.error('[sendMessage] Full response data:', result);
+    throw new Error(`AI Error: ${result.message.content}`);
+  }
+  
+  return result;
 }
 
 /**

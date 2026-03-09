@@ -4,7 +4,7 @@ OpenAI Agent for Todo AI Chatbot - Phase III.
 This module defines the OpenAI Agent with MCP tool bindings for task management.
 Supports both OpenAI and OpenRouter API endpoints.
 
-Updated for latest openai-agents SDK syntax.
+Updated for latest openai-agents SDK syntax with explicit tool binding.
 """
 
 import logging
@@ -24,7 +24,8 @@ from mcp_server.tools.task_tools import (
 from mcp_server.context import create_mcp_context
 from ai_agents.instructions import SYSTEM_INSTRUCTIONS, AGENT_NAME, AGENT_MODEL
 from config import settings
-from database import get_session_direct
+from database import get_session_direct, engine
+from sqlmodel import Session
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -46,39 +47,43 @@ def add_task_tool(title: str) -> Dict[str, Any]:
     Returns:
         Dictionary with task details and confirmation message
     """
-    print(f'\n🔧 [TOOL CALL] add_task_tool called with title: "{title}"')
+    print(f'\n[TOOL CALL] AI is calling tool: add_task_tool')
+    print(f'   Parameters: title="{title}"')
+    
     try:
         ctx = get_current_context()
         print(f'   User ID from context: {ctx.user_id}')
-        
-        # Create fresh database session for this tool call
-        session = get_session_direct()
+
+        # Create FRESH database session for this tool call
+        fresh_session = Session(engine)
         try:
             # Temporarily patch the context to use fresh session
             import mcp_server.tools.task_tools as task_tools_module
             original_get_session = task_tools_module.get_session
-            
+
             def fresh_session_generator():
-                yield session
+                yield fresh_session
             task_tools_module.get_session = fresh_session_generator
-            
+
             try:
+                print(f'   Executing mcp_add_task...')
                 result = mcp_add_task(ctx, title=title)
-                print(f'   ✓ mcp_add_task returned: {result.get("success", False)}')
+                print(f'   [SUCCESS] mcp_add_task returned: {result.get("success", False)}')
             except Exception as inner_error:
-                print(f'   ❌ mcp_add_task FAILED: {type(inner_error).__name__}: {str(inner_error)}')
+                print(f'   [FAILED] mcp_add_task FAILED: {type(inner_error).__name__}: {str(inner_error)}')
                 raise
             finally:
                 # Restore original function
                 task_tools_module.get_session = original_get_session
         finally:
-            session.close()
-        
+            fresh_session.close()
+            print(f'   Database session closed')
+
         print(f'   Tool result: {result.get("message", "Success")}')
         print(f'   Task ID: {result.get("task", {}).get("id", "N/A")}\n')
         return result
     except Exception as e:
-        print(f'   ❌ ERROR in add_task_tool: {type(e).__name__}: {str(e)}\n')
+        print(f'   [ERROR] ERROR in add_task_tool: {type(e).__name__}: {str(e)}\n')
         logger.error(f"add_task_tool failed: {e}")
         logger.exception("Full traceback:")
         # Re-raise so the agent knows the tool failed
@@ -96,31 +101,35 @@ def list_tasks_tool(status: str = "all") -> Dict[str, Any]:
     Returns:
         Dictionary with list of tasks and count
     """
-    print(f'\n🔧 [TOOL CALL] list_tasks_tool called with status: {status}')
+    print(f'\n[TOOL CALL] AI is calling tool: list_tasks_tool')
+    print(f'   Parameters: status="{status}"')
+    
     try:
         ctx = get_current_context()
-        
-        # Create fresh database session
-        session = get_session_direct()
+
+        # Create FRESH database session
+        fresh_session = Session(engine)
         try:
             import mcp_server.tools.task_tools as task_tools_module
             original_get_session = task_tools_module.get_session
-            
+
             def fresh_session_generator():
-                yield session
+                yield fresh_session
             task_tools_module.get_session = fresh_session_generator
-            
+
             try:
+                print(f'   Executing mcp_list_tasks...')
                 result = mcp_list_tasks(ctx, status=status)
             finally:
                 task_tools_module.get_session = original_get_session
         finally:
-            session.close()
-        
+            fresh_session.close()
+            print(f'   Database session closed')
+
         print(f'   Found {result.get("count", 0)} tasks\n')
         return result
     except Exception as e:
-        print(f'   ❌ ERROR in list_tasks_tool: {type(e).__name__}: {str(e)}\n')
+        print(f'   [ERROR] ERROR in list_tasks_tool: {type(e).__name__}: {str(e)}\n')
         logger.error(f"list_tasks_tool failed: {e}")
         raise
 
@@ -136,31 +145,35 @@ def complete_task_tool(task_id: str) -> Dict[str, Any]:
     Returns:
         Dictionary with updated task details and confirmation message
     """
-    print(f'\n🔧 [TOOL CALL] complete_task_tool called with task_id: {task_id}')
+    print(f'\n[TOOL CALL] AI is calling tool: complete_task_tool')
+    print(f'   Parameters: task_id="{task_id}"')
+    
     try:
         ctx = get_current_context()
-        
-        # Create fresh database session
-        session = get_session_direct()
+
+        # Create FRESH database session
+        fresh_session = Session(engine)
         try:
             import mcp_server.tools.task_tools as task_tools_module
             original_get_session = task_tools_module.get_session
-            
+
             def fresh_session_generator():
-                yield session
+                yield fresh_session
             task_tools_module.get_session = fresh_session_generator
-            
+
             try:
+                print(f'   Executing mcp_complete_task...')
                 result = mcp_complete_task(ctx, task_id=task_id)
             finally:
                 task_tools_module.get_session = original_get_session
         finally:
-            session.close()
-        
+            fresh_session.close()
+            print(f'   Database session closed')
+
         print(f'   Tool result: {result.get("message", "Success")}\n')
         return result
     except Exception as e:
-        print(f'   ❌ ERROR in complete_task_tool: {type(e).__name__}: {str(e)}\n')
+        print(f'   [ERROR] ERROR in complete_task_tool: {type(e).__name__}: {str(e)}\n')
         logger.error(f"complete_task_tool failed: {e}")
         raise
 
@@ -176,31 +189,35 @@ def delete_task_tool(task_id: str) -> Dict[str, Any]:
     Returns:
         Dictionary with success confirmation
     """
-    print(f'\n🔧 [TOOL CALL] delete_task_tool called with task_id: {task_id}')
+    print(f'\n[TOOL CALL] AI is calling tool: delete_task_tool')
+    print(f'   Parameters: task_id="{task_id}"')
+    
     try:
         ctx = get_current_context()
-        
-        # Create fresh database session
-        session = get_session_direct()
+
+        # Create FRESH database session
+        fresh_session = Session(engine)
         try:
             import mcp_server.tools.task_tools as task_tools_module
             original_get_session = task_tools_module.get_session
-            
+
             def fresh_session_generator():
-                yield session
+                yield fresh_session
             task_tools_module.get_session = fresh_session_generator
-            
+
             try:
+                print(f'   Executing mcp_delete_task...')
                 result = mcp_delete_task(ctx, task_id=task_id)
             finally:
                 task_tools_module.get_session = original_get_session
         finally:
-            session.close()
-        
+            fresh_session.close()
+            print(f'   Database session closed')
+
         print(f'   Tool result: {result.get("message", "Success")}\n')
         return result
     except Exception as e:
-        print(f'   ❌ ERROR in delete_task_tool: {type(e).__name__}: {str(e)}\n')
+        print(f'   [ERROR] ERROR in delete_task_tool: {type(e).__name__}: {str(e)}\n')
         logger.error(f"delete_task_tool failed: {e}")
         raise
 
@@ -222,31 +239,35 @@ def update_task_tool(
     Returns:
         Dictionary with updated task details and confirmation message
     """
-    print(f'\n🔧 [TOOL CALL] update_task_tool called with task_id: {task_id}, title: {title}, completed: {completed}')
+    print(f'\n[TOOL CALL] AI is calling tool: update_task_tool')
+    print(f'   Parameters: task_id="{task_id}", title={title}, completed={completed}')
+    
     try:
         ctx = get_current_context()
-        
-        # Create fresh database session
-        session = get_session_direct()
+
+        # Create FRESH database session
+        fresh_session = Session(engine)
         try:
             import mcp_server.tools.task_tools as task_tools_module
             original_get_session = task_tools_module.get_session
-            
+
             def fresh_session_generator():
-                yield session
+                yield fresh_session
             task_tools_module.get_session = fresh_session_generator
-            
+
             try:
+                print(f'   Executing mcp_update_task...')
                 result = mcp_update_task(ctx, task_id=task_id, title=title, completed=completed)
             finally:
                 task_tools_module.get_session = original_get_session
         finally:
-            session.close()
-        
+            fresh_session.close()
+            print(f'   Database session closed')
+
         print(f'   Tool result: {result.get("message", "Success")}\n')
         return result
     except Exception as e:
-        print(f'   ❌ ERROR in update_task_tool: {type(e).__name__}: {str(e)}\n')
+        print(f'   [ERROR] ERROR in update_task_tool: {type(e).__name__}: {str(e)}\n')
         logger.error(f"update_task_tool failed: {e}")
         raise
 
@@ -296,8 +317,8 @@ def clear_context():
 def create_todo_agent() -> Agent:
     """
     Create and configure the Todo AI Agent with OpenRouter/OpenAI support.
-    
-    Uses the latest openai-agents SDK syntax.
+
+    Uses the latest openai-agents SDK syntax with explicit tool binding.
     """
     # Check if using OpenRouter
     is_openrouter = "openrouter.ai" in settings.OPENAI_BASE_URL
@@ -309,7 +330,7 @@ def create_todo_agent() -> Agent:
 
     # Create OpenAI client with proper configuration
     from openai import OpenAI
-    
+
     if is_openrouter:
         # OpenRouter configuration with required headers
         client = OpenAI(
@@ -329,24 +350,26 @@ def create_todo_agent() -> Agent:
         )
         logger.info("✓ OpenAI client configured")
 
-    # Create agent with the client and model settings
-    # Note: In latest SDK, model is passed as a string or Model instance
-    # We pass the model name directly
+    # Define all tools explicitly
+    all_tools = [
+        add_task_tool,
+        list_tasks_tool,
+        complete_task_tool,
+        delete_task_tool,
+        update_task_tool,
+    ]
+
+    # Create agent with explicit tool binding
     agent = Agent(
         name=AGENT_NAME,
         instructions=SYSTEM_INSTRUCTIONS,
-        model=AGENT_MODEL,  # Pass model name directly
+        model=AGENT_MODEL,
         model_settings=ModelSettings(
             max_tokens=settings.OPENAI_MAX_TOKENS,
             temperature=0.7,
         ),
-        tools=[
-            add_task_tool,
-            list_tasks_tool,
-            complete_task_tool,
-            delete_task_tool,
-            update_task_tool,
-        ],
+        # Explicitly pass tools list to agent
+        tools=all_tools,
     )
 
     # Store the client on the agent for use during execution
@@ -354,18 +377,15 @@ def create_todo_agent() -> Agent:
 
     # Print tool registration summary
     print('\n' + '='*60)
-    print('🤖 TODO AI AGENT INITIALIZED')
+    print('TODO AI AGENT INITIALIZED')
     print('='*60)
     print(f'  Name: {AGENT_NAME}')
     print(f'  Model: {AGENT_MODEL}')
     print(f'  Provider: {"OpenRouter" if is_openrouter else "OpenAI"}')
     print(f'  Max Tokens: {settings.OPENAI_MAX_TOKENS}')
-    print(f'  Tools Registered:')
-    print(f'    ✓ add_task_tool')
-    print(f'    ✓ list_tasks_tool')
-    print(f'    ✓ complete_task_tool')
-    print(f'    ✓ delete_task_tool')
-    print(f'    ✓ update_task_tool')
+    print(f'  Tools Registered (explicit binding):')
+    for tool in all_tools:
+        print(f'    [CHECK] {tool.name if hasattr(tool, "name") else tool.__name__}')
     print('='*60 + '\n')
 
     logger.info(f"✓ Created Todo AI Agent: {AGENT_NAME}")
@@ -440,7 +460,7 @@ class TodoAgentRunner:
             # Set context for this request - store on both thread-local AND instance
             set_current_context(self.user_id)
             self._context = create_mcp_context(user_id=self.user_id)
-            print(f'\n🤖 [AGENT] Processing message for user_id: {self.user_id}')
+            print(f'\n[AGENT] Processing message for user_id: {self.user_id}')
             print(f'   Message: "{message[:100]}..."')
             print(f'   Context created: user_id={self._context.user_id}')
 
@@ -457,7 +477,7 @@ class TodoAgentRunner:
             logger.info(f"Processing message for user_id: {self.user_id}")
             logger.debug(f"Input messages: {len(input_messages)}")
 
-            # Run the agent
+            # Run the agent - tools are already bound to the agent
             print(f'   Running agent...')
             result = await Runner.run(
                 self._agent,
@@ -532,7 +552,7 @@ class TodoAgentRunner:
                 pass  # No event loop, proceed normally
 
             return asyncio.run(self.process_message(message, conversation_history))
-            
+
         except Exception as e:
             logger.error(f"Sync agent processing failed: {type(e).__name__}: {str(e)}")
             logger.exception("Full traceback:")
