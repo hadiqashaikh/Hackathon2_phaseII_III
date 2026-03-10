@@ -17,7 +17,9 @@ from pydantic import BaseModel, Field
 from database import get_session
 from middleware.auth import get_current_user_id
 from models import Conversation, Message, ConversationRead, MessageRead
-from ai_agents.todo_agent import TodoAgentRunner, AgentResponse
+
+# Use Ollama agent (works with local Ollama - FREE!)
+from ai_agents.ollama_agent import OllamaTodoAgent, AgentResponse
 
 # Set up logging with enhanced detail
 logging.basicConfig(
@@ -206,22 +208,21 @@ def chat(
         logger.debug(f"  History preview: {conversation_history[-3:] if conversation_history else '[]'}")
 
         # Step 4: Process with AI agent
-        logger.info(f"  → Calling TodoAgentRunner.process_message_sync()...")
+        logger.info(f"  → Calling Ollama agent...")
         logger.debug(f"    - user_id: {user_id}")
         logger.debug(f"    - message: {request.message[:50]}...")
         logger.debug(f"    - conversation_history length: {len(conversation_history)}")
 
         try:
-            runner = TodoAgentRunner(user_id=user_id)
-            logger.debug(f"  ✓ TodoAgentRunner initialized")
-
-            print(f'\n🤖 [CHAT ENDPOINT] Calling AI agent for user: {user_id}')
+            print(f'\n🤖 [CHAT ENDPOINT] Calling Ollama agent for user: {user_id}')
             print(f'   Message: "{request.message[:100]}..."')
 
-            agent_response = runner.process_message_sync(
+            agent = OllamaTodoAgent(user_id=user_id)
+            agent_response = agent.process_message(
                 message=request.message,
                 conversation_history=conversation_history
             )
+
             print(f'   AI response received: "{agent_response.content[:100]}..."')
             print(f'   Tool calls: {len(agent_response.tool_calls)}\n')
             logger.info(f"  [SUCCESS] AI agent processing successful")

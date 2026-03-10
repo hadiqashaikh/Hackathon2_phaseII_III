@@ -14,6 +14,7 @@ from config import settings
 # Import routers
 from api.routers import tasks
 from api.routers import chat
+from api.routers import quick_tasks
 
 # Import authentication dependencies
 from middleware.auth import get_current_user_id
@@ -45,6 +46,9 @@ app.include_router(tasks.router, prefix="/api/tasks", tags=["tasks"])
 
 # Include Phase III chat router (AI chatbot)
 app.include_router(chat.router, prefix="/api/chat", tags=["chat"])
+
+# Include Quick Tasks router (instant operations without AI)
+app.include_router(quick_tasks.router, prefix="/api/quick-tasks", tags=["quick-tasks"])
 
 
 @app.on_event("startup")

@@ -202,14 +202,14 @@ def complete_task(
 ) -> Dict[str, Any]:
     """
     Mark a specific task as completed for the authenticated user.
-    
+
     Args:
         ctx: MCP context containing user_id (auto-injected by auth middleware)
-        task_id: The ID of the task to complete (as string)
-    
+        task_id: The ID of the task to complete (as string). Can also be a task title/description.
+
     Returns:
         Dictionary with updated task details and user-friendly message
-    
+
     Raises:
         ValueError: If task_id is invalid format
         NotFoundError: If task not found or doesn't belong to user
@@ -219,27 +219,39 @@ def complete_task(
     if not ctx.user_id:
         logger.error("complete_task called without user_id")
         raise Exception("Unauthorized: User ID not found in context")
-    
+
     # Validate task_id (ensure it's a string for TEXT column comparison)
-    task_id_str = str(task_id)
-    
-    logger.info(f"Completing task {task_id} for user_id: {ctx.user_id}")
-    
+    task_id_str = str(task_id).strip()
+
+    logger.info(f"Completing task '{task_id}' for user_id: {ctx.user_id}")
+
     try:
         with get_db_session() as session:
-            # Find task by ID AND user_id (data isolation + security)
-            # Note: task.id is TEXT in Phase II schema, so we use string comparison
+            # First, try to find by exact ID match
             task = session.exec(
                 select(Task).where(
                     Task.id == task_id_str,
                     Task.user_id == ctx.user_id
                 )
             ).first()
-            
+
+            # If not found by ID, try to find by title (case-insensitive partial match)
             if not task:
-                logger.warning(f"Task {task_id} not found or not owned by user {ctx.user_id}")
+                logger.info(f"Task not found by ID '{task_id_str}', searching by title...")
+                task = session.exec(
+                    select(Task).where(
+                        Task.user_id == ctx.user_id,
+                        Task.title.ilike(f"%{task_id_str}%")
+                    )
+                ).first()
+                
+                if task:
+                    logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
+
+            if not task:
+                logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
                 raise Exception(f"Task not found. The task may not exist or you don't have permission to access it.")
-            
+
             if task.completed:
                 return {
                     "success": True,
@@ -247,15 +259,15 @@ def complete_task(
                     "task": format_task_response(task),
                     "already_completed": True,
                 }
-            
+
             # Mark as completed
             task.completed = True
             session.add(task)
             session.commit()
             session.refresh(task)
-            
-            logger.info(f"Task {task_id} marked as completed for user_id: {ctx.user_id}")
-            
+
+            logger.info(f"Task '{task_id}' marked as completed for user_id: {ctx.user_id}")
+
             return {
                 "success": True,
                 "message": f'Task "{task.title}" has been marked as complete! Great job!',
@@ -279,14 +291,14 @@ def delete_task(
 ) -> Dict[str, Any]:
     """
     Remove a specific task from the authenticated user's list.
-    
+
     Args:
         ctx: MCP context containing user_id (auto-injected by auth middleware)
-        task_id: The ID of the task to delete (as string)
-    
+        task_id: The ID of the task to delete (as string). Can also be a task title/description.
+
     Returns:
         Dictionary with success confirmation and deleted task info
-    
+
     Raises:
         ValueError: If task_id is invalid format
         NotFoundError: If task not found or doesn't belong to user
@@ -296,36 +308,50 @@ def delete_task(
     if not ctx.user_id:
         logger.error("delete_task called without user_id")
         raise Exception("Unauthorized: User ID not found in context")
-    
+
     # Validate task_id (ensure it's a string for TEXT column comparison)
-    task_id_str = str(task_id)
-    
-    logger.info(f"Deleting task {task_id} for user_id: {ctx.user_id}")
-    
+    task_id_str = str(task_id).strip()
+
+    logger.info(f"Deleting task '{task_id}' for user_id: {ctx.user_id}")
+
     try:
         with get_db_session() as session:
-            # Find task by ID AND user_id (data isolation + security)
+            # First, try to find by exact ID match
             task = session.exec(
                 select(Task).where(
                     Task.id == task_id_str,
                     Task.user_id == ctx.user_id
                 )
             ).first()
-            
+
+            # If not found by ID, try to find by title (case-insensitive partial match)
+            # This handles cases where AI extracts task description instead of UUID
             if not task:
-                logger.warning(f"Task {task_id} not found or not owned by user {ctx.user_id}")
+                logger.info(f"Task not found by ID '{task_id_str}', searching by title...")
+                task = session.exec(
+                    select(Task).where(
+                        Task.user_id == ctx.user_id,
+                        Task.title.ilike(f"%{task_id_str}%")
+                    )
+                ).first()
+                
+                if task:
+                    logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
+
+            if not task:
+                logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
                 raise Exception(f"Task not found. The task may not exist or you don't have permission to delete it.")
-            
+
             task_title = task.title
             session.delete(task)
             session.commit()
-            
-            logger.info(f"Task {task_id} deleted successfully for user_id: {ctx.user_id}")
-            
+
+            logger.info(f"Task '{task_id}' deleted successfully for user_id: {ctx.user_id}")
+
             return {
                 "success": True,
                 "message": f'Task "{task_title}" has been deleted successfully',
-                "deleted_id": task_id_str,
+                "deleted_id": task.id,
             }
     except Exception as e:
         if "not found" in str(e).lower():
@@ -347,16 +373,16 @@ def update_task(
 ) -> Dict[str, Any]:
     """
     Modify properties of an existing task for the authenticated user.
-    
+
     Args:
         ctx: MCP context containing user_id (auto-injected by auth middleware)
-        task_id: The UUID of the task to update (as string)
+        task_id: The UUID of the task to update (as string). Can also be a task title/description.
         title: Optional new title (1-255 characters)
         completed: Optional completion status (True/False)
-    
+
     Returns:
         Dictionary with updated task details and user-friendly message
-    
+
     Raises:
         ValueError: If title is empty or too long
         NotFoundError: If task not found or doesn't belong to user
@@ -366,54 +392,67 @@ def update_task(
     if not ctx.user_id:
         logger.error("update_task called without user_id")
         raise Exception("Unauthorized: User ID not found in context")
-    
+
     # Validate title if provided
     if title is not None:
         if len(title.strip()) == 0:
             raise ValueError("Task title cannot be empty")
         if len(title) > 255:
             raise ValueError("Task title must be 255 characters or less")
-    
+
     # Check if at least one field is being updated
     if title is None and completed is None:
         raise ValueError("At least one field (title or completed) must be provided for update")
-    
-    logger.info(f"Updating task {task_id} for user_id: {ctx.user_id}")
-    
+
+    logger.info(f"Updating task '{task_id}' for user_id: {ctx.user_id}")
+
     try:
         with get_db_session() as session:
-            # Find task by ID AND user_id (data isolation + security)
+            # First, try to find by exact ID match
             task = session.exec(
                 select(Task).where(
                     Task.id == str(task_id),
                     Task.user_id == ctx.user_id
                 )
             ).first()
-            
+
+            # If not found by ID, try to find by title (case-insensitive partial match)
             if not task:
-                logger.warning(f"Task {task_id} not found or not owned by user {ctx.user_id}")
+                logger.info(f"Task not found by ID '{task_id}', searching by title...")
+                task = session.exec(
+                    select(Task).where(
+                        Task.user_id == ctx.user_id,
+                        Task.title.ilike(f"%{task_id}%")
+                    )
+                ).first()
+                
+                if task:
+                    logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
+
+            if not task:
+                logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
                 raise Exception(f"Task not found. The task may not exist or you don't have permission to update it.")
-            
+
             # Track what's being updated
             updates = []
-            
+
             # Update fields if provided
             if title is not None:
                 old_title = task.title
                 task.title = title.strip()
                 updates.append(f"title: '{old_title}' to '{task.title}'")
-            
+
             if completed is not None:
                 old_completed = task.completed
                 task.completed = completed
                 updates.append(f"completed: {old_completed} to {completed}")
-            
+
             session.add(task)
             session.commit()
             session.refresh(task)
-            
-            logger.info(f"Task {task_id} updated for user_id: {ctx.user_id}. Changes: {', '.join(updates)}")
-            
+
+            logger.info(f"Task '{task_id}' updated for user_id: {ctx.user_id}. Changes: {', '.join(updates)}")
+
             return {
                 "success": True,
                 "message": f'Task "{task.title}" has been updated successfully',
