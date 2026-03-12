@@ -1,33 +1,25 @@
-# 🚀 Complete Setup Guide - Todo AI Chatbot (Ollama)
+# 🚀 Complete Setup Guide - Todo AI Chatbot (OpenRouter)
 
 ## ✅ Configuration Complete!
 
-Aapka system ab **Ollama** (free, local AI) use kar raha hai. Koi API key expire nahi hogi!
+Aapka system ab **OpenRouter** (free cloud AI) use kar raha hai. Koi API key expire nahi hogi!
+
+**Note:** Agar OpenRouter API key nahi hai, toh local development ke liye Ollama use kar sakte ho (commented section in `.env`).
 
 ---
 
 ## 📋 Step-by-Step Running Guide
 
-### **Step 1: Ollama Server Start Karein**
+### **Step 1: OpenRouter API Key Lo (Optional for Cloud)**
 
-Ollama ko run karna zaroori hai kyunki ye local AI model host karta hai.
+Agar cloud deployment karna hai toh OpenRouter API key lo:
 
-```bash
-# Naya terminal kholen aur ye chalayein:
-ollama serve
-```
+1. Visit: https://openrouter.ai/
+2. Sign up (Google se 2 min)
+3. API Key copy karo
+4. `.env` file mein paste karo: `OPENROUTER_API_KEY=sk-or-...`
 
-**Expected Output:**
-```
-2026/03/09 23:30:00 INFO: serving on http://127.0.0.1:11434
-```
-
-**Note:** Ollama background mein automatically bhi chal sakta hai. Check karein:
-```bash
-ollama list
-```
-
-Agar model dikhe to Ollama chal raha hai!
+**Note:** Local testing ke liye API key zaroori nahi - aap Ollama use kar sakte ho!
 
 ---
 
@@ -102,17 +94,11 @@ npm run dev
 
 ## 🔧 Troubleshooting
 
-### **Problem: "Ollama server not running"**
+### **Problem: "OpenRouter API key not set"**
 
 **Solution:**
-```bash
-# Ollama start karein
-ollama serve
-
-# Agar already chal raha hai to restart karein:
-# Task Manager mein jaake "ollama" end karein, phir:
-ollama serve
-```
+1. `.env` file check karo - `OPENROUTER_API_KEY` add karo
+2. Ya local testing ke liye Ollama use karo (uncomment Ollama section in `.env`)
 
 ---
 
@@ -120,17 +106,12 @@ ollama serve
 
 **Solution:**
 ```bash
-# Model dobara download karein
-ollama pull qwen2.5:3b
-
-# Ya koi aur model try karein:
-ollama pull llama3.2
+# OpenRouter pe different free model try karo:
+# .env mein update karo:
+OPENROUTER_AGENT_MODEL="llama-3-8b-instruct"
 ```
 
-Phir `.env` update karein:
-```env
-OPENAI_AGENT_MODEL="llama3.2"
-```
+Available free models: https://openrouter.ai/models
 
 ---
 
@@ -138,12 +119,8 @@ OPENAI_AGENT_MODEL="llama3.2"
 
 **Solution:**
 1. Backend terminal check karein - error wahan dikhega
-2. Ollama chal raha hai verify karein: `http://localhost:11434`
-3. `.env` file check karein:
-   ```env
-   OPENAI_BASE_URL="http://localhost:11434/v1"
-   OPENAI_AGENT_MODEL="qwen2.5:3b"
-   ```
+2. `.env` file check karein - API key set hai?
+3. Database connection check karein
 
 ---
 
@@ -162,19 +139,14 @@ OPENAI_AGENT_MODEL="llama3.2"
 
 ### **Servers Start Karne Ka Quick Command:**
 
-**Terminal 1 - Ollama:**
-```bash
-ollama serve
-```
-
-**Terminal 2 - Backend:**
+**Terminal 1 - Backend:**
 ```bash
 cd C:\Users\Admin\Desktop\Hackathon2\phase-two\backend
 venv\Scripts\activate
 uvicorn main:app --reload --port 8000
 ```
 
-**Terminal 3 - Frontend:**
+**Terminal 2 - Frontend:**
 ```bash
 cd C:\Users\Admin\Desktop\Hackathon2\phase-two\my-todo
 npm run dev
@@ -189,7 +161,7 @@ npm run dev
 | Frontend | http://localhost:3000 | Main app |
 | Backend API | http://localhost:8000 | API server |
 | API Docs | http://localhost:8000/docs | Swagger docs |
-| Ollama | http://localhost:11434 | AI model server |
+| OpenRouter | https://openrouter.ai | Cloud AI API |
 
 ---
 
@@ -224,19 +196,15 @@ Update the first task to say "buy milk and eggs"
 
 ## 💡 Tips
 
-1. **Ollama hamesha chal raha hona chahiye** - Band karoge to AI kaam nahi karega
+1. **OpenRouter API key optional hai** - Local testing ke liye Ollama use kar sakte ho
 
 2. **Backend auto-reload hota hai** - Code changes se server restart nahi karna padta
 
 3. **Frontend bhi auto-reload hota hai** - React changes automatically dikhenge
 
-4. **Model quality improve karni hai?** To better model download karein:
-   ```bash
-   ollama pull llama3.1  # 8B model, better quality
-   ```
-   Phir `.env` mein:
+4. **Model quality improve karni hai?** OpenRouter pe better free model try karo:
    ```env
-   OPENAI_AGENT_MODEL="llama3.1"
+   OPENROUTER_AGENT_MODEL="llama-3-8b-instruct"
    ```
 
 ---
@@ -244,9 +212,8 @@ Update the first task to say "buy milk and eggs"
 ## 🆘 Still Having Issues?
 
 1. **Check backend terminal** - Error wahan dikhega
-2. **Check Ollama is running** - `ollama list` command chalayein
-3. **Verify .env settings** - Sab paths sahi hone chahiye
-4. **Restart all servers** - Teenon band karke phir start karein
+2. **Verify .env settings** - API key aur database URL check karo
+3. **Restart servers** - Dono band karke phir start karein
 
 ---
 
@@ -254,11 +221,10 @@ Update the first task to say "buy milk and eggs"
 
 **Sab kuch chal raha hai agar:**
 
-- ✅ Ollama: `ollama list` shows models
 - ✅ Backend: `http://localhost:8000/docs` opens Swagger UI
 - ✅ Frontend: `http://localhost:3000` shows login page
 - ✅ AI Chat: Message bhejne par reply aata hai aur task add hota hai
 
 ---
 
-**Enjoy your FREE, unlimited AI chatbot! 🎉**
+**Enjoy your FREE AI chatbot! 🎉**

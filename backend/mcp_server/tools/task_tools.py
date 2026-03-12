@@ -20,7 +20,7 @@ from sqlmodel import Session, select
 from mcp.server import FastMCP
 
 from models import Task, TaskCreate, TaskUpdate
-from database import get_session
+from database import get_session, get_session_direct
 from mcp_server.context import MCPContext
 
 # Set up logging
@@ -30,14 +30,26 @@ logger = logging.getLogger(__name__)
 # Initialize MCP server
 mcp = FastMCP(name="todo-ai-mcp-server")
 
+# Thread-local storage for optional session injection
+import contextvars
+_session_context: contextvars.ContextVar[Optional[Session]] = contextvars.ContextVar('db_session', default=None)
+
 
 # ===========================================
 # Helper Functions
 # ===========================================
 
 def get_db_session() -> Session:
-    """Get a database session."""
-    return next(get_session())
+    """Get a database session - use context var or create new one."""
+    ctx_session = _session_context.get()
+    if ctx_session:
+        return ctx_session
+    return get_session_direct()
+
+
+def set_db_session(session: Optional[Session]) -> None:
+    """Set the database session in context."""
+    _session_context.set(session)
 
 
 def format_task_response(task: Task) -> Dict[str, Any]:
@@ -86,33 +98,34 @@ def add_task(
     if len(title) > 255:
         raise ValueError("Task title must be 255 characters or less")
 
-    print(f'\n💾 [DATABASE] Saving to DB: "{title}"')
+    print(f'\n[DATABASE] Saving to DB: "{title}"')
     print(f'   User ID: {ctx.user_id}')
     logger.info(f"Creating task for user_id: {ctx.user_id}, title: {title}")
-    
+
     try:
-        with get_db_session() as session:
-            # Generate a unique task ID (TEXT format to match Phase II schema)
-            task_id = str(uuid.uuid4())
-            
-            # Create new task with user_id from context
-            task = Task(
-                id=task_id,
-                title=title.strip(),
-                completed=False,
-                user_id=ctx.user_id
-            )
-            session.add(task)
-            session.commit()
-            session.refresh(task)
-            
-            logger.info(f"Task created successfully with id: {task.id}")
-            
-            return {
-                "success": True,
-                "message": f'Task "{task.title}" has been created successfully',
-                "task": format_task_response(task),
-            }
+        db_session = get_db_session()
+        
+        # Generate a unique task ID (TEXT format to match Phase II schema)
+        task_id = str(uuid.uuid4())
+
+        # Create new task with user_id from context
+        task = Task(
+            id=task_id,
+            title=title.strip(),
+            completed=False,
+            user_id=ctx.user_id
+        )
+        db_session.add(task)
+        db_session.commit()
+        db_session.refresh(task)
+
+        logger.info(f"Task created successfully with id: {task.id}")
+
+        return {
+            "success": True,
+            "message": f'Task "{task.title}" has been created successfully',
+            "task": format_task_response(task),
+        }
     except Exception as e:
         logger.error(f"Error creating task: {str(e)}")
         raise Exception(f"Failed to create task: {str(e)}")
@@ -129,14 +142,14 @@ def list_tasks(
 ) -> Dict[str, Any]:
     """
     List all tasks for the authenticated user with optional status filter.
-    
+
     Args:
         ctx: MCP context containing user_id (auto-injected by auth middleware)
         status: Filter tasks by status: 'all', 'pending', or 'completed'
-    
+
     Returns:
         Dictionary with list of tasks and count
-    
+
     Raises:
         ValueError: If status is not a valid option
         HTTPException: If user_id is missing (401 Unauthorized)
@@ -145,47 +158,48 @@ def list_tasks(
     if not ctx.user_id:
         logger.error("list_tasks called without user_id")
         raise Exception("Unauthorized: User ID not found in context")
-    
+
     # Validate status filter
     valid_statuses = ["all", "pending", "completed"]
     if status not in valid_statuses:
         raise ValueError(f"Invalid status '{status}'. Must be one of: {', '.join(valid_statuses)}")
-    
+
     logger.info(f"Listing tasks for user_id: {ctx.user_id}, status: {status}")
-    
+
     try:
-        with get_db_session() as session:
-            # Build query with user_id filter (data isolation)
-            query = select(Task).where(Task.user_id == ctx.user_id)
-            
-            # Apply status filter
-            if status == "pending":
-                query = query.where(Task.completed == False)
-            elif status == "completed":
-                query = query.where(Task.completed == True)
-            
-            # Order by created_at descending (newest first)
-            query = query.order_by(Task.created_at.desc())
-            
-            tasks = session.exec(query).all()
-            
-            logger.info(f"Retrieved {len(tasks)} tasks for user_id: {ctx.user_id}")
-            
-            # Format response based on status
-            if status == "pending":
-                status_label = "pending"
-            elif status == "completed":
-                status_label = "completed"
-            else:
-                status_label = "all"
-            
-            return {
-                "success": True,
-                "message": f"Found {len(tasks)} {status_label} task(s)",
-                "count": len(tasks),
-                "status_filter": status,
-                "tasks": [format_task_response(task) for task in tasks],
-            }
+        db_session = get_db_session()
+        
+        # Build query with user_id filter (data isolation)
+        query = select(Task).where(Task.user_id == ctx.user_id)
+
+        # Apply status filter
+        if status == "pending":
+            query = query.where(Task.completed == False)
+        elif status == "completed":
+            query = query.where(Task.completed == True)
+
+        # Order by created_at descending (newest first)
+        query = query.order_by(Task.created_at.desc())
+
+        tasks = db_session.exec(query).all()
+
+        logger.info(f"Retrieved {len(tasks)} tasks for user_id: {ctx.user_id}")
+
+        # Format response based on status
+        if status == "pending":
+            status_label = "pending"
+        elif status == "completed":
+            status_label = "completed"
+        else:
+            status_label = "all"
+
+        return {
+            "success": True,
+            "message": f"Found {len(tasks)} {status_label} task(s)",
+            "count": len(tasks),
+            "status_filter": status,
+            "tasks": [format_task_response(task) for task in tasks],
+        }
     except Exception as e:
         logger.error(f"Error listing tasks: {str(e)}")
         raise Exception(f"Failed to list tasks: {str(e)}")
@@ -226,53 +240,54 @@ def complete_task(
     logger.info(f"Completing task '{task_id}' for user_id: {ctx.user_id}")
 
     try:
-        with get_db_session() as session:
-            # First, try to find by exact ID match
-            task = session.exec(
+        db_session = get_db_session()
+        
+        # First, try to find by exact ID match
+        task = db_session.exec(
+            select(Task).where(
+                Task.id == task_id_str,
+                Task.user_id == ctx.user_id
+            )
+        ).first()
+
+        # If not found by ID, try to find by title (case-insensitive partial match)
+        if not task:
+            logger.info(f"Task not found by ID '{task_id_str}', searching by title...")
+            task = db_session.exec(
                 select(Task).where(
-                    Task.id == task_id_str,
-                    Task.user_id == ctx.user_id
+                    Task.user_id == ctx.user_id,
+                    Task.title.ilike(f"%{task_id_str}%")
                 )
             ).first()
 
-            # If not found by ID, try to find by title (case-insensitive partial match)
-            if not task:
-                logger.info(f"Task not found by ID '{task_id_str}', searching by title...")
-                task = session.exec(
-                    select(Task).where(
-                        Task.user_id == ctx.user_id,
-                        Task.title.ilike(f"%{task_id_str}%")
-                    )
-                ).first()
-                
-                if task:
-                    logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
+            if task:
+                logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
 
-            if not task:
-                logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
-                raise Exception(f"Task not found. The task may not exist or you don't have permission to access it.")
+        if not task:
+            logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
+            raise Exception(f"Task not found. The task may not exist or you don't have permission to access it.")
 
-            if task.completed:
-                return {
-                    "success": True,
-                    "message": f'Task "{task.title}" was already completed',
-                    "task": format_task_response(task),
-                    "already_completed": True,
-                }
-
-            # Mark as completed
-            task.completed = True
-            session.add(task)
-            session.commit()
-            session.refresh(task)
-
-            logger.info(f"Task '{task_id}' marked as completed for user_id: {ctx.user_id}")
-
+        if task.completed:
             return {
                 "success": True,
-                "message": f'Task "{task.title}" has been marked as complete! Great job!',
+                "message": f'Task "{task.title}" was already completed',
                 "task": format_task_response(task),
+                "already_completed": True,
             }
+
+        # Mark as completed
+        task.completed = True
+        db_session.add(task)
+        db_session.commit()
+        db_session.refresh(task)
+
+        logger.info(f"Task '{task_id}' marked as completed for user_id: {ctx.user_id}")
+
+        return {
+            "success": True,
+            "message": f'Task "{task.title}" has been marked as complete! Great job!',
+            "task": format_task_response(task),
+        }
     except Exception as e:
         if "not found" in str(e).lower():
             raise
@@ -315,44 +330,44 @@ def delete_task(
     logger.info(f"Deleting task '{task_id}' for user_id: {ctx.user_id}")
 
     try:
-        with get_db_session() as session:
-            # First, try to find by exact ID match
-            task = session.exec(
+        db_session = get_db_session()
+        
+        # First, try to find by exact ID match
+        task = db_session.exec(
+            select(Task).where(
+                Task.id == task_id_str,
+                Task.user_id == ctx.user_id
+            )
+        ).first()
+
+        # If not found by ID, try to find by title (case-insensitive partial match)
+        if not task:
+            logger.info(f"Task not found by ID '{task_id_str}', searching by title...")
+            task = db_session.exec(
                 select(Task).where(
-                    Task.id == task_id_str,
-                    Task.user_id == ctx.user_id
+                    Task.user_id == ctx.user_id,
+                    Task.title.ilike(f"%{task_id_str}%")
                 )
             ).first()
 
-            # If not found by ID, try to find by title (case-insensitive partial match)
-            # This handles cases where AI extracts task description instead of UUID
-            if not task:
-                logger.info(f"Task not found by ID '{task_id_str}', searching by title...")
-                task = session.exec(
-                    select(Task).where(
-                        Task.user_id == ctx.user_id,
-                        Task.title.ilike(f"%{task_id_str}%")
-                    )
-                ).first()
-                
-                if task:
-                    logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
+            if task:
+                logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
 
-            if not task:
-                logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
-                raise Exception(f"Task not found. The task may not exist or you don't have permission to delete it.")
+        if not task:
+            logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
+            raise Exception(f"Task not found. The task may not exist or you don't have permission to delete it.")
 
-            task_title = task.title
-            session.delete(task)
-            session.commit()
+        task_title = task.title
+        db_session.delete(task)
+        db_session.commit()
 
-            logger.info(f"Task '{task_id}' deleted successfully for user_id: {ctx.user_id}")
+        logger.info(f"Task '{task_id}' deleted successfully for user_id: {ctx.user_id}")
 
-            return {
-                "success": True,
-                "message": f'Task "{task_title}" has been deleted successfully',
-                "deleted_id": task.id,
-            }
+        return {
+            "success": True,
+            "message": f'Task "{task_title}" has been deleted successfully',
+            "deleted_id": task.id,
+        }
     except Exception as e:
         if "not found" in str(e).lower():
             raise
@@ -407,58 +422,59 @@ def update_task(
     logger.info(f"Updating task '{task_id}' for user_id: {ctx.user_id}")
 
     try:
-        with get_db_session() as session:
-            # First, try to find by exact ID match
-            task = session.exec(
+        db_session = get_db_session()
+        
+        # First, try to find by exact ID match
+        task = db_session.exec(
+            select(Task).where(
+                Task.id == str(task_id),
+                Task.user_id == ctx.user_id
+            )
+        ).first()
+
+        # If not found by ID, try to find by title (case-insensitive partial match)
+        if not task:
+            logger.info(f"Task not found by ID '{task_id}', searching by title...")
+            task = db_session.exec(
                 select(Task).where(
-                    Task.id == str(task_id),
-                    Task.user_id == ctx.user_id
+                    Task.user_id == ctx.user_id,
+                    Task.title.ilike(f"%{task_id}%")
                 )
             ).first()
 
-            # If not found by ID, try to find by title (case-insensitive partial match)
-            if not task:
-                logger.info(f"Task not found by ID '{task_id}', searching by title...")
-                task = session.exec(
-                    select(Task).where(
-                        Task.user_id == ctx.user_id,
-                        Task.title.ilike(f"%{task_id}%")
-                    )
-                ).first()
-                
-                if task:
-                    logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
+            if task:
+                logger.info(f"Found task by title match: '{task.title}' (ID: {task.id})")
 
-            if not task:
-                logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
-                raise Exception(f"Task not found. The task may not exist or you don't have permission to update it.")
+        if not task:
+            logger.warning(f"Task '{task_id}' not found or not owned by user {ctx.user_id}")
+            raise Exception(f"Task not found. The task may not exist or you don't have permission to update it.")
 
-            # Track what's being updated
-            updates = []
+        # Track what's being updated
+        updates = []
 
-            # Update fields if provided
-            if title is not None:
-                old_title = task.title
-                task.title = title.strip()
-                updates.append(f"title: '{old_title}' to '{task.title}'")
+        # Update fields if provided
+        if title is not None:
+            old_title = task.title
+            task.title = title.strip()
+            updates.append(f"title: '{old_title}' to '{task.title}'")
 
-            if completed is not None:
-                old_completed = task.completed
-                task.completed = completed
-                updates.append(f"completed: {old_completed} to {completed}")
+        if completed is not None:
+            old_completed = task.completed
+            task.completed = completed
+            updates.append(f"completed: {old_completed} to {completed}")
 
-            session.add(task)
-            session.commit()
-            session.refresh(task)
+        db_session.add(task)
+        db_session.commit()
+        db_session.refresh(task)
 
-            logger.info(f"Task '{task_id}' updated for user_id: {ctx.user_id}. Changes: {', '.join(updates)}")
+        logger.info(f"Task '{task_id}' updated for user_id: {ctx.user_id}. Changes: {', '.join(updates)}")
 
-            return {
-                "success": True,
-                "message": f'Task "{task.title}" has been updated successfully',
-                "task": format_task_response(task),
-                "updates": updates,
-            }
+        return {
+            "success": True,
+            "message": f'Task "{task.title}" has been updated successfully',
+            "task": format_task_response(task),
+            "updates": updates,
+        }
     except Exception as e:
         if "not found" in str(e).lower():
             raise

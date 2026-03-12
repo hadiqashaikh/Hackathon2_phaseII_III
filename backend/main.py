@@ -5,6 +5,11 @@ This backend extends the Phase II Task API with AI-powered chat functionality
 using OpenAI Agents SDK and Model Context Protocol (MCP).
 """
 
+# Set UTF-8 encoding for Windows console compatibility
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import SQLModel

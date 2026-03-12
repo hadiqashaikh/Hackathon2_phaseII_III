@@ -18,10 +18,15 @@ class Settings(BaseSettings):
     BETTER_AUTH_SECRET: str
 
     # OpenAI Configuration
-    OPENAI_API_KEY: str
+    OPENAI_API_KEY: str = ""
     OPENAI_AGENT_MODEL: str = "gpt-4o"
     OPENAI_BASE_URL: str = "https://api.openai.com/v1"  # Default to OpenAI, can be overridden for OpenRouter
     OPENAI_MAX_TOKENS: int = 4000  # Reduced token limit for OpenRouter free tier
+
+    # OpenRouter Configuration (Free tier for cloud deployment)
+    OPENROUTER_API_KEY: str = ""
+    OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1"
+    OPENROUTER_AGENT_MODEL: str = "meta-llama/llama-3-8b-instruct:free"  # Free model on OpenRouter
 
     # Chat Configuration
     CHATKIT_MAX_MESSAGES: int = 50

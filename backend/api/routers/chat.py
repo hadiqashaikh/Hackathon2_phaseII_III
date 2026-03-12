@@ -17,9 +17,10 @@ from pydantic import BaseModel, Field
 from database import get_session
 from middleware.auth import get_current_user_id
 from models import Conversation, Message, ConversationRead, MessageRead
+from config import settings
 
-# Use Ollama agent (works with local Ollama - FREE!)
-from ai_agents.ollama_agent import OllamaTodoAgent, AgentResponse
+# OpenRouter agent (FREE cloud deployment!)
+from ai_agents.openrouter_agent import OpenRouterTodoAgent, AgentResponse
 
 # Set up logging with enhanced detail
 logging.basicConfig(
@@ -208,16 +209,16 @@ def chat(
         logger.debug(f"  History preview: {conversation_history[-3:] if conversation_history else '[]'}")
 
         # Step 4: Process with AI agent
-        logger.info(f"  → Calling Ollama agent...")
+        logger.info(f"  → Calling AI agent...")
         logger.debug(f"    - user_id: {user_id}")
         logger.debug(f"    - message: {request.message[:50]}...")
         logger.debug(f"    - conversation_history length: {len(conversation_history)}")
 
         try:
-            print(f'\n🤖 [CHAT ENDPOINT] Calling Ollama agent for user: {user_id}')
+            print(f'\n[CHAT ENDPOINT] Calling OpenRouter AI agent for user: {user_id}')
             print(f'   Message: "{request.message[:100]}..."')
 
-            agent = OllamaTodoAgent(user_id=user_id)
+            agent = OpenRouterTodoAgent(user_id=user_id)
             agent_response = agent.process_message(
                 message=request.message,
                 conversation_history=conversation_history
