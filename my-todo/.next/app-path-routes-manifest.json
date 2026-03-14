@@ -3,6 +3,7 @@
   "/_not-found/page": "/_not-found",
   "/api/auth/[...all]/route": "/api/auth/[...all]",
   "/api/tasks/route": "/api/tasks",
+  "/chat/page": "/chat",
   "/favicon.ico/route": "/favicon.ico",
   "/page": "/"
 }

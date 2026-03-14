@@ -99,9 +99,15 @@ export default function UnifiedDashboard() {
   // Task Functions
   // ============================================
 
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+
   const fetchTasks = async () => {
     try {
-      const res = await fetch('/api/tasks');
+      const res = await fetch(`${API_BASE}/api/tasks/`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+      });
       const data = await res.json();
       if (Array.isArray(data)) setTasks(data);
     } catch (error) {
@@ -112,9 +118,10 @@ export default function UnifiedDashboard() {
   const addTask = async () => {
     if (!taskInput.trim()) return;
     try {
-      const res = await fetch('/api/tasks', {
+      const res = await fetch(`${API_BASE}/api/tasks/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({ title: taskInput }),
       });
       if (res.ok) {
@@ -129,10 +136,11 @@ export default function UnifiedDashboard() {
 
   const toggleComplete = async (task: Task) => {
     try {
-      const res = await fetch('/api/tasks', {
+      const res = await fetch(`${API_BASE}/api/tasks/${task.id}/toggle`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: task.id, completed: !task.completed }),
+        credentials: 'include',
+        body: JSON.stringify({}),
       });
       if (res.ok) {
         const updated = await res.json();
@@ -147,10 +155,11 @@ export default function UnifiedDashboard() {
     const newTitle = prompt('Update mission:', oldTitle);
     if (!newTitle || newTitle === oldTitle) return;
     try {
-      const res = await fetch('/api/tasks', {
-        method: 'PATCH',
+      const res = await fetch(`${API_BASE}/api/tasks/${id}`, {
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id, title: newTitle }),
+        credentials: 'include',
+        body: JSON.stringify({ title: newTitle }),
       });
       if (res.ok) {
         const updated = await res.json();
@@ -163,10 +172,10 @@ export default function UnifiedDashboard() {
 
   const deleteTask = async (id: string) => {
     try {
-      const res = await fetch('/api/tasks', {
+      const res = await fetch(`${API_BASE}/api/tasks/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id }),
+        credentials: 'include',
       });
       if (res.ok) setTasks((prev) => prev.filter((t) => t.id !== id));
     } catch (error) {

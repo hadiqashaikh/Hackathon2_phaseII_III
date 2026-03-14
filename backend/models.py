@@ -1,52 +1,36 @@
 """
-SQLModel models for Phase III: Todo AI Chatbot.
-
-This module defines all database models including:
-- Task (Phase II): Existing task management model (matches Neon DB schema)
-- Conversation (Phase III): Chat session tracking
-- Message (Phase III): Individual chat messages
+SQLModel definitions for Todo AI Chatbot.
 """
 
-from sqlmodel import SQLModel, Field, Relationship
-from typing import Optional, List
+from sqlmodel import SQLModel, Field, Column
+from typing import Optional
 import uuid
 from datetime import datetime
-from sqlalchemy import Column
+from sqlalchemy import DateTime
 
 
 # ===========================================
-# Task Models (Phase II - Existing)
+# Task Models
 # ===========================================
-# IMPORTANT: This model must match the existing Neon DB schema from Phase II
-# Database columns: id (TEXT), userId (TEXT), title (TEXT), completed (BOOLEAN), createdAt (TIMESTAMP)
 
-class TaskBase(SQLModel):
-    """Base schema for task operations."""
-    title: str = Field(min_length=1, max_length=255, description="Task title")
-    completed: bool = Field(default=False, description="Task completion status")
-    user_id: str = Field(description="Owner of the task (for multi-tenancy)")
-
-
-class Task(TaskBase, table=True):
-    """
-    Task table model - matches existing Phase II Neon DB schema.
-    
-    Database uses camelCase column names: userId, createdAt
-    """
+class Task(SQLModel, table=True):
+    """Task table - matches Neon DB schema."""
     __tablename__ = "task"
     __table_args__ = {"extend_existing": True}
-    
-    # Map Python attribute names to database column names
+
     id: str = Field(primary_key=True)
     user_id: str = Field(sa_column=Column("userId", index=True))
     title: str = Field(min_length=1, max_length=255)
     completed: bool = Field(default=False)
-    created_at: datetime = Field(default_factory=datetime.utcnow, sa_column=Column("createdAt"))
+    created_at: datetime = Field(
+        default_factory=datetime.utcnow,
+        sa_column=Column("createdAt", DateTime(timezone=True))
+    )
 
 
-class TaskCreate(TaskBase):
-    """Schema for creating a new task."""
-    pass
+class TaskCreate(SQLModel):
+    """Schema for creating a task."""
+    title: str = Field(min_length=1, max_length=255)
 
 
 class TaskUpdate(SQLModel):
@@ -55,117 +39,76 @@ class TaskUpdate(SQLModel):
     completed: Optional[bool] = Field(default=None)
 
 
-class TaskRead(TaskBase):
+class TaskRead(SQLModel):
     """Schema for returning task data."""
     id: str
+    title: str
+    completed: bool
+    user_id: str
     created_at: datetime
 
 
 # ===========================================
-# Conversation Models (Phase III - New)
+# Conversation Models
 # ===========================================
 
-class ConversationBase(SQLModel):
-    """Base schema for conversation sessions."""
-    user_id: str = Field(
-        index=True,
-        description="Owner of this conversation (references Better Auth user)"
-    )
-
-
-class Conversation(ConversationBase, table=True):
-    """
-    Conversation session for tracking AI chat history.
-    
-    Each conversation represents a unique chat session for a user.
-    Messages are linked to conversations via foreign key.
-    """
+class Conversation(SQLModel, table=True):
+    """Chat conversation session."""
     __tablename__ = "conversation"
-    
-    id: Optional[uuid.UUID] = Field(
-        default_factory=uuid.uuid4,
-        primary_key=True,
-        description="Unique conversation identifier"
+
+    id: Optional[uuid.UUID] = Field(default_factory=uuid.uuid4, primary_key=True)
+    user_id: str = Field(index=True)
+    session_id: str = Field(unique=True, index=True)
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)
+
+
+class Message(SQLModel, table=True):
+    """Chat message."""
+    __tablename__ = "message"
+
+    id: Optional[uuid.UUID] = Field(default_factory=uuid.uuid4, primary_key=True)
+    conversation_id: uuid.UUID = Field(
+        foreign_key="conversation.id",
+        ondelete="CASCADE",
+        index=True
     )
-    session_id: str = Field(
-        unique=True,
-        index=True,
-        description="Unique session identifier (UUID string)"
-    )
-    created_at: Optional[datetime] = Field(
-        default_factory=datetime.utcnow,
-        description="Conversation creation timestamp"
-    )
-    updated_at: Optional[datetime] = Field(
-        default_factory=datetime.utcnow,
-        description="Conversation last update timestamp"
-    )
-    
-    # Relationship to messages (one-to-many)
-    messages: List["Message"] = Relationship(
-        back_populates="conversation",
-        sa_relationship_kwargs={"cascade": "all, delete-orphan"}
-    )
+    role: str  # user, assistant, system
+    content: str
+    created_at: datetime = Field(default_factory=datetime.utcnow)
 
 
 class ConversationRead(SQLModel):
     """Schema for returning conversation data."""
-    id: str  # Return as string for JSON serialization
+    id: uuid.UUID
     user_id: str
     session_id: str
     created_at: datetime
     updated_at: datetime
 
 
-# ===========================================
-# Message Models (Phase III - New)
-# ===========================================
-
-class MessageBase(SQLModel):
-    """Base schema for chat messages."""
-    role: str = Field(
-        description="Message role: 'user', 'assistant', or 'system'"
-    )
-    content: str = Field(
-        description="Message content text"
-    )
-
-
-class Message(MessageBase, table=True):
-    """
-    Individual message within a conversation.
-    
-    Each message belongs to exactly one conversation and has a role
-    indicating whether it was sent by the user or the AI assistant.
-    """
-    __tablename__ = "message"
-    
-    id: Optional[uuid.UUID] = Field(
-        default_factory=uuid.uuid4,
-        primary_key=True,
-        description="Unique message identifier"
-    )
-    conversation_id: uuid.UUID = Field(
-        foreign_key="conversation.id",
-        index=True,
-        description="Reference to parent conversation"
-    )
-    created_at: Optional[datetime] = Field(
-        default_factory=datetime.utcnow,
-        description="Message creation timestamp"
-    )
-    
-    # Relationship to conversation (many-to-one)
-    conversation: Optional[Conversation] = Relationship(back_populates="messages")
-
-
-class MessageRead(MessageBase):
+class MessageRead(SQLModel):
     """Schema for returning message data."""
     id: uuid.UUID
     conversation_id: uuid.UUID
+    role: str
+    content: str
     created_at: datetime
 
 
-class MessageCreate(MessageBase):
-    """Schema for creating a new message."""
-    pass
+# ===========================================
+# User Models (for Better Auth)
+# ===========================================
+
+class User(SQLModel, table=True):
+    """User table for Better Auth."""
+    __tablename__ = "user"
+    __table_args__ = {"extend_existing": True}
+
+    id: str = Field(primary_key=True)
+    email: str = Field(unique=True, index=True)
+    email_verified: bool = Field(default=False)
+    name: Optional[str] = None
+    image: Optional[str] = None
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)

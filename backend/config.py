@@ -1,7 +1,6 @@
 """
-Centralized configuration for Phase III: Todo AI Chatbot.
-
-Uses pydantic-settings for type-safe environment variable loading.
+Configuration for Todo AI Chatbot Backend.
+Uses pydantic-settings for type-safe environment variables.
 """
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -9,35 +8,28 @@ from typing import List
 
 
 class Settings(BaseSettings):
-    """Application settings loaded from environment variables."""
+    """Application settings."""
 
-    # Database Configuration
+    # Database
     DATABASE_URL: str
 
-    # Authentication (Better Auth)
+    # Authentication
     BETTER_AUTH_SECRET: str
 
-    # OpenAI Configuration
-    OPENAI_API_KEY: str = ""
-    OPENAI_AGENT_MODEL: str = "gpt-4o"
-    OPENAI_BASE_URL: str = "https://api.openai.com/v1"  # Default to OpenAI, can be overridden for OpenRouter
-    OPENAI_MAX_TOKENS: int = 4000  # Reduced token limit for OpenRouter free tier
-
-    # OpenRouter Configuration (Free tier for cloud deployment)
+    # OpenRouter (FREE tier)
     OPENROUTER_API_KEY: str = ""
     OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1"
-    OPENROUTER_AGENT_MODEL: str = "meta-llama/llama-3-8b-instruct:free"  # Free model on OpenRouter
+    OPENROUTER_AGENT_MODEL: str = "google/gemini-2.0-flash-lite-001"
 
-    # Chat Configuration
-    CHATKIT_MAX_MESSAGES: int = 50
+    # OpenAI (fallback)
+    OPENAI_API_KEY: str = ""
+    OPENAI_MAX_TOKENS: int = 2000
 
-    # Server Configuration
-    MCP_SERVER_PORT: int = 8000
+    # Server
     BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:3000"]
 
-    # Frontend Configuration
-    NEXT_PUBLIC_BETTER_AUTH_URL: str = "http://localhost:8000"
-    NEXT_PUBLIC_API_BASE_URL: str = "http://localhost:8000"
+    # Debug mode
+    DEBUG: bool = True
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -46,16 +38,5 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    @property
-    def is_development(self) -> bool:
-        """Check if running in development mode."""
-        return "localhost" in self.DATABASE_URL or "127.0.0.1" in self.DATABASE_URL
 
-
-# Global settings instance
 settings = Settings()
-
-
-def get_settings() -> Settings:
-    """Get the global settings instance."""
-    return settings

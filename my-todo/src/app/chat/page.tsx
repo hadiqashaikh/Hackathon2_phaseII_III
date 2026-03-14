@@ -7,7 +7,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { Send, Bot, User, Loader2, Trash2, MessageSquare } from 'lucide-react';
+import { Send, Bot, User, Loader2, Trash2, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { authClient } from '@/lib/auth-client';
 import {
@@ -17,6 +17,7 @@ import {
   listConversations,
   deleteConversation,
   Conversation as ConversationType,
+  listTasks,
 } from '@/lib/api';
 
 interface ChatMessage {
@@ -42,6 +43,7 @@ export default function ChatPage() {
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [conversations, setConversations] = useState<ConversationType[]>([]);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [tasks, setTasks] = useState<Array<{ id: string; title: string; completed: boolean }>>([]);
 
   // Scroll to bottom when new messages arrive
   const scrollToBottom = () => {
@@ -56,6 +58,7 @@ export default function ChatPage() {
   useEffect(() => {
     if (session) {
       loadConversations();
+      loadTasks();
     }
   }, [session]);
 
@@ -65,6 +68,16 @@ export default function ChatPage() {
       setConversations(list);
     } catch (error) {
       console.error('Failed to load conversations:', error);
+    }
+  }
+
+  async function loadTasks() {
+    try {
+      const taskList = await listTasks();
+      setTasks(taskList);
+      console.log('[loadTasks] Loaded tasks:', taskList);
+    } catch (error) {
+      console.error('Failed to load tasks:', error);
     }
   }
 
@@ -155,9 +168,15 @@ export default function ChatPage() {
       };
 
       setMessages(prev => [...prev, aiMessage]);
+
+      // Refresh tasks if AI made changes (add/delete/update/complete task)
+      if (response.tool_calls && response.tool_calls.length > 0) {
+        console.log('[handleSubmit] Tool calls detected, refreshing tasks:', response.tool_calls);
+        await loadTasks();
+      }
     } catch (error) {
       console.error('Failed to send message:', error);
-      
+
       // Add error message
       const errorMessage: ChatMessage = {
         id: Date.now().toString(),
@@ -318,6 +337,37 @@ export default function ChatPage() {
             </div>
           </div>
         </div>
+
+        {/* Tasks Panel - Show current tasks */}
+        {tasks.length > 0 && (
+          <div className="bg-blue-50 border-b border-blue-100 px-4 py-2">
+            <div className="flex items-center gap-2 mb-2">
+              <CheckCircle2 className="h-4 w-4 text-blue-600" />
+              <h3 className="text-sm font-semibold text-blue-900">
+                My Tasks ({tasks.length})
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {tasks.slice(0, 5).map(task => (
+                <span
+                  key={task.id}
+                  className={`text-xs px-3 py-1 rounded-full ${
+                    task.completed
+                      ? 'bg-green-100 text-green-700 line-through'
+                      : 'bg-white text-gray-700 border border-gray-200'
+                  }`}
+                >
+                  {task.title}
+                </span>
+              ))}
+              {tasks.length > 5 && (
+                <span className="text-xs text-gray-500">
+                  +{tasks.length - 5} more
+                </span>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">

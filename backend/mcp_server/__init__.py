@@ -1,1 +1,1 @@
-# MCP Server package for Todo AI Chatbot
+# MCP Server

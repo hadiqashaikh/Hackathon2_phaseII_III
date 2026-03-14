@@ -50,6 +50,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/chat": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/chat",
+      "dataRoute": "/chat.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/favicon.ico": {
       "initialHeaders": {
         "cache-control": "public, max-age=0, must-revalidate",
@@ -107,8 +131,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "0e3c6e66be5e98938e20f935744b7a2c",
-    "previewModeSigningKey": "0cc125cf84c2b73767d126d53e4de4beadd422012271b2077f1f79396755efbc",
-    "previewModeEncryptionKey": "6979bf4875e8d25b82da7fb612d9833fced7b969b69705c96a0d7ac61e1fc7bd"
+    "previewModeId": "b785feffa555cdce7d5e87d9901b6620",
+    "previewModeSigningKey": "6b4f97995ab699e482364a25cc671dd1cf84d1cb223f32287ac84014eae491a5",
+    "previewModeEncryptionKey": "fb43859af29ceee6c57d4d38643f550716d51635deff23b6d9ee122a3c3f6152"
   }
 }

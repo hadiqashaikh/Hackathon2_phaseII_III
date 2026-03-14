@@ -29,6 +29,7 @@ __pycache__/
 backend/.env.example
 backend/.env
 my-todo/.env
+my-todo/.env.local
 
 # --- OS & Debug ---
 .DS_Store

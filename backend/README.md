@@ -1,99 +1,78 @@
-# FastAPI Task Backend
+# Todo AI Chatbot Backend
 
-This is a Python backend service built with FastAPI that provides task management functionality with JWT-based authentication and user data isolation.
+FastAPI backend with AI-powered task management using OpenRouter (FREE tier).
 
-## Features
+## Quick Start
 
-- JWT token authentication using Better Auth compatible tokens
-- Secure task management with user data isolation
-- Full CRUD operations for tasks
-- Toggle task completion status
-- Proper error handling and logging
+### Local Development
 
-## Prerequisites
-
-- Python 3.10+
-- PostgreSQL database (tested with Neon Serverless)
-- Better Auth configured with JWT plugin on the frontend
-
-## Installation
-
-1. Create a virtual environment:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-2. Install dependencies:
-```bash
+# Install dependencies
 pip install -r requirements.txt
+
+# Run server
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+# Open docs
+http://localhost:8000/docs
 ```
 
-3. Configure environment variables in `.env`:
-```env
-DATABASE_URL=postgresql://username:password@ep-xxx.us-east-1.aws.neon.tech/db_name
-BETTER_AUTH_SECRET=your_32_character_secret_key_here_must_be_at_least_32_characters
-```
+## Deployment
 
-## Running the Application
+### Hugging Face Spaces
+
+1. Create new Space with **Docker** SDK
+2. Add environment variables in Settings:
+   - `DATABASE_URL` - Your Neon PostgreSQL URL
+   - `BETTER_AUTH_SECRET` - Random secret key
+   - `OPENROUTER_API_KEY` - Get from openrouter.ai
+   - `OPENROUTER_BASE_URL` - `https://openrouter.ai/api/v1`
+   - `OPENROUTER_AGENT_MODEL` - `google/gemini-2.0-flash-lite-001`
+3. Push code to Space
+4. Wait for deployment (3-5 minutes)
+
+### Environment Variables
 
 ```bash
-uvicorn main:app --reload
+DATABASE_URL=postgresql://...
+BETTER_AUTH_SECRET=your-secret-key
+OPENROUTER_API_KEY=sk-or-v1-...
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+OPENROUTER_AGENT_MODEL=google/gemini-2.0-flash-lite-001
+DEBUG=True
 ```
-
-The server will start on http://localhost:8000
 
 ## API Endpoints
 
-All endpoints require a valid JWT token in the Authorization header:
+### Tasks
+- `POST /api/tasks/` - Create task
+- `GET /api/tasks/` - List tasks
+- `GET /api/tasks/{id}` - Get task
+- `PUT /api/tasks/{id}` - Update task
+- `DELETE /api/tasks/{id}` - Delete task
+- `PATCH /api/tasks/{id}/toggle` - Toggle completion
 
-```
-Authorization: Bearer <jwt_token>
-```
+### Chat (AI)
+- `POST /api/chat/message` - Send message to AI
+- `GET /api/chat/conversations` - List conversations
+- `GET /api/chat/conversations/{id}` - Get conversation
+- `DELETE /api/chat/conversations/{id}` - Delete conversation
 
-### Create Task
-```
-POST /api/tasks/
-```
+### Quick Tasks
+- `POST /api/quick-tasks/` - Create task directly
+- `GET /api/quick-tasks/` - List tasks
+- `DELETE /api/quick-tasks/{id}` - Delete task
+- `PATCH /api/quick-tasks/{id}/toggle` - Toggle task
 
-### Get All Tasks
-```
-GET /api/tasks/
-```
+## Tech Stack
 
-### Get Single Task
-```
-GET /api/tasks/{task_id}
-```
+- **Framework**: FastAPI
+- **Database**: Neon PostgreSQL (serverless)
+- **ORM**: SQLModel
+- **Auth**: Better Auth (JWT sessions)
+- **AI**: OpenRouter (FREE tier - Gemini 2.0 Flash Lite)
+- **Protocol**: MCP (Model Context Protocol)
 
-### Update Task
-```
-PUT /api/tasks/{task_id}
-```
+## License
 
-### Delete Task
-```
-DELETE /api/tasks/{task_id}
-```
-
-### Toggle Task Completion
-```
-PATCH /api/tasks/{task_id}/toggle
-```
-
-## Architecture
-
-- **main.py**: FastAPI application entry point
-- **models.py**: SQLModel definitions for Task entity
-- **database.py**: Database connection and session management
-- **security.py**: JWT token validation and user extraction
-- **api/routers/tasks.py**: Task CRUD endpoints with authentication
-- **requirements.txt**: Python dependencies
-- **.env**: Environment variables
-
-## Security
-
-- All endpoints require JWT authentication
-- User data isolation through user_id filtering
-- Proper validation of tokens (signature, expiration)
-- Error responses don't reveal the existence of other users' data
+MIT

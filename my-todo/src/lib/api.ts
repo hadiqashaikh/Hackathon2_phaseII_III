@@ -134,7 +134,7 @@ export async function sendMessage(
   message: string,
   conversationId?: string
 ): Promise<ChatResponse> {
-  const url = `${BASE_URL}/api/chat/`;
+  const url = `${BASE_URL}/api/chat/message`;
   console.log(`[sendMessage] Attempting to connect to: ${url}`);
   logCookies();
 
@@ -149,26 +149,39 @@ export async function sendMessage(
       conversation_id: conversationId,
     }),
   }, 'sendMessage');
-  
-  // Validate response - check for empty or error responses
+
+  // Validate response
   if (!result) {
     console.error('[sendMessage] Empty response from backend');
     throw new Error('Empty response from AI service');
   }
-  
+
+  // Check if result has the correct structure
+  if (!result.conversation_id) {
+    console.error('[sendMessage] Missing conversation_id in response:', result);
+    throw new Error('Invalid response: missing conversation_id');
+  }
+
+  // Check if message object exists and has required fields
   if (!result.message || !result.message.content) {
-    console.error('[sendMessage] Invalid response structure:', result);
+    console.error('[sendMessage] Invalid message structure:', result);
+    // If response has 'response' field instead (old format), convert it
+    if ('response' in result && typeof result.response === 'string') {
+      return {
+        conversation_id: result.conversation_id,
+        message: {
+          id: 'temp-' + Date.now(),
+          conversation_id: result.conversation_id,
+          role: 'assistant',
+          content: result.response,
+          created_at: new Date().toISOString(),
+        },
+        tool_calls: result.tool_calls || [],
+      } as ChatResponse;
+    }
     throw new Error('Invalid response format from AI service');
   }
-  
-  // Check if AI returned a generic error message
-  const content = result.message.content.trim().toLowerCase();
-  if (content === 'sorry' || content === 'error' || content.includes('i apologize') && content.includes('error')) {
-    console.error('[sendMessage] AI returned error message:', result.message.content);
-    console.error('[sendMessage] Full response data:', result);
-    throw new Error(`AI Error: ${result.message.content}`);
-  }
-  
+
   return result;
 }
 
@@ -234,11 +247,37 @@ export async function deleteConversation(
   console.log(`[deleteConversation] URL: ${url}`);
   logCookies();
 
-  return handleFetch<{ success: boolean; deleted_conversation_id: string }>(url, {
-    method: 'DELETE',
+  try {
+    const result = await handleFetch<{ success: boolean; deleted_conversation_id: string }>(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    }, 'deleteConversation');
+
+    return result;
+  } catch (error) {
+    // If conversation not found, it might already be deleted - treat as success
+    if (error instanceof Error && error.message.includes('404')) {
+      console.log(`[deleteConversation] Conversation ${conversationId} not found (may already be deleted)`);
+      return { success: true, deleted_conversation_id: conversationId };
+    }
+    throw error;
+  }
+}
+
+/**
+ * List all tasks
+ */
+export async function listTasks(): Promise<{ id: string; title: string; completed: boolean; created_at: string }[]> {
+  const url = `${BASE_URL}/api/tasks/`;
+  
+  return handleFetch<{ id: string; title: string; completed: boolean; created_at: string }[]>(url, {
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
     credentials: 'include',
-  }, 'deleteConversation');
+  }, 'listTasks');
 }
