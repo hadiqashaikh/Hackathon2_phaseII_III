@@ -11,10 +11,10 @@ class Settings(BaseSettings):
     """Application settings."""
 
     # Database
-    DATABASE_URL: str
+    DATABASE_URL: str = ""
 
     # Authentication
-    BETTER_AUTH_SECRET: str
+    BETTER_AUTH_SECRET: str = ""
     BETTER_AUTH_URL: str = "http://localhost:3000"
 
     # OpenRouter (FREE tier)
