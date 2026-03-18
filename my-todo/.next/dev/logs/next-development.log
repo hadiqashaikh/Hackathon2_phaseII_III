@@ -1,863 +1,392 @@
-[00:00:03.222] Server  LOG     ✓ Ready in 2.6s
-[00:00:09.076] Server  LOG     ○ Compiling / ...
-[00:00:10.416] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:24.172] Server  ERROR   2026-03-14T16:56:02.766Z ERROR [Better Auth]: INTERNAL_SERVER_ERROR Error: Failed query: select "id", "expiresAt", "token", "createdAt", "updatedAt", "ipAddress", "userAgent", "userId" from "session" where "session"."token" = $1
-params: hJ6ZizeX4pQqEhBaZRKpcQr1SOF4U8VM
-[00:00:53.247] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:58.879] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:00:58.879] Browser LOG     Available cookies: 
-[00:00:58.879] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:00:58.879] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:00:58.879] Browser LOG     Cookie session_token: NOT FOUND
-[00:00:58.879] Browser LOG     Cookie auth_token: NOT FOUND
-[00:00:58.879] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:00:58.879] Browser LOG     [listConversations] Request options: {
+[00:00:02.450] Server  LOG     ✓ Ready in 1644ms
+[00:00:08.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.442] Server  ERROR   (node:11132) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[00:00:14.743] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:00:14.743] Browser LOG     Available cookies: 
+[00:00:14.743] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:00:14.743] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:00:14.743] Browser LOG     Cookie session_token: NOT FOUND
+[00:00:14.743] Browser LOG     Cookie auth_token: NOT FOUND
+[00:00:14.744] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:00:14.744] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:01:14.631] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:01:14.631] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:01:26.650] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[00:01:26.650] Browser LOG     Available cookies: 
-[00:01:26.650] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:01:26.650] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:01:26.650] Browser LOG     Cookie session_token: NOT FOUND
-[00:01:26.650] Browser LOG     Cookie auth_token: NOT FOUND
-[00:01:26.650] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[00:01:26.650] Browser LOG     [sendMessage] Request options: {
+[00:00:15.356] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:00:15.357] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:01:38.085] Browser LOG     [sendMessage] Attempting to connect to: /api/chat/message
+[00:01:38.085] Browser LOG     Available cookies: 
+[00:01:38.085] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:01:38.085] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:01:38.085] Browser LOG     Cookie session_token: NOT FOUND
+[00:01:38.085] Browser LOG     Cookie auth_token: NOT FOUND
+[00:01:38.085] Browser LOG     [sendMessage] Fetching URL: /api/chat/message
+[00:01:38.085] Browser LOG     [sendMessage] Request options: {
   "method": "POST",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include",
-  "body": "{\"message\":\"Add a task to buy book\"}"
+  "body": "{\"message\":\"\\\"Add a task to buy pen\\\"\"}"
 }
-[00:01:51.222] Browser LOG     [sendMessage] Success: {"conversation_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","message":{"content":"I've added the task: buy book","conversation_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","created_at":"2026-03-14T16:57:19.390735","id":"0ac5613c-c9ae-4bac-8929-a596509c1f83","role":"assistant"},"tool_calls":[{"arguments":{"title":"buy book"},"result":{"message":"Task \"buy book\" created","success":true,"task":{"completed":false,"created_at":"2026-03-14T16:57:14.280482","id":"0197cead-5d81-433a-979a-6fbda79247cc","title":"buy book","user_id":"debug-user"}},"tool":"add_task_tool"}]}
-[00:01:51.222] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:01:51.222] Browser LOG     Available cookies: 
-[00:01:51.222] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:01:51.222] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:01:51.222] Browser LOG     Cookie session_token: NOT FOUND
-[00:01:51.222] Browser LOG     Cookie auth_token: NOT FOUND
-[00:01:51.222] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:01:51.222] Browser LOG     [listConversations] Request options: {
+[00:01:59.280] Browser LOG     [sendMessage] Success: {"conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","message":{"content":"I've added the task: buy pen.","conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","created_at":"2026-03-18T12:20:41.135252","id":"5df6e2ca-e77f-4e12-bf88-fd2a343b77a8","role":"assistant"},"tool_calls":[{"arguments":{"title":"buy pen"},"result":{"message":"Task \"buy pen\" created","success":true,"task":{"completed":false,"created_at":"2026-03-18T12:20:37.343517","id":"589c3d2f-b224-488d-87f0-a5859b2cdcf9","title":"buy pen","user_id":"debug-user"}},"tool":"add_task_tool"}]}
+[00:01:59.280] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:01:59.280] Browser LOG     Available cookies: 
+[00:01:59.280] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:01:59.280] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:01:59.280] Browser LOG     Cookie session_token: NOT FOUND
+[00:01:59.280] Browser LOG     Cookie auth_token: NOT FOUND
+[00:01:59.280] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:01:59.280] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:01:53.124] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T16:57:05.938246","id":"eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2","session_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","updated_at":"2026-03-14T16:57:20.276152","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:01:53.124] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T16:57:05.938246","id":"eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2","session_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","updated_at":"2026-03-14T16:57:20.276152","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:01:53.124] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
-[00:02:36.532] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[00:02:36.532] Browser LOG     Available cookies: 
-[00:02:36.532] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:02:36.532] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:02:36.532] Browser LOG     Cookie session_token: NOT FOUND
-[00:02:36.532] Browser LOG     Cookie auth_token: NOT FOUND
-[00:02:36.532] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[00:02:36.532] Browser LOG     [sendMessage] Request options: {
+[00:02:00.034] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:02:00.034] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:02:00.034] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
+[00:02:08.850] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:10.806] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:02:10.806] Browser LOG     Available cookies: 
+[00:02:10.806] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:02:10.806] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:02:10.806] Browser LOG     Cookie session_token: NOT FOUND
+[00:02:10.806] Browser LOG     Cookie auth_token: NOT FOUND
+[00:02:10.806] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:02:10.806] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:02:11.732] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:02:11.732] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:02:17.379] Browser LOG     [loadConversation] Loading conversation: 7b10422d-fc3e-493c-b085-fb6ae4fddb4e
+[00:02:17.379] Browser LOG     Available cookies: 
+[00:02:17.379] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:02:17.379] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:02:17.379] Browser LOG     Cookie session_token: NOT FOUND
+[00:02:17.379] Browser LOG     Cookie auth_token: NOT FOUND
+[00:02:17.379] Browser LOG     [getConversationMessages] Fetching URL: /api/chat/conversations/7b10422d-fc3e-493c-b085-fb6ae4fddb4e/messages
+[00:02:17.379] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:02:18.729] Browser LOG     [getConversationMessages] Success: {"conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","count":2,"messages":[{"content":"\"Add a task to buy pen\"","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T12:20:41.135252","id":"c3611f5b-7883-41c2-a509-767ea5d2bd78","role":"user"},{"content":"I've added the task: buy pen.","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T12:20:41.135252","id":"5df6e2ca-e77f-4e12-bf88-fd2a343b77a8","role":"assistant"}]}
+[00:16:38.172] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:16:38.172] Browser LOG     Available cookies: 
+[00:16:38.172] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:16:38.173] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:16:38.173] Browser LOG     Cookie session_token: NOT FOUND
+[00:16:38.173] Browser LOG     Cookie auth_token: NOT FOUND
+[00:16:38.173] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:16:38.173] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:16:40.764] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:16:40.764] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:16:57.684] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:16:57.684] Browser LOG     Available cookies: 
+[00:16:57.684] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:16:57.684] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:16:57.684] Browser LOG     Cookie session_token: NOT FOUND
+[00:16:57.684] Browser LOG     Cookie auth_token: NOT FOUND
+[00:16:57.685] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:16:57.685] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:16:58.679] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:16:58.679] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:46:43.753] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:46:43.753] Browser LOG     Available cookies: 
+[00:46:43.753] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:46:43.753] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:46:43.753] Browser LOG     Cookie session_token: NOT FOUND
+[00:46:43.753] Browser LOG     Cookie auth_token: NOT FOUND
+[00:46:43.753] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:46:43.753] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:46:45.885] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:46:45.885] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:46:54.069] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:57.275] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:46:57.275] Browser LOG     Available cookies: 
+[00:46:57.276] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:46:57.276] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:46:57.276] Browser LOG     Cookie session_token: NOT FOUND
+[00:46:57.276] Browser LOG     Cookie auth_token: NOT FOUND
+[00:46:57.276] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:46:57.276] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:46:57.276] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:46:57.276] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:46:57.952] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:46:57.952] Browser LOG     Available cookies: 
+[00:46:57.952] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:46:57.952] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:46:57.952] Browser LOG     Cookie session_token: NOT FOUND
+[00:46:57.952] Browser LOG     Cookie auth_token: NOT FOUND
+[00:46:57.952] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:46:57.952] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:46:58.854] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:46:58.854] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T12:20:41.752302","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:46:59.937] Browser LOG     [loadConversation] Loading conversation: 7b10422d-fc3e-493c-b085-fb6ae4fddb4e
+[00:46:59.937] Browser LOG     Available cookies: 
+[00:46:59.937] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:46:59.937] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:46:59.937] Browser LOG     Cookie session_token: NOT FOUND
+[00:46:59.937] Browser LOG     Cookie auth_token: NOT FOUND
+[00:46:59.937] Browser LOG     [getConversationMessages] Fetching URL: /api/chat/conversations/7b10422d-fc3e-493c-b085-fb6ae4fddb4e/messages
+[00:46:59.937] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:47:01.296] Browser LOG     [getConversationMessages] Success: {"conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","count":2,"messages":[{"content":"\"Add a task to buy pen\"","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T12:20:41.135252","id":"c3611f5b-7883-41c2-a509-767ea5d2bd78","role":"user"},{"content":"I've added the task: buy pen.","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T12:20:41.135252","id":"5df6e2ca-e77f-4e12-bf88-fd2a343b77a8","role":"assistant"}]}
+[00:47:08.704] Browser LOG     [sendMessage] Attempting to connect to: /api/chat/message
+[00:47:08.704] Browser LOG     Available cookies: 
+[00:47:08.704] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:47:08.704] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:47:08.704] Browser LOG     Cookie session_token: NOT FOUND
+[00:47:08.704] Browser LOG     Cookie auth_token: NOT FOUND
+[00:47:08.704] Browser LOG     [sendMessage] Fetching URL: /api/chat/message
+[00:47:08.704] Browser LOG     [sendMessage] Request options: {
   "method": "POST",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include",
-  "body": "{\"message\":\"delete the task to buy book\",\"conversation_id\":\"021980e4-48b4-4bb5-8796-e8caad4974a2\"}"
+  "body": "{\"message\":\"\\\"Add a task to buy pen\\\"\",\"conversation_id\":\"7b10422d-fc3e-493c-b085-fb6ae4fddb4e\"}"
 }
-[00:02:52.673] Browser LOG     [sendMessage] Success: {"conversation_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","message":{"content":"Sorry, I couldn't complete that action: Task not found: 'to buy book'","conversation_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","created_at":"2026-03-14T16:58:28.300557","id":"57b37907-f90d-4cf5-a363-83781bf70eeb","role":"assistant"},"tool_calls":[]}
-[00:05:31.065] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:05:31.065] Browser LOG     Available cookies: 
-[00:05:31.065] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:05:31.065] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:05:31.065] Browser LOG     Cookie session_token: NOT FOUND
-[00:05:31.065] Browser LOG     Cookie auth_token: NOT FOUND
-[00:05:31.065] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:05:31.065] Browser LOG     [listConversations] Request options: {
+[00:47:23.516] Browser LOG     [sendMessage] Success: {"conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","message":{"content":"I've added the task: buy pen.","conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","created_at":"2026-03-18T13:06:05.361300","id":"7aa16376-b48d-448c-9b62-28dba1b9259b","role":"assistant"},"tool_calls":[{"arguments":{"title":"buy pen"},"result":{"message":"Task \"buy pen\" created","success":true,"task":{"completed":false,"created_at":"2026-03-18T13:06:01.696899","id":"301f6fc5-fe3a-4794-bad6-4b947085ea5f","title":"buy pen","user_id":"debug-user"}},"tool":"add_task_tool"}]}
+[00:47:23.516] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
+[00:47:45.066] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:47.511] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:47:47.511] Browser LOG     Available cookies: 
+[00:47:47.511] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:47:47.511] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:47:47.511] Browser LOG     Cookie session_token: NOT FOUND
+[00:47:47.511] Browser LOG     Cookie auth_token: NOT FOUND
+[00:47:47.511] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:47:47.511] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:05:32.201] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-14T16:57:05.938246","id":"eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2","session_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","updated_at":"2026-03-14T16:57:20.276152","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:05:32.202] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-14T16:57:05.938246","id":"eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2","session_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","updated_at":"2026-03-14T16:57:20.276152","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:12:46.943] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:12:46.943] Browser LOG     Available cookies: 
-[00:12:46.943] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:12:46.943] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:12:46.943] Browser LOG     Cookie session_token: NOT FOUND
-[00:12:46.943] Browser LOG     Cookie auth_token: NOT FOUND
-[00:12:46.943] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:12:46.944] Browser LOG     [listConversations] Request options: {
+[00:47:48.426] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:47:48.426] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:49:04.675] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:49:04.675] Browser LOG     Available cookies: 
+[00:49:04.675] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:49:04.675] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:49:04.675] Browser LOG     Cookie session_token: NOT FOUND
+[00:49:04.676] Browser LOG     Cookie auth_token: NOT FOUND
+[00:49:04.676] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:49:04.676] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:12:48.599] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-14T16:57:05.938246","id":"eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2","session_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","updated_at":"2026-03-14T16:57:20.276152","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:12:48.599] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-14T16:57:05.938246","id":"eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2","session_id":"021980e4-48b4-4bb5-8796-e8caad4974a2","updated_at":"2026-03-14T16:57:20.276152","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:12:57.658] Browser LOG     [handleDeleteConversation] Deleting conversation: eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:12:57.658] Browser LOG     [deleteConversation] Deleting conversation: eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:12:57.658] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:12:57.658] Browser LOG     Available cookies: 
-[00:12:57.658] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:12:57.658] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:12:57.658] Browser LOG     Cookie session_token: NOT FOUND
-[00:12:57.658] Browser LOG     Cookie auth_token: NOT FOUND
-[00:12:57.658] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:12:57.658] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[00:13:00.504] Browser LOG     [deleteConversation] Success: {"message":"Conversation deleted successfully","success":true}
-[00:13:00.504] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:13:00.504] Browser LOG     Available cookies: 
-[00:13:00.504] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:13:00.504] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:13:00.504] Browser LOG     Cookie session_token: NOT FOUND
-[00:13:00.504] Browser LOG     Cookie auth_token: NOT FOUND
-[00:13:00.504] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:13:00.505] Browser LOG     [listConversations] Request options: {
+[00:49:05.691] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:49:05.691] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:49:16.693] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:49:16.693] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:49:16.693] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:49:16.693] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:49:16.693] Browser LOG     Cookie session_token: NOT FOUND
+[00:49:16.693] Browser LOG     Cookie auth_token: NOT FOUND
+[00:49:16.693] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:49:16.693] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:13:04.337] Browser LOG     [handleDeleteConversation] Deleting conversation: eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:13:04.337] Browser LOG     [deleteConversation] Deleting conversation: eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:13:04.337] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:13:04.337] Browser LOG     Available cookies: 
-[00:13:04.337] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:13:04.337] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:13:04.337] Browser LOG     Cookie session_token: NOT FOUND
-[00:13:04.337] Browser LOG     Cookie auth_token: NOT FOUND
-[00:13:04.337] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/eefc6eca-dfea-45fd-a39d-3ad19cfb4ba2
-[00:13:04.337] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[00:13:04.337] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:13:04.337] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:13:05.790] Browser ERROR   [deleteConversation] HTTP 404: {"detail":"Conversation not found. It may have already been deleted."}
-[00:13:05.790] Browser ERROR   [deleteConversation] === FULL ERROR DATA ===
-[00:13:05.790] Browser ERROR   [deleteConversation] Status: 404
-[00:13:05.790] Browser ERROR   [deleteConversation] Status Text: Not Found
-[00:13:05.790] Browser ERROR   [deleteConversation] Response Headers: {"content-length":"70","content-type":"application/json"}
-[00:13:05.790] Browser ERROR   [deleteConversation] Error Data: {
-  "detail": "Conversation not found. It may have already been deleted."
-}
-[00:13:05.790] Browser ERROR   [deleteConversation] === END ERROR DATA ===
-[00:13:05.790] Browser ERROR   [deleteConversation] Full backend errorData: {"detail":"Conversation not found. It may have already been deleted."}
-[00:13:05.790] Browser ERROR   [deleteConversation] Request failed: {}
-[00:13:05.790] Browser ERROR   Failed to delete conversation: {}
-[00:13:14.894] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:13:14.894] Browser LOG     Available cookies: 
-[00:13:14.894] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:13:14.894] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:13:14.894] Browser LOG     Cookie session_token: NOT FOUND
-[00:13:14.894] Browser LOG     Cookie auth_token: NOT FOUND
-[00:13:14.894] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:13:14.894] Browser LOG     [listConversations] Request options: {
+[00:49:17.756] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:49:17.756] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:50:56.961] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:50:56.961] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:50:56.961] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:50:56.961] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:50:56.961] Browser LOG     Cookie session_token: NOT FOUND
+[00:50:56.961] Browser LOG     Cookie auth_token: NOT FOUND
+[00:50:56.961] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:50:56.961] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:13:17.113] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:17.962] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:13:17.962] Browser LOG     Available cookies: 
-[00:13:17.962] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:13:17.962] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:13:17.962] Browser LOG     Cookie session_token: NOT FOUND
-[00:13:17.962] Browser LOG     Cookie auth_token: NOT FOUND
-[00:13:17.962] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:13:17.962] Browser LOG     [listConversations] Request options: {
+[00:50:57.622] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:50:57.622] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:51:06.688] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:51:06.688] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:51:06.688] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:51:06.688] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:51:06.688] Browser LOG     Cookie session_token: NOT FOUND
+[00:51:06.688] Browser LOG     Cookie auth_token: NOT FOUND
+[00:51:06.688] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:51:06.689] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:13:19.050] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:13:19.050] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:13:38.397] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:13:38.397] Browser LOG     Available cookies: 
-[00:13:38.397] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:13:38.397] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:13:38.397] Browser LOG     Cookie session_token: NOT FOUND
-[00:13:38.397] Browser LOG     Cookie auth_token: NOT FOUND
-[00:13:38.397] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:13:38.397] Browser LOG     [listConversations] Request options: {
+[00:51:07.404] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:51:07.404] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:51:16.553] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:51:16.553] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:51:16.553] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:51:16.553] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:51:16.553] Browser LOG     Cookie session_token: NOT FOUND
+[00:51:16.553] Browser LOG     Cookie auth_token: NOT FOUND
+[00:51:16.553] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:51:16.553] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:13:39.547] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:13:39.547] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:13:43.711] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[00:13:43.711] Browser LOG     Available cookies: 
-[00:13:43.711] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:13:43.711] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:13:43.711] Browser LOG     Cookie session_token: NOT FOUND
-[00:13:43.711] Browser LOG     Cookie auth_token: NOT FOUND
-[00:13:43.711] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[00:13:43.711] Browser LOG     [sendMessage] Request options: {
+[00:51:17.655] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:51:17.655] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:51:25.267] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:51:25.267] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:51:25.267] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:51:25.267] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:51:25.267] Browser LOG     Cookie session_token: NOT FOUND
+[00:51:25.267] Browser LOG     Cookie auth_token: NOT FOUND
+[00:51:25.267] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:51:25.267] Browser LOG     [listConversations] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:51:25.931] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:51:25.932] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:06:05.974435","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:51:48.658] Browser LOG     [loadConversation] Loading conversation: 7b10422d-fc3e-493c-b085-fb6ae4fddb4e
+[00:51:48.659] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:51:48.659] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:51:48.659] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:51:48.659] Browser LOG     Cookie session_token: NOT FOUND
+[00:51:48.659] Browser LOG     Cookie auth_token: NOT FOUND
+[00:51:48.659] Browser LOG     [getConversationMessages] Fetching URL: /api/chat/conversations/7b10422d-fc3e-493c-b085-fb6ae4fddb4e/messages
+[00:51:48.659] Browser LOG     [getConversationMessages] Request options: {
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "credentials": "include"
+}
+[00:51:49.766] Browser LOG     [getConversationMessages] Success: {"conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","count":4,"messages":[{"content":"\"Add a task to buy pen\"","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T12:20:41.135252","id":"c3611f5b-7883-41c2-a509-767ea5d2bd78","role":"user"},{"content":"I've added the task: buy pen.","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T12:20:41.135252","id":"5df6e2ca-e77f-4e12-bf88-fd2a343b77a8","role":"assistant"},{"content":"\"Add a task to buy pen\"","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T13:06:05.361300","id":"85ba97c8-79f2-437b-ad05-5675c4f69cdd","role":"user"},{"content":"I've added the task: buy pen.","conversation_id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","created_at":"2026-03-18T13:06:05.361300","id":"7aa16376-b48d-448c-9b62-28dba1b9259b","role":"assistant"}]}
+[00:52:15.761] Browser LOG     [sendMessage] Attempting to connect to: /api/chat/message
+[00:52:15.761] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:52:15.761] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:52:15.761] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:52:15.761] Browser LOG     Cookie session_token: NOT FOUND
+[00:52:15.761] Browser LOG     Cookie auth_token: NOT FOUND
+[00:52:15.761] Browser LOG     [sendMessage] Fetching URL: /api/chat/message
+[00:52:15.761] Browser LOG     [sendMessage] Request options: {
   "method": "POST",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include",
-  "body": "{\"message\":\"\\\"add a task to buy eggs\\\"\"}"
+  "body": "{\"message\":\"\\\"delete a task to buy pen\\\"\",\"conversation_id\":\"7b10422d-fc3e-493c-b085-fb6ae4fddb4e\"}"
 }
-[00:14:01.240] Browser LOG     [sendMessage] Success: {"conversation_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","message":{"content":"I've added the task: buy eggs","conversation_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","created_at":"2026-03-14T17:09:37.541905","id":"abbd10bd-da89-4bb7-ac8c-1a0f8de82008","role":"assistant"},"tool_calls":[{"arguments":{"title":"buy eggs"},"result":{"message":"Task \"buy eggs\" created","success":true,"task":{"completed":false,"created_at":"2026-03-14T17:09:34.900767","id":"256d44d2-16c4-481f-8987-7a9cfecde034","title":"buy eggs","user_id":"debug-user"}},"tool":"add_task_tool"}]}
-[00:14:01.241] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:14:01.241] Browser LOG     Available cookies: 
-[00:14:01.241] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:14:01.241] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:14:01.241] Browser LOG     Cookie session_token: NOT FOUND
-[00:14:01.241] Browser LOG     Cookie auth_token: NOT FOUND
-[00:14:01.241] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:14:01.241] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[00:14:02.155] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:14:02.155] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:14:02.155] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
-[00:14:14.017] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:14:14.017] Browser LOG     Available cookies: 
-[00:14:14.017] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:14:14.017] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:14:14.017] Browser LOG     Cookie session_token: NOT FOUND
-[00:14:14.017] Browser LOG     Cookie auth_token: NOT FOUND
-[00:14:14.017] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:14:14.017] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[00:14:15.274] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:14:15.274] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:14:21.457] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[00:14:21.457] Browser LOG     Available cookies: 
-[00:14:21.457] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:14:21.457] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:14:21.457] Browser LOG     Cookie session_token: NOT FOUND
-[00:14:21.457] Browser LOG     Cookie auth_token: NOT FOUND
-[00:14:21.457] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[00:14:21.457] Browser LOG     [sendMessage] Request options: {
+[00:52:22.778] Browser LOG     [sendMessage] Success: {"conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","message":{"content":"I've deleted the task: buy pen.","conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","created_at":"2026-03-18T13:11:05.613482","id":"d0b5830d-bf6e-4714-bbea-369fd8f2233a","role":"assistant"},"tool_calls":[{"arguments":{"task_id":"buy pen"},"result":{"deleted_id":"ecb84237-2dcc-483f-99ab-d8e5cd196c88","message":"Task \"buy pen\" deleted","success":true},"tool":"delete_task_tool"}]}
+[00:52:22.779] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
+[00:52:36.925] Browser LOG     [sendMessage] Attempting to connect to: /api/chat/message
+[00:52:36.925] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:52:36.925] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:52:36.925] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:52:36.925] Browser LOG     Cookie session_token: NOT FOUND
+[00:52:36.925] Browser LOG     Cookie auth_token: NOT FOUND
+[00:52:36.925] Browser LOG     [sendMessage] Fetching URL: /api/chat/message
+[00:52:36.925] Browser LOG     [sendMessage] Request options: {
   "method": "POST",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include",
-  "body": "{\"message\":\"\\\"delete the task to buy eggs\\\" → Delete hoga\",\"conversation_id\":\"47628dc2-0708-4a85-a0be-081c4e5b4706\"}"
+  "body": "{\"message\":\"\\\"delete a task to buy pen\\\"\",\"conversation_id\":\"7b10422d-fc3e-493c-b085-fb6ae4fddb4e\"}"
 }
-[00:14:34.102] Browser LOG     [sendMessage] Success: {"conversation_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","message":{"content":"I've deleted the task: buy eggs","conversation_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","created_at":"2026-03-14T17:10:09.785329","id":"1fbbe979-988b-4e88-acaf-56a200c385ff","role":"assistant"},"tool_calls":[{"arguments":{"task_id":"buy eggs"},"result":{"deleted_id":"256d44d2-16c4-481f-8987-7a9cfecde034","message":"Task \"buy eggs\" deleted","success":true},"tool":"delete_task_tool"}]}
-[00:14:34.102] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
-[00:15:05.382] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:15:05.382] Browser LOG     Available cookies: 
-[00:15:05.382] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:15:05.382] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:15:05.382] Browser LOG     Cookie session_token: NOT FOUND
-[00:15:05.382] Browser LOG     Cookie auth_token: NOT FOUND
-[00:15:05.382] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:15:05.382] Browser LOG     [listConversations] Request options: {
+[00:53:02.299] Browser LOG     [sendMessage] Success: {"conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","message":{"content":"I tried to delete the task \"buy pen\", but it","conversation_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","created_at":"2026-03-18T13:11:44.742487","id":"bc2635dd-e3bb-4955-94c7-6027f07ba617","role":"assistant"},"tool_calls":[{"arguments":{"task_id":"buy pen"},"result":{"deleted_id":"589c3d2f-b224-488d-87f0-a5859b2cdcf9","message":"Task \"buy pen\" deleted","success":true},"tool":"delete_task_tool"}]}
+[00:53:02.299] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
+[00:54:31.675] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:54:31.675] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:54:31.675] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:54:31.675] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:54:31.675] Browser LOG     Cookie session_token: NOT FOUND
+[00:54:31.675] Browser LOG     Cookie auth_token: NOT FOUND
+[00:54:31.675] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:54:31.675] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:15:06.831] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:15:06.831] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:15:21.209] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[00:15:21.209] Browser LOG     Available cookies: 
-[00:15:21.209] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:15:21.209] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:15:21.209] Browser LOG     Cookie session_token: NOT FOUND
-[00:15:21.209] Browser LOG     Cookie auth_token: NOT FOUND
-[00:15:21.209] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[00:15:21.209] Browser LOG     [sendMessage] Request options: {
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include",
-  "body": "{\"message\":\"mark buy book as complete\\\"\",\"conversation_id\":\"47628dc2-0708-4a85-a0be-081c4e5b4706\"}"
-}
-[00:15:35.857] Browser LOG     [sendMessage] Success: {"conversation_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","message":{"content":"I've marked the task \"buy book\" as complete.","conversation_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","created_at":"2026-03-14T17:11:11.631028","id":"b5864ce2-94a4-470e-8632-e7583973f360","role":"assistant"},"tool_calls":[{"arguments":{"task_id":"buy book"},"result":{"message":"Task \"buy book\" completed! Great job!","success":true,"task":{"completed":true,"created_at":"2026-03-14T16:57:14.280482","id":"0197cead-5d81-433a-979a-6fbda79247cc","title":"buy book","user_id":"debug-user"}},"tool":"complete_task_tool"}]}
-[00:15:35.857] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
-[00:15:57.016] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[00:15:57.016] Browser LOG     Available cookies: 
-[00:15:57.016] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:15:57.016] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:15:57.016] Browser LOG     Cookie session_token: NOT FOUND
-[00:15:57.016] Browser LOG     Cookie auth_token: NOT FOUND
-[00:15:57.016] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[00:15:57.016] Browser LOG     [listConversations] Request options: {
+[00:54:31.675] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:11:45.245184","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:54:31.675] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:11:45.245184","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:59:53.212] Browser LOG     [listConversations] Attempting to connect to: /api/chat/conversations
+[00:59:53.212] Browser LOG     Available cookies: __next_hmr_refresh_hash__=31
+[00:59:53.212] Browser LOG     Cookie better-auth.session_token: NOT FOUND
+[00:59:53.212] Browser LOG     Cookie better-auth.session-token: NOT FOUND
+[00:59:53.212] Browser LOG     Cookie session_token: NOT FOUND
+[00:59:53.213] Browser LOG     Cookie auth_token: NOT FOUND
+[00:59:53.213] Browser LOG     [listConversations] Fetching URL: /api/chat/conversations
+[00:59:53.213] Browser LOG     [listConversations] Request options: {
   "method": "GET",
   "headers": {
     "Content-Type": "application/json"
   },
   "credentials": "include"
 }
-[00:15:58.204] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:15:58.204] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[00:16:26.079] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[00:16:26.079] Browser LOG     Available cookies: 
-[00:16:26.079] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:16:26.079] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:16:26.079] Browser LOG     Cookie session_token: NOT FOUND
-[00:16:26.079] Browser LOG     Cookie auth_token: NOT FOUND
-[00:16:26.079] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[00:16:26.079] Browser LOG     [sendMessage] Request options: {
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include",
-  "body": "{\"message\":\"update buy book to buy groceries pen\\\"\",\"conversation_id\":\"47628dc2-0708-4a85-a0be-081c4e5b4706\"}"
-}
-[00:16:40.156] Browser LOG     [sendMessage] Success: {"conversation_id":"34e8a3b1-a5dd-4827-af89-8ad8d2947aeb","message":{"content":"I've updated the task \"buy book\" to \"buy groceries pen\".","conversation_id":"34e8a3b1-a5dd-4827-af89-8ad8d2947aeb","created_at":"2026-03-14T17:12:15.826538","id":"7c2b89bc-d759-4e99-a23c-d2ef35e511f1","role":"assistant"},"tool_calls":[{"arguments":{"task_id":"buy book","title":"buy groceries pen"},"result":{"message":"Task \"buy groceries pen\" updated","success":true,"task":{"completed":true,"created_at":"2026-03-14T16:57:14.280482","id":"0197cead-5d81-433a-979a-6fbda79247cc","title":"buy groceries pen","user_id":"debug-user"}},"tool":"update_task_tool"}]}
-[00:16:40.156] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
-[00:17:36.398] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[00:17:36.398] Browser LOG     Available cookies: 
-[00:17:36.398] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[00:17:36.398] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[00:17:36.398] Browser LOG     Cookie session_token: NOT FOUND
-[00:17:36.398] Browser LOG     Cookie auth_token: NOT FOUND
-[00:17:36.398] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[00:17:36.398] Browser LOG     [sendMessage] Request options: {
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include",
-  "body": "{\"message\":\"delete buy groceries pen\",\"conversation_id\":\"47628dc2-0708-4a85-a0be-081c4e5b4706\"}"
-}
-[00:17:48.968] Browser LOG     [sendMessage] Success: {"conversation_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","message":{"content":"I've deleted the task: buy groceries pen","conversation_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","created_at":"2026-03-14T17:13:24.549410","id":"2741513c-ab18-4b76-8208-18e4f04cbba7","role":"assistant"},"tool_calls":[{"arguments":{"task_id":"buy groceries pen"},"result":{"deleted_id":"0197cead-5d81-433a-979a-6fbda79247cc","message":"Task \"buy groceries pen\" deleted","success":true},"tool":"delete_task_tool"}]}
-[00:17:48.968] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
-[02:15:58.855] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:15:58.855] Browser LOG     Available cookies: 
-[02:15:58.855] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:15:58.855] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:15:58.855] Browser LOG     Cookie session_token: NOT FOUND
-[02:15:58.855] Browser LOG     Cookie auth_token: NOT FOUND
-[02:15:58.855] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:15:58.855] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:01.745] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:12:07.329726","id":"1ec97b68-3a9a-4f1d-94ad-966596901d68","session_id":"34e8a3b1-a5dd-4827-af89-8ad8d2947aeb","updated_at":"2026-03-14T17:12:16.451375","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[02:16:01.745] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:12:07.329726","id":"1ec97b68-3a9a-4f1d-94ad-966596901d68","session_id":"34e8a3b1-a5dd-4827-af89-8ad8d2947aeb","updated_at":"2026-03-14T17:12:16.451375","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[02:16:05.872] Browser LOG     [handleDeleteConversation] Deleting conversation: 1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:05.872] Browser LOG     [deleteConversation] Deleting conversation: 1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:05.873] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:05.873] Browser LOG     Available cookies: 
-[02:16:05.873] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:05.873] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:05.873] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:05.873] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:05.873] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:05.873] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:07.561] Browser LOG     [deleteConversation] Success: {"message":"Conversation deleted successfully","success":true}
-[02:16:07.561] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:16:07.561] Browser LOG     Available cookies: 
-[02:16:07.561] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:07.561] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:07.561] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:07.561] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:07.561] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:16:07.561] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:10.570] Browser LOG     [handleDeleteConversation] Deleting conversation: 1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:10.570] Browser LOG     [deleteConversation] Deleting conversation: 1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:10.570] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:10.570] Browser LOG     Available cookies: 
-[02:16:10.570] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:10.570] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:10.570] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:10.570] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:10.570] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/1ec97b68-3a9a-4f1d-94ad-966596901d68
-[02:16:10.570] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:10.570] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[02:16:10.570] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-14T16:58:18.306140","id":"2be1f780-9cd6-400b-a932-e9f4c986f44e","session_id":"648f77ec-53a7-4e13-bd5d-0d6ff13f6bca","updated_at":"2026-03-14T16:58:28.860518","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[02:16:11.934] Browser ERROR   [deleteConversation] HTTP 404: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:11.934] Browser ERROR   [deleteConversation] === FULL ERROR DATA ===
-[02:16:11.934] Browser ERROR   [deleteConversation] Status: 404
-[02:16:11.934] Browser ERROR   [deleteConversation] Status Text: Not Found
-[02:16:11.934] Browser ERROR   [deleteConversation] Response Headers: {"content-length":"70","content-type":"application/json"}
-[02:16:11.934] Browser ERROR   [deleteConversation] Error Data: {
-  "detail": "Conversation not found. It may have already been deleted."
-}
-[02:16:11.934] Browser ERROR   [deleteConversation] === END ERROR DATA ===
-[02:16:11.934] Browser ERROR   [deleteConversation] Full backend errorData: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:11.934] Browser ERROR   [deleteConversation] Request failed: {}
-[02:16:11.934] Browser ERROR   Failed to delete conversation: {}
-[02:16:14.051] Browser LOG     [handleDeleteConversation] Deleting conversation: 2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:14.051] Browser LOG     [deleteConversation] Deleting conversation: 2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:14.051] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:14.051] Browser LOG     Available cookies: 
-[02:16:14.051] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:14.051] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:14.051] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:14.051] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:14.051] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:14.051] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:18.370] Browser LOG     [handleDeleteConversation] Deleting conversation: 2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:18.370] Browser LOG     [deleteConversation] Deleting conversation: 2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:18.370] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:18.370] Browser LOG     Available cookies: 
-[02:16:18.370] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:18.370] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:18.370] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:18.370] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:18.370] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/2be1f780-9cd6-400b-a932-e9f4c986f44e
-[02:16:18.370] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:18.370] Browser LOG     [deleteConversation] Success: {"message":"Conversation deleted successfully","success":true}
-[02:16:18.370] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:16:18.370] Browser LOG     Available cookies: 
-[02:16:18.370] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:18.370] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:18.370] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:18.370] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:18.370] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:16:18.370] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:19.226] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[02:16:19.226] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"},{"created_at":"2026-03-14T12:40:32.880951","id":"e9243886-926d-47a8-bbe2-d85a8fcc1d03","session_id":"35f6e54e-0b1d-49dd-8655-90561ee6e3bb","updated_at":"2026-03-14T12:40:39.263686","user_id":"debug-user"}]
-[02:16:19.889] Browser ERROR   [deleteConversation] HTTP 404: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:19.889] Browser ERROR   [deleteConversation] === FULL ERROR DATA ===
-[02:16:19.889] Browser ERROR   [deleteConversation] Status: 404
-[02:16:19.889] Browser ERROR   [deleteConversation] Status Text: Not Found
-[02:16:19.889] Browser ERROR   [deleteConversation] Response Headers: {"content-length":"70","content-type":"application/json"}
-[02:16:19.889] Browser ERROR   [deleteConversation] Error Data: {
-  "detail": "Conversation not found. It may have already been deleted."
-}
-[02:16:19.889] Browser ERROR   [deleteConversation] === END ERROR DATA ===
-[02:16:19.889] Browser ERROR   [deleteConversation] Full backend errorData: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:19.889] Browser ERROR   [deleteConversation] Request failed: {}
-[02:16:19.889] Browser ERROR   Failed to delete conversation: {}
-[02:16:22.168] Browser LOG     [handleDeleteConversation] Deleting conversation: e9243886-926d-47a8-bbe2-d85a8fcc1d03
-[02:16:22.168] Browser LOG     [deleteConversation] Deleting conversation: e9243886-926d-47a8-bbe2-d85a8fcc1d03
-[02:16:22.168] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/e9243886-926d-47a8-bbe2-d85a8fcc1d03
-[02:16:22.168] Browser LOG     Available cookies: 
-[02:16:22.169] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:22.169] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:22.169] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:22.169] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:22.169] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/e9243886-926d-47a8-bbe2-d85a8fcc1d03
-[02:16:22.169] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:24.070] Browser LOG     [deleteConversation] Success: {"message":"Conversation deleted successfully","success":true}
-[02:16:24.070] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:16:24.070] Browser LOG     Available cookies: 
-[02:16:24.070] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:24.070] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:24.070] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:24.070] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:24.070] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:16:24.070] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:25.441] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"}]
-[02:16:25.441] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"},{"created_at":"2026-03-13T18:01:32.704615","id":"831cae1c-9322-4c90-ad61-5909703aeaf6","session_id":"64a6f528-2904-436f-bc2a-03fa0840ffdb","updated_at":"2026-03-14T16:36:15.697026","user_id":"debug-user"}]
-[02:16:30.204] Browser LOG     [handleDeleteConversation] Deleting conversation: 831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:30.204] Browser LOG     [deleteConversation] Deleting conversation: 831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:30.204] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:30.204] Browser LOG     Available cookies: 
-[02:16:30.204] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:30.204] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:30.204] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:30.204] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:30.204] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:30.204] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:33.811] Browser LOG     [handleDeleteConversation] Deleting conversation: 831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:33.811] Browser LOG     [deleteConversation] Deleting conversation: 831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:33.811] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:33.811] Browser LOG     Available cookies: 
-[02:16:33.811] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:33.811] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:33.811] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:33.811] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:33.811] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/831cae1c-9322-4c90-ad61-5909703aeaf6
-[02:16:33.811] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:33.811] Browser LOG     [deleteConversation] Success: {"message":"Conversation deleted successfully","success":true}
-[02:16:33.811] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:16:33.811] Browser LOG     Available cookies: 
-[02:16:33.811] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:33.811] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:33.811] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:33.811] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:33.811] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:16:33.811] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:34.574] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"}]
-[02:16:34.574] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"},{"created_at":"2026-03-14T17:09:23.313284","id":"fa1c115e-d806-4065-ac7e-4c04cee72211","session_id":"47628dc2-0708-4a85-a0be-081c4e5b4706","updated_at":"2026-03-14T17:09:38.145191","user_id":"debug-user"}]
-[02:16:35.105] Browser ERROR   [deleteConversation] HTTP 404: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:35.105] Browser ERROR   [deleteConversation] === FULL ERROR DATA ===
-[02:16:35.105] Browser ERROR   [deleteConversation] Status: 404
-[02:16:35.105] Browser ERROR   [deleteConversation] Status Text: Not Found
-[02:16:35.105] Browser ERROR   [deleteConversation] Response Headers: {"content-length":"70","content-type":"application/json"}
-[02:16:35.105] Browser ERROR   [deleteConversation] Error Data: {
-  "detail": "Conversation not found. It may have already been deleted."
-}
-[02:16:35.105] Browser ERROR   [deleteConversation] === END ERROR DATA ===
-[02:16:35.105] Browser ERROR   [deleteConversation] Full backend errorData: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:35.105] Browser ERROR   [deleteConversation] Request failed: {}
-[02:16:35.105] Browser ERROR   Failed to delete conversation: {}
-[02:16:37.299] Browser LOG     [handleDeleteConversation] Deleting conversation: fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:37.299] Browser LOG     [deleteConversation] Deleting conversation: fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:37.299] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:37.299] Browser LOG     Available cookies: 
-[02:16:37.299] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:37.299] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:37.299] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:37.299] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:37.299] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:37.299] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:42.215] Browser LOG     [handleDeleteConversation] Deleting conversation: fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:42.215] Browser LOG     [deleteConversation] Deleting conversation: fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:42.215] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:42.215] Browser LOG     Available cookies: 
-[02:16:42.215] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:42.215] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:42.215] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:42.215] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:42.215] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/fa1c115e-d806-4065-ac7e-4c04cee72211
-[02:16:42.215] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:42.215] Browser LOG     [deleteConversation] Success: {"message":"Conversation deleted successfully","success":true}
-[02:16:42.215] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:16:42.215] Browser LOG     Available cookies: 
-[02:16:42.215] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:42.215] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:42.215] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:42.215] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:42.215] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:16:42.215] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:43.645] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"}]
-[02:16:43.645] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"},{"created_at":"2026-03-14T17:10:02.403778","id":"03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d","session_id":"df5a6040-cfd6-4d66-98f5-ba6855787e90","updated_at":"2026-03-14T17:10:10.395912","user_id":"debug-user"}]
-[02:16:43.912] Browser ERROR   [deleteConversation] HTTP 404: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:43.912] Browser ERROR   [deleteConversation] === FULL ERROR DATA ===
-[02:16:43.912] Browser ERROR   [deleteConversation] Status: 404
-[02:16:43.912] Browser ERROR   [deleteConversation] Status Text: Not Found
-[02:16:43.912] Browser ERROR   [deleteConversation] Response Headers: {"content-length":"70","content-type":"application/json"}
-[02:16:43.912] Browser ERROR   [deleteConversation] Error Data: {
-  "detail": "Conversation not found. It may have already been deleted."
-}
-[02:16:43.912] Browser ERROR   [deleteConversation] === END ERROR DATA ===
-[02:16:43.912] Browser ERROR   [deleteConversation] Full backend errorData: {"detail":"Conversation not found. It may have already been deleted."}
-[02:16:43.912] Browser ERROR   [deleteConversation] Request failed: {}
-[02:16:43.912] Browser ERROR   Failed to delete conversation: {}
-[02:16:47.363] Browser LOG     [handleDeleteConversation] Deleting conversation: 03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d
-[02:16:47.363] Browser LOG     [deleteConversation] Deleting conversation: 03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d
-[02:16:47.363] Browser LOG     [deleteConversation] URL: http://localhost:8000/api/chat/conversations/03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d
-[02:16:47.363] Browser LOG     Available cookies: 
-[02:16:47.363] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:47.363] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:47.365] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:47.365] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:47.365] Browser LOG     [deleteConversation] Fetching URL: http://localhost:8000/api/chat/conversations/03b3eb8b-f1b5-4ece-9d1e-3a1fbebf8a9d
-[02:16:47.365] Browser LOG     [deleteConversation] Request options: {
-  "method": "DELETE",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:50.719] Browser LOG     [deleteConversation] Success: {"message":"Conversation deleted successfully","success":true}
-[02:16:50.719] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:16:50.719] Browser LOG     Available cookies: 
-[02:16:50.719] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:50.719] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:50.719] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:50.719] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:50.719] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:16:50.719] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:50.719] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:16:50.719] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:16:55.667] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:16:56.461] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:16:56.461] Browser LOG     Available cookies: 
-[02:16:56.461] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:16:56.461] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:16:56.461] Browser LOG     Cookie session_token: NOT FOUND
-[02:16:56.461] Browser LOG     Cookie auth_token: NOT FOUND
-[02:16:56.461] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:16:56.461] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:16:57.710] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:16:57.710] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T17:13:25.162747","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:17:00.577] Browser LOG     [loadConversation] Loading conversation: d690d107-8259-4f4d-b0c2-24fe9d884abe
-[02:17:00.577] Browser LOG     Available cookies: 
-[02:17:00.577] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:17:00.577] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:17:00.577] Browser LOG     Cookie session_token: NOT FOUND
-[02:17:00.577] Browser LOG     Cookie auth_token: NOT FOUND
-[02:17:00.577] Browser LOG     [getConversationMessages] Fetching URL: http://localhost:8000/api/chat/conversations/d690d107-8259-4f4d-b0c2-24fe9d884abe/messages
-[02:17:00.577] Browser LOG     [getConversationMessages] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:17:01.960] Browser LOG     [getConversationMessages] Success: {"conversation_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","count":2,"messages":[{"content":"delete buy groceries pen","conversation_id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","created_at":"2026-03-14T17:13:24.548896","id":"1f1497dc-d0ef-470a-9f06-cc281d9e0d12","role":"user"},{"content":"I've deleted the task: buy groceries pen","conversation_id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","created_at":"2026-03-14T17:13:24.549410","id":"2741513c-ab18-4b76-8208-18e4f04cbba7","role":"assistant"}]}
-[02:17:54.298] Browser LOG     [sendMessage] Attempting to connect to: http://localhost:8000/api/chat/message
-[02:17:54.298] Browser LOG     Available cookies: 
-[02:17:54.298] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:17:54.298] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:17:54.298] Browser LOG     Cookie session_token: NOT FOUND
-[02:17:54.299] Browser LOG     Cookie auth_token: NOT FOUND
-[02:17:54.299] Browser LOG     [sendMessage] Fetching URL: http://localhost:8000/api/chat/message
-[02:17:54.299] Browser LOG     [sendMessage] Request options: {
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include",
-  "body": "{\"message\":\"add a task \\\"I purchase ring\\\"\",\"conversation_id\":\"d690d107-8259-4f4d-b0c2-24fe9d884abe\"}"
-}
-[02:18:06.762] Browser LOG     [sendMessage] Success: {"conversation_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","message":{"content":"I've added the task: I purchase ring","conversation_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","created_at":"2026-03-14T19:13:41.397411","id":"3640ee05-661f-42db-b80d-c19005d36976","role":"assistant"},"tool_calls":[{"arguments":{"title":"I purchase ring"},"result":{"message":"Task \"I purchase ring\" created","success":true,"task":{"completed":false,"created_at":"2026-03-14T19:13:38.435675","id":"583ec94f-b8d7-45ce-9acc-e35aad6562ef","title":"I purchase ring","user_id":"debug-user"}},"tool":"add_task_tool"}]}
-[02:18:06.762] Browser LOG     [handleChatSubmit] Task tool detected, refreshing tasks...
-[02:18:18.711] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:18:18.712] Browser LOG     Available cookies: 
-[02:18:18.712] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:18:18.712] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:18:18.712] Browser LOG     Cookie session_token: NOT FOUND
-[02:18:18.712] Browser LOG     Cookie auth_token: NOT FOUND
-[02:18:18.712] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:18:18.712] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:18:19.724] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:18:19.724] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:18:59.725] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:18:59.725] Browser LOG     Available cookies: 
-[02:18:59.725] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:18:59.725] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:18:59.725] Browser LOG     Cookie session_token: NOT FOUND
-[02:18:59.725] Browser LOG     Cookie auth_token: NOT FOUND
-[02:18:59.725] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:18:59.725] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:19:00.756] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:19:00.756] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:20:39.713] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:20:39.713] Browser LOG     Available cookies: 
-[02:20:39.713] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:20:39.713] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:20:39.713] Browser LOG     Cookie session_token: NOT FOUND
-[02:20:39.713] Browser LOG     Cookie auth_token: NOT FOUND
-[02:20:39.713] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:20:39.713] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:20:41.722] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:20:41.722] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:24:05.557] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:24:05.557] Browser LOG     Available cookies: 
-[02:24:05.557] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:24:05.557] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:24:05.557] Browser LOG     Cookie session_token: NOT FOUND
-[02:24:05.557] Browser LOG     Cookie auth_token: NOT FOUND
-[02:24:05.557] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:24:05.557] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:24:06.722] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:24:06.722] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:19.709] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:27:19.709] Browser LOG     Available cookies: 
-[02:27:19.709] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:27:19.709] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:27:19.709] Browser LOG     Cookie session_token: NOT FOUND
-[02:27:19.709] Browser LOG     Cookie auth_token: NOT FOUND
-[02:27:19.709] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:27:19.709] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:27:20.708] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:20.708] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:37.710] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:27:37.710] Browser LOG     Available cookies: 
-[02:27:37.710] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:27:37.710] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:27:37.710] Browser LOG     Cookie session_token: NOT FOUND
-[02:27:37.710] Browser LOG     Cookie auth_token: NOT FOUND
-[02:27:37.710] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:27:37.710] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:27:38.717] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:38.717] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:44.637] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:27:44.637] Browser LOG     Available cookies: 
-[02:27:44.637] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:27:44.637] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:27:44.637] Browser LOG     Cookie session_token: NOT FOUND
-[02:27:44.637] Browser LOG     Cookie auth_token: NOT FOUND
-[02:27:44.637] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:27:44.637] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:27:45.783] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:45.783] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:50.721] Browser LOG     [listConversations] Attempting to connect to: http://localhost:8000/api/chat/conversations
-[02:27:50.721] Browser LOG     Available cookies: 
-[02:27:50.721] Browser LOG     Cookie better-auth.session_token: NOT FOUND
-[02:27:50.721] Browser LOG     Cookie better-auth.session-token: NOT FOUND
-[02:27:50.721] Browser LOG     Cookie session_token: NOT FOUND
-[02:27:50.721] Browser LOG     Cookie auth_token: NOT FOUND
-[02:27:50.721] Browser LOG     [listConversations] Fetching URL: http://localhost:8000/api/chat/conversations
-[02:27:50.721] Browser LOG     [listConversations] Request options: {
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "credentials": "include"
-}
-[02:27:51.710] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
-[02:27:51.710] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-14T17:13:16.866046","id":"d690d107-8259-4f4d-b0c2-24fe9d884abe","session_id":"21df8d8c-ec27-4d0e-a24a-9cc67f624d85","updated_at":"2026-03-14T19:13:42.083539","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:59:55.110] Browser LOG     [listConversations] Success: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:11:45.245184","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]
+[00:59:55.110] Browser LOG     [loadConversations] Loaded conversations: [{"created_at":"2026-03-18T12:20:23.343867","id":"7b10422d-fc3e-493c-b085-fb6ae4fddb4e","session_id":"081f3c7d-2a84-40ba-8574-c25e0a69d0f2","updated_at":"2026-03-18T13:11:45.245184","user_id":"debug-user"},{"created_at":"2026-03-18T11:47:08.966731","id":"c0223a31-b147-4c1a-905e-8df937bd3047","session_id":"fc952f99-4e34-48c9-8a2b-dbab523ee739","updated_at":"2026-03-18T12:10:34.313919","user_id":"debug-user"},{"created_at":"2026-03-16T14:34:31.423982","id":"c2d7f4bb-8b2e-4c18-ab8e-a48b12e945c1","session_id":"ca8ad3db-4195-42ca-9665-d7d66f867525","updated_at":"2026-03-16T14:34:52.555230","user_id":"debug-user"},{"created_at":"2026-03-14T17:11:02.108193","id":"1a27a397-2d53-49ba-976b-51936ae7ac30","session_id":"6dba65d0-7a44-4222-83a8-c7088d7d99e1","updated_at":"2026-03-14T17:11:12.139655","user_id":"debug-user"}]

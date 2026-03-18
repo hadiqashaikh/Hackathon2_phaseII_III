@@ -1,23 +1,24 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "backend/main.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "my-todo/package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "backend/main.py"
+      "source": "/api/auth/:path*",
+      "destination": "/my-todo/api/auth/:path*"
     },
     {
-      "source": "/(.*)",
-      "destination": "my-todo/$1"
+      "source": "/api/:path*",
+      "destination": "/api/main.py"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/my-todo/:path*"
     }
-  ]
+  ],
+  "functions": {
+    "api/main.py": {
+      "runtime": "python3.11"
+    }
+  },
+  "env": {
+    "PYTHONPATH": "."
+  }
 }

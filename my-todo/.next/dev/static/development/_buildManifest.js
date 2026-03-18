@@ -1,6 +1,19 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
-    "afterFiles": [],
+    "afterFiles": [
+      {
+        "source": "/api/chat/:path*"
+      },
+      {
+        "source": "/api/tasks/:path*"
+      },
+      {
+        "source": "/api/quick-tasks/:path*"
+      },
+      {
+        "source": "/api/auth/me"
+      }
+    ],
     "beforeFiles": [],
     "fallback": []
   },

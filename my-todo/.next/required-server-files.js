@@ -92,6 +92,7 @@ self.__SERVER_FILES_MANIFEST={
     "compiler": {},
     "expireTime": 31536000,
     "staticPageGenerationTimeout": 60,
+    "output": "standalone",
     "modularizeImports": {
       "@mui/icons-material": {
         "transform": "@mui/icons-material/{{member}}"
@@ -296,7 +297,17 @@ self.__SERVER_FILES_MANIFEST={
     "turbopack": {
       "root": "C:\\Users\\Admin\\Desktop\\Hackathon2\\phase-two\\my-todo"
     },
-    "distDirRoot": ".next"
+    "distDirRoot": ".next",
+    "_originalRewrites": {
+      "beforeFiles": [],
+      "afterFiles": [
+        {
+          "source": "/api/:path*",
+          "destination": "http://127.0.0.1:8000/api/:path*"
+        }
+      ],
+      "fallback": []
+    }
   },
   "appDir": "C:\\Users\\Admin\\Desktop\\Hackathon2\\phase-two\\my-todo",
   "relativeAppDir": "",

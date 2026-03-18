@@ -7,7 +7,7 @@ export const auth = betterAuth({
     database: drizzleAdapter(db, {
         provider: "pg",
         schema: {
-            user: schema.users,         // Yahan 'users' likhein agar schema.ts mein export const users hai
+            user: schema.users,
             session: schema.sessions,
             account: schema.accounts,
             verification: schema.verifications,
@@ -19,5 +19,19 @@ export const auth = betterAuth({
     session: {
         expiresIn: 60 * 60 * 24 * 7, // 7 days
         updateAge: 60 * 60 * 24, // 1 day
+    },
+    // Cookie configuration for localhost development
+    advanced: {
+        cookies: {
+            session_token: {
+                name: "better-auth.session_token",
+                attributes: {
+                    sameSite: "lax",
+                    secure: false, // false for localhost (http)
+                    path: "/",
+                    httpOnly: true,
+                },
+            },
+        },
     },
 });

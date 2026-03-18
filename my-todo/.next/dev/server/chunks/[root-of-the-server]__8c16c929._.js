@@ -156,6 +156,20 @@ const auth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f
     session: {
         expiresIn: 60 * 60 * 24 * 7,
         updateAge: 60 * 60 * 24
+    },
+    // Cookie configuration for localhost development
+    advanced: {
+        cookies: {
+            session_token: {
+                name: "better-auth.session_token",
+                attributes: {
+                    sameSite: "lax",
+                    secure: false,
+                    path: "/",
+                    httpOnly: true
+                }
+            }
+        }
     }
 });
 }),

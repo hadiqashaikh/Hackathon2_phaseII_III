@@ -10,9 +10,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$better$2d$auth$2f$dist$2f$client$2f$react$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/better-auth/dist/client/react/index.mjs [app-client] (ecmascript) <locals>");
 ;
 const authClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$better$2d$auth$2f$dist$2f$client$2f$react$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAuthClient"])({
-    baseURL: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+    baseURL: ("TURBOPACK compile-time value", "http://localhost:3000") || "http://localhost:3000",
     fetchOptions: {
         credentials: 'include'
+    },
+    // Explicitly enable cookie storage
+    fetch: async (url, options)=>{
+        const response = await fetch(url, {
+            ...options,
+            credentials: 'include'
+        });
+        return response;
     }
 });
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -36,12 +44,15 @@ __turbopack_context__.s([
     "sendMessage",
     ()=>sendMessage
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * API Client for Todo AI Chatbot
  *
  * Direct API calls to backend with Better Auth cookie support
- */ const BASE_URL = ("TURBOPACK compile-time value", "http://localhost:8000") || 'http://localhost:8000';
+ * Uses relative paths for Vercel deployment compatibility
+ * Next.js dev server proxies /api/* to FastAPI backend
+ */ // Use relative paths - Next.js will proxy to FastAPI in local dev
+// On Vercel, /api/* routes directly to FastAPI (same-origin)
+const BASE_URL = '';
 /**
  * Debug: Log available cookies
  */ function logCookies() {
@@ -104,10 +115,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
             console.error(`[${operationName}] Connection error - Cannot reach backend at ${url}`);
             console.error(`[${operationName}] Error details:`, error.message);
             console.error(`[${operationName}] Troubleshooting:`);
-            console.error(`[${operationName}]   1. Ensure backend server is running on port 8000`);
+            console.error(`[${operationName}]   1. Ensure backend server is running`);
             console.error(`[${operationName}]   2. Check CORS configuration in main.py`);
-            console.error(`[${operationName}]   3. Verify NEXT_PUBLIC_API_BASE_URL environment variable`);
-            throw new Error(`Cannot connect to backend server at ${url}. ` + `Please ensure the backend is running on port 8000 and CORS is properly configured.`);
+            console.error(`[${operationName}]   3. Verify API routing configuration`);
+            throw new Error(`Cannot connect to backend server at ${url}. ` + `Please ensure the backend is running and CORS/routing is properly configured.`);
         }
         console.error(`[${operationName}] Request failed:`, error);
         throw error;
@@ -240,7 +251,6 @@ __turbopack_context__.s([
     "default",
     ()=>UnifiedDashboard
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-jsx/style.js [app-client] (ecmascript)");
 /**
@@ -321,7 +331,9 @@ function UnifiedDashboard() {
     // ============================================
     // Task Functions
     // ============================================
-    const API_BASE = ("TURBOPACK compile-time value", "http://localhost:8000") || 'http://localhost:8000';
+    // Use relative paths - Next.js will proxy to FastAPI in local dev
+    // On Vercel, /api/* routes directly to FastAPI (same-origin)
+    const API_BASE = '';
     const fetchTasks = async ()=>{
         try {
             const res = await fetch(`${API_BASE}/api/tasks/`, {
@@ -590,7 +602,7 @@ function UnifiedDashboard() {
                         className: "h-12 w-12 animate-spin text-blue-500 mx-auto mb-4"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 334,
+                        lineNumber: 336,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -598,18 +610,18 @@ function UnifiedDashboard() {
                         children: "Loading Orbit..."
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 335,
+                        lineNumber: 337,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 333,
+                lineNumber: 335,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 332,
+            lineNumber: 334,
             columnNumber: 12
         }, this);
     }
@@ -624,21 +636,21 @@ function UnifiedDashboard() {
                     className: "absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-950 to-black"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 347,
+                    lineNumber: 349,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 348,
+                    lineNumber: 350,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 349,
+                    lineNumber: 351,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -655,12 +667,12 @@ function UnifiedDashboard() {
                                             className: "h-8 w-8 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 355,
+                                            lineNumber: 357,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 354,
+                                        lineNumber: 356,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -668,7 +680,7 @@ function UnifiedDashboard() {
                                         children: isLogin ? 'Welcome Back' : 'Join Orbit'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 357,
+                                        lineNumber: 359,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -676,13 +688,13 @@ function UnifiedDashboard() {
                                         children: isLogin ? 'Sign in to manage your tasks' : 'Create an account to get started'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 360,
+                                        lineNumber: 362,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 353,
+                                lineNumber: 355,
                                 columnNumber: 13
                             }, this),
                             !isLogin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -691,7 +703,7 @@ function UnifiedDashboard() {
                                 className: "w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all mb-3"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 365,
+                                lineNumber: 367,
                                 columnNumber: 26
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -701,7 +713,7 @@ function UnifiedDashboard() {
                                 className: "w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all mb-3"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 366,
+                                lineNumber: 368,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -711,7 +723,7 @@ function UnifiedDashboard() {
                                 className: "w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all mb-6"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 367,
+                                lineNumber: 369,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -720,7 +732,7 @@ function UnifiedDashboard() {
                                 children: isLogin ? 'Sign In' : 'Sign Up'
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 368,
+                                lineNumber: 370,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -729,24 +741,24 @@ function UnifiedDashboard() {
                                 children: isLogin ? "Need an account? Sign Up" : "Already have an account? Sign In"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 371,
+                                lineNumber: 373,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 352,
+                        lineNumber: 354,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 351,
+                    lineNumber: 353,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 345,
+            lineNumber: 347,
             columnNumber: 12
         }, this);
     }
@@ -769,7 +781,7 @@ function UnifiedDashboard() {
                                     children: "Conversations"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 389,
+                                    lineNumber: 391,
                                     columnNumber: 35
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -779,18 +791,18 @@ function UnifiedDashboard() {
                                         className: "h-5 w-5 text-slate-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 391,
+                                        lineNumber: 393,
                                         columnNumber: 35
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
                                         className: "h-5 w-5 text-slate-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 391,
+                                        lineNumber: 393,
                                         columnNumber: 89
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 390,
+                                    lineNumber: 392,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -800,18 +812,18 @@ function UnifiedDashboard() {
                                         className: "h-5 w-5 text-slate-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 394,
+                                        lineNumber: 396,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 393,
+                                    lineNumber: 395,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/page.tsx",
-                            lineNumber: 388,
+                            lineNumber: 390,
                             columnNumber: 11
                         }, this),
                         !sidebarCollapsed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -825,19 +837,19 @@ function UnifiedDashboard() {
                                         className: "h-5 w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 401,
+                                        lineNumber: 403,
                                         columnNumber: 17
                                     }, this),
                                     "New Chat"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 400,
+                                lineNumber: 402,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.tsx",
-                            lineNumber: 399,
+                            lineNumber: 401,
                             columnNumber: 33
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -847,7 +859,7 @@ function UnifiedDashboard() {
                                 children: "No conversations yet"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 408,
+                                lineNumber: 410,
                                 columnNumber: 64
                             }, this) : conversations.map((conv_0)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     onClick: ()=>loadConversation(conv_0.id),
@@ -862,7 +874,7 @@ function UnifiedDashboard() {
                                                         children: "Conversation"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 413,
+                                                        lineNumber: 415,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -870,13 +882,13 @@ function UnifiedDashboard() {
                                                         children: new Date(conv_0.created_at).toLocaleDateString()
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 416,
+                                                        lineNumber: 418,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 412,
+                                                lineNumber: 414,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -886,12 +898,12 @@ function UnifiedDashboard() {
                                                     className: "h-4 w-4 text-red-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/page.tsx",
-                                                    lineNumber: 421,
+                                                    lineNumber: 423,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 420,
+                                                lineNumber: 422,
                                                 columnNumber: 23
                                             }, this)
                                         ]
@@ -899,17 +911,17 @@ function UnifiedDashboard() {
                                         className: "h-5 w-5 text-slate-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 423,
+                                        lineNumber: 425,
                                         columnNumber: 27
                                     }, this)
                                 }, conv_0.id, false, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 410,
+                                    lineNumber: 412,
                                     columnNumber: 52
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.tsx",
-                            lineNumber: 407,
+                            lineNumber: 409,
                             columnNumber: 11
                         }, this),
                         !sidebarCollapsed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -923,12 +935,12 @@ function UnifiedDashboard() {
                                             className: "h-5 w-5 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 431,
+                                            lineNumber: 433,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 430,
+                                        lineNumber: 432,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -939,7 +951,7 @@ function UnifiedDashboard() {
                                                 children: session?.user?.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 434,
+                                                lineNumber: 436,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -947,35 +959,35 @@ function UnifiedDashboard() {
                                                 children: session?.user?.email
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 437,
+                                                lineNumber: 439,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 433,
+                                        lineNumber: 435,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 429,
+                                lineNumber: 431,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.tsx",
-                            lineNumber: 428,
+                            lineNumber: 430,
                             columnNumber: 33
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 386,
+                    lineNumber: 388,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 385,
+                lineNumber: 387,
                 columnNumber: 7
             }, this),
             showSidebar && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -983,7 +995,7 @@ function UnifiedDashboard() {
                 className: "jsx-70ca38711bcf89f9" + " " + "fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 447,
+                lineNumber: 449,
                 columnNumber: 23
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1006,7 +1018,7 @@ function UnifiedDashboard() {
                                                         children: "TASK ORBIT"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 457,
+                                                        lineNumber: 459,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1017,13 +1029,13 @@ function UnifiedDashboard() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 460,
+                                                        lineNumber: 462,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 456,
+                                                lineNumber: 458,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1036,12 +1048,12 @@ function UnifiedDashboard() {
                                                             className: "h-5 w-5 text-slate-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/page.tsx",
-                                                            lineNumber: 466,
+                                                            lineNumber: 468,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 465,
+                                                        lineNumber: 467,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1053,19 +1065,19 @@ function UnifiedDashboard() {
                                                         children: "Logout"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 468,
+                                                        lineNumber: 470,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 464,
+                                                lineNumber: 466,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 455,
+                                        lineNumber: 457,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1079,7 +1091,7 @@ function UnifiedDashboard() {
                                                 className: "jsx-70ca38711bcf89f9" + " " + "flex-1 bg-transparent border-none text-white placeholder-slate-500 px-4 py-2 focus:outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 479,
+                                                lineNumber: 481,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1088,19 +1100,19 @@ function UnifiedDashboard() {
                                                 children: "Add"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 480,
+                                                lineNumber: 482,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 478,
+                                        lineNumber: 480,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 454,
+                                lineNumber: 456,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1114,7 +1126,7 @@ function UnifiedDashboard() {
                                                 className: "h-16 w-16 text-slate-700 mx-auto mb-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 490,
+                                                lineNumber: 492,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1122,13 +1134,13 @@ function UnifiedDashboard() {
                                                 children: "No tasks yet. Add one above!"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 491,
+                                                lineNumber: 493,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 489,
+                                        lineNumber: 491,
                                         columnNumber: 37
                                     }, this) : tasks.map((task_0, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             style: {
@@ -1146,12 +1158,12 @@ function UnifiedDashboard() {
                                                                 className: "h-4 w-4 text-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/page.tsx",
-                                                                lineNumber: 497,
+                                                                lineNumber: 499,
                                                                 columnNumber: 46
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/page.tsx",
-                                                            lineNumber: 496,
+                                                            lineNumber: 498,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1159,13 +1171,13 @@ function UnifiedDashboard() {
                                                             children: task_0.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/page.tsx",
-                                                            lineNumber: 499,
+                                                            lineNumber: 501,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/page.tsx",
-                                                    lineNumber: 495,
+                                                    lineNumber: 497,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1178,12 +1190,12 @@ function UnifiedDashboard() {
                                                                 className: "h-4 w-4 text-blue-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/page.tsx",
-                                                                lineNumber: 505,
+                                                                lineNumber: 507,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/page.tsx",
-                                                            lineNumber: 504,
+                                                            lineNumber: 506,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1193,40 +1205,40 @@ function UnifiedDashboard() {
                                                                 className: "h-4 w-4 text-red-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/page.tsx",
-                                                                lineNumber: 508,
+                                                                lineNumber: 510,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/page.tsx",
-                                                            lineNumber: 507,
+                                                            lineNumber: 509,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/page.tsx",
-                                                    lineNumber: 503,
+                                                    lineNumber: 505,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, task_0.id, true, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 492,
+                                            lineNumber: 494,
                                             columnNumber: 55
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 488,
+                                    lineNumber: 490,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 487,
+                                lineNumber: 489,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 452,
+                        lineNumber: 454,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1241,12 +1253,12 @@ function UnifiedDashboard() {
                                             className: "h-5 w-5 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 521,
+                                            lineNumber: 523,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 520,
+                                        lineNumber: 522,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1257,7 +1269,7 @@ function UnifiedDashboard() {
                                                 children: "AI Assistant"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 524,
+                                                lineNumber: 526,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1265,19 +1277,19 @@ function UnifiedDashboard() {
                                                 children: conversationId ? 'Chat active' : 'Start a new conversation'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 525,
+                                                lineNumber: 527,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 523,
+                                        lineNumber: 525,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 519,
+                                lineNumber: 521,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1291,12 +1303,12 @@ function UnifiedDashboard() {
                                                 className: "h-10 w-10 text-blue-400"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 535,
+                                                lineNumber: 537,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 534,
+                                            lineNumber: 536,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1304,7 +1316,7 @@ function UnifiedDashboard() {
                                             children: "Todo AI Chatbot"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 537,
+                                            lineNumber: 539,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1312,7 +1324,7 @@ function UnifiedDashboard() {
                                             children: "I can help you manage your tasks through natural conversation."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 540,
+                                            lineNumber: 542,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1323,7 +1335,7 @@ function UnifiedDashboard() {
                                                     children: '"Add a task to buy groceries"'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/page.tsx",
-                                                    lineNumber: 544,
+                                                    lineNumber: 546,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1331,7 +1343,7 @@ function UnifiedDashboard() {
                                                     children: '"What tasks do I have?"'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/page.tsx",
-                                                    lineNumber: 547,
+                                                    lineNumber: 549,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1339,19 +1351,19 @@ function UnifiedDashboard() {
                                                     children: '"Mark my first task as complete"'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/page.tsx",
-                                                    lineNumber: 550,
+                                                    lineNumber: 552,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 543,
+                                            lineNumber: 545,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 533,
+                                    lineNumber: 535,
                                     columnNumber: 38
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                     children: [
@@ -1359,12 +1371,12 @@ function UnifiedDashboard() {
                                                 message: msg
                                             }, msg.id, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 555,
+                                                lineNumber: 557,
                                                 columnNumber: 38
                                             }, this)),
                                         isLoading && messages[messages.length - 1]?.role === 'user' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TypingIndicator, {}, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 556,
+                                            lineNumber: 558,
                                             columnNumber: 81
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1372,14 +1384,14 @@ function UnifiedDashboard() {
                                             className: "jsx-70ca38711bcf89f9"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 557,
+                                            lineNumber: 559,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 532,
+                                lineNumber: 534,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1402,7 +1414,7 @@ function UnifiedDashboard() {
                                             className: "jsx-70ca38711bcf89f9" + " " + "flex-1 resize-none backdrop-blur-xl bg-slate-800/30 border border-slate-700/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 564,
+                                            lineNumber: 566,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1413,41 +1425,41 @@ function UnifiedDashboard() {
                                                 className: "h-5 w-5 animate-spin"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 569,
+                                                lineNumber: 571,
                                                 columnNumber: 30
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 569,
+                                                lineNumber: 571,
                                                 columnNumber: 77
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 568,
+                                            lineNumber: 570,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 563,
+                                    lineNumber: 565,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 562,
+                                lineNumber: 564,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 517,
+                        lineNumber: 519,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 450,
+                lineNumber: 452,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1457,7 +1469,7 @@ function UnifiedDashboard() {
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 383,
+        lineNumber: 385,
         columnNumber: 10
     }, this);
 }
@@ -1472,11 +1484,11 @@ _c = UnifiedDashboard;
 // ============================================
 function MessageBubble(t0) {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(24);
-    if ($[0] !== "1423d038be41d6e143fed1b901a425cb7f5d61ac9b80308336428f7815101cfc") {
+    if ($[0] !== "86ac08e17d8491d524345f5fa210916f40fdd60873c26ebca7978bef8a64a489") {
         for(let $i = 0; $i < 24; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "1423d038be41d6e143fed1b901a425cb7f5d61ac9b80308336428f7815101cfc";
+        $[0] = "86ac08e17d8491d524345f5fa210916f40fdd60873c26ebca7978bef8a64a489";
     }
     const { message } = t0;
     const isUser = message.role === "user";
@@ -1488,13 +1500,13 @@ function MessageBubble(t0) {
             className: "h-4 w-4 text-white"
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 631,
+            lineNumber: 633,
             columnNumber: 19
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__["Bot"], {
             className: "h-4 w-4 text-white"
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 631,
+            lineNumber: 633,
             columnNumber: 61
         }, this);
         $[1] = isUser;
@@ -1509,7 +1521,7 @@ function MessageBubble(t0) {
             children: t3
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 639,
+            lineNumber: 641,
             columnNumber: 10
         }, this);
         $[3] = t2;
@@ -1526,7 +1538,7 @@ function MessageBubble(t0) {
             children: message.content
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 649,
+            lineNumber: 651,
             columnNumber: 10
         }, this);
         $[6] = message.content;
@@ -1541,7 +1553,7 @@ function MessageBubble(t0) {
             children: message.tool_calls.map(_MessageBubbleMessageTool_callsMap)
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 657,
+            lineNumber: 659,
             columnNumber: 65
         }, this);
         $[8] = message.tool_calls;
@@ -1568,7 +1580,7 @@ function MessageBubble(t0) {
             children: t9
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 677,
+            lineNumber: 679,
             columnNumber: 11
         }, this);
         $[12] = t8;
@@ -1588,7 +1600,7 @@ function MessageBubble(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 686,
+            lineNumber: 688,
             columnNumber: 11
         }, this);
         $[15] = t10;
@@ -1609,7 +1621,7 @@ function MessageBubble(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 697,
+            lineNumber: 699,
             columnNumber: 11
         }, this);
         $[20] = t1;
@@ -1630,17 +1642,17 @@ function _MessageBubbleMessageTool_callsMap(tc, idx) {
         toolCall: tc
     }, idx, false, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 712,
+        lineNumber: 714,
         columnNumber: 10
     }, this);
 }
 function ToolCallIndicator(t0) {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(6);
-    if ($[0] !== "1423d038be41d6e143fed1b901a425cb7f5d61ac9b80308336428f7815101cfc") {
+    if ($[0] !== "86ac08e17d8491d524345f5fa210916f40fdd60873c26ebca7978bef8a64a489") {
         for(let $i = 0; $i < 6; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "1423d038be41d6e143fed1b901a425cb7f5d61ac9b80308336428f7815101cfc";
+        $[0] = "86ac08e17d8491d524345f5fa210916f40fdd60873c26ebca7978bef8a64a489";
     }
     const { toolCall } = t0;
     let t1;
@@ -1691,12 +1703,12 @@ function ToolCallIndicator(t0) {
                 children: t2
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 767,
+                lineNumber: 769,
                 columnNumber: 110
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 767,
+            lineNumber: 769,
             columnNumber: 10
         }, this);
         $[4] = t2;
@@ -1712,11 +1724,11 @@ _c2 = ToolCallIndicator;
 // ============================================
 function TypingIndicator() {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(5);
-    if ($[0] !== "1423d038be41d6e143fed1b901a425cb7f5d61ac9b80308336428f7815101cfc") {
+    if ($[0] !== "86ac08e17d8491d524345f5fa210916f40fdd60873c26ebca7978bef8a64a489") {
         for(let $i = 0; $i < 5; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "1423d038be41d6e143fed1b901a425cb7f5d61ac9b80308336428f7815101cfc";
+        $[0] = "86ac08e17d8491d524345f5fa210916f40fdd60873c26ebca7978bef8a64a489";
     }
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -1726,12 +1738,12 @@ function TypingIndicator() {
                 className: "h-4 w-4 text-white"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 790,
+                lineNumber: 792,
                 columnNumber: 94
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 790,
+            lineNumber: 792,
             columnNumber: 10
         }, this);
         $[1] = t0;
@@ -1747,7 +1759,7 @@ function TypingIndicator() {
             }
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 797,
+            lineNumber: 799,
             columnNumber: 10
         }, this);
         $[2] = t1;
@@ -1763,7 +1775,7 @@ function TypingIndicator() {
             }
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 806,
+            lineNumber: 808,
             columnNumber: 10
         }, this);
         $[3] = t2;
@@ -1790,24 +1802,24 @@ function TypingIndicator() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 815,
+                                lineNumber: 817,
                                 columnNumber: 203
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 815,
+                        lineNumber: 817,
                         columnNumber: 167
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 815,
+                    lineNumber: 817,
                     columnNumber: 52
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 815,
+            lineNumber: 817,
             columnNumber: 10
         }, this);
         $[4] = t3;

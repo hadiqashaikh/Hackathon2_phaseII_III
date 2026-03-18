@@ -5,4 +5,12 @@ export const authClient = createAuthClient({
     fetchOptions: {
         credentials: 'include',
     },
+    // Explicitly enable cookie storage
+    fetch: async (url, options) => {
+        const response = await fetch(url, {
+            ...options,
+            credentials: 'include',
+        });
+        return response;
+    },
 });

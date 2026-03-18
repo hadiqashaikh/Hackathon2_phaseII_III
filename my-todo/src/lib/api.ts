@@ -2,9 +2,13 @@
  * API Client for Todo AI Chatbot
  *
  * Direct API calls to backend with Better Auth cookie support
+ * Uses relative paths for Vercel deployment compatibility
+ * Next.js dev server proxies /api/* to FastAPI backend
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+// Use relative paths - Next.js will proxy to FastAPI in local dev
+// On Vercel, /api/* routes directly to FastAPI (same-origin)
+const BASE_URL = '';
 
 export interface Message {
   id: string;
@@ -114,12 +118,12 @@ async function handleFetch<T>(
       console.error(`[${operationName}] Connection error - Cannot reach backend at ${url}`);
       console.error(`[${operationName}] Error details:`, error.message);
       console.error(`[${operationName}] Troubleshooting:`);
-      console.error(`[${operationName}]   1. Ensure backend server is running on port 8000`);
+      console.error(`[${operationName}]   1. Ensure backend server is running`);
       console.error(`[${operationName}]   2. Check CORS configuration in main.py`);
-      console.error(`[${operationName}]   3. Verify NEXT_PUBLIC_API_BASE_URL environment variable`);
+      console.error(`[${operationName}]   3. Verify API routing configuration`);
       throw new Error(
         `Cannot connect to backend server at ${url}. ` +
-        `Please ensure the backend is running on port 8000 and CORS is properly configured.`
+        `Please ensure the backend is running and CORS/routing is properly configured.`
       );
     }
     console.error(`[${operationName}] Request failed:`, error);

@@ -99,7 +99,9 @@ export default function UnifiedDashboard() {
   // Task Functions
   // ============================================
 
-  const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+  // Use relative paths - Next.js will proxy to FastAPI in local dev
+  // On Vercel, /api/* routes directly to FastAPI (same-origin)
+  const API_BASE = '';
 
   const fetchTasks = async () => {
     try {
